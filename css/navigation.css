@@ -1,0 +1,43 @@
+.navi {
+    background-color: #74c4ff;
+    width: 1425px;
+    height: 50px;
+    /* Text */
+    display: grid;
+
+    /* grid layout*/
+    grid-template-rows: 10px 10px 10px 10px 10px;
+    grid-template-columns: 20px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 20px;
+    /* Abstand */    
+}
+
+.naviEintrag {
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    /* Abstände */
+
+    /* Schrift */
+    font-size: large;
+
+    /* Border */
+    border: 1px solid #67B1E6;
+    border-radius: 25%;
+
+    /* Background Color */
+    background-color: #67B1E6;
+}
+
+.naviStart {
+    grid-row-start: 2;
+    grid-row-end:2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+.naviProfil{
+    grid-row-start: 2;
+    grid-row-end:2;
+    grid-column-start: 3;
+    grid-column-end: 3;
+}

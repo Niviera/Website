@@ -1,0 +1,143 @@
+.profileContainer {
+    height: 500px;
+    width: 1300px;
+    margin: 5%;
+
+    border: 1px solid black;
+
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+}
+
+.picture {
+    /* groeße */
+    height: 200px;
+    width: 200px;
+
+    /* grid position */
+    grid-row-start: 1;
+    grid-row-end:4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
+    /* Rahmen */
+    border: 2px solid #A4B4BF;
+}
+
+/* Name */
+.nameForm {
+    grid-row-start: 1;
+    grid-row-end:1;
+    grid-column-start: 6;
+    grid-column-end: 6;
+}
+
+.vorname {
+    grid-row-start: 1;
+    grid-row-end:1;
+    grid-column-start: 7;
+    grid-column-end: 7;
+}
+
+.nachname {
+    grid-row-start: 1;
+    grid-row-end:1;
+    grid-column-start: 8;
+    grid-column-end: 8;
+}
+
+/* Straße */
+.straßeForm {
+    grid-row-start: 2;
+    grid-row-end:2;
+    grid-column-start: 6;
+    grid-column-end: 6;
+
+}
+
+.straße {
+    grid-row-start: 2;
+    grid-row-end:2;
+    grid-column-start: 7;
+    grid-column-end: 8;
+
+    /* 
+        keinen Zeilenumbruch 
+        Quelle: https://www.digitalocean.com/community/tutorials/css-prevent-line-break-de
+    */
+    white-space: nowrap;
+}
+
+/* Stadt */
+.stadtForm {
+    grid-row-start: 3;
+    grid-row-end:3;
+    grid-column-start: 6;
+    grid-column-end: 6;
+}
+
+.plz {
+    grid-row-start: 3;
+    grid-row-end:3;
+    grid-column-start: 7;
+    grid-column-end: 7;
+}
+
+.stadt {
+    grid-row-start: 3;
+    grid-row-end:3;
+    grid-column-start: 8;
+    grid-column-end: 8;
+    white-space: nowrap;
+
+}
+
+/* Festnetz */
+.telForm {
+    grid-row-start: 4;
+    grid-row-end:4;
+    grid-column-start: 6;
+    grid-column-end: 6;
+}
+
+.tel {
+    grid-row-start: 4;
+    grid-row-end:4;
+    grid-column-start: 7;
+    grid-column-end: 8;
+    white-space:nowrap;
+}
+
+/* Mobile */
+.mobileForm {
+    grid-row-start: 5;
+    grid-row-end:5;
+    grid-column-start: 6;
+    grid-column-end: 6;
+}
+
+.mobile {
+    grid-row-start: 5;
+    grid-row-end:5;
+    grid-column-start: 7;
+    grid-column-end: 8;
+    white-space:nowrap;
+}
+
+/* Email */
+
+.emailForm {
+    grid-row-start: 6;
+    grid-row-end:6;
+    grid-column-start: 6;
+    grid-column-end: 6;
+}
+
+.mail {
+    grid-row-start: 6;
+    grid-row-end:6;
+    grid-column-start: 7;
+    grid-column-end: 8;
+    white-space:nowrap;
+}

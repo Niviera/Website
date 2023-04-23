@@ -1,0 +1,33 @@
+
+.picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 75px;
+}
+
+.overview {
+    height: auto;
+    width: 1425px;
+    display: flex;
+}
+
+.advancendSearch {
+    background-color: #74c4ff;
+    height: auto ;
+    width: 25%; 
+}
+
+.offers {
+    /* Container für Angebote */
+    height: auto;
+    width: 75%; 
+
+    /* Grid Quelle: "https://www.youtube.com/watch?v=EiNiSFIPIQE&ab_channel=SlayingTheDragon" */
+    display:grid;
+    grid-template-columns: 215px 215px 215px 215px 215px;
+    grid-template-rows: 200px;
+
+    /* Border */
+    border: 2px solid #A4B4BF;
+}
+
