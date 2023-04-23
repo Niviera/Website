@@ -1,2 +1,1 @@
-<link rel="stylesheet" href="css/footer.css" />
-<div class="footer"></div>
+<div class="footer" style="background-color: #1922bd; height: 30px"></div>
