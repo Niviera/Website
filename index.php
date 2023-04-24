@@ -8,7 +8,7 @@
   <title>Document</title>
 </head>
 
-<body>
+<body style="background-color: #dcf0ff;">
   <!-- Header -->
   <header>
     <?php
