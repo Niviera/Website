@@ -77,7 +77,7 @@
                     </tr>
                     <tr>
                         <th></th>
-                        <th><input type="submit" text="Konto erstellen"></th>
+                        <th><Button>Konto erstellen</button></th>
                         <th></th>
                     </tr>
                 </table>

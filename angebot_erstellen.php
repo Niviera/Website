@@ -35,7 +35,7 @@
                 </tr>
                 <tr>
                     <th>Beschreibung: </th>
-                    <th><textarea requierd></textarea></th>
+                    <th><textarea required></textarea></th>
                 </tr>
                 <tr>
                     <th></th>

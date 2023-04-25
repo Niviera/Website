@@ -28,16 +28,15 @@
                     <th>Titel: </th>
                     <th>Kategorie: </th>
                     <th>Löschen: </th>
-                    <th></th>
                 </tr>
                 <tr>
                     <th>1 </th>
                     <th><a href="angebot_eins.php">zu verschenken</a> </th>
                     <th> zu verschenken </th>
-                    <th><input type="checkbox"></input></th>
+                    <th><input type="checkbox"></th>
                 </tr>
             </table>
-            <th><button type="button">Löschen</button></th>
+            <button type="button">Löschen</button>
         </div>
 
     </center>
