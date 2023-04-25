@@ -12,3 +12,5 @@ Verwendete Programme:
 GitHub
 - https://github.com/Niviera/Website
 
+Validatoren:
+- https://validator.w3.org/#validate_by_input
