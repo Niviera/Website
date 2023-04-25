@@ -1,1 +1,0 @@
-<div class="footer" style="background-color: #1922bd; height: 30px"></div>

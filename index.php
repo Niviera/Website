@@ -10,16 +10,14 @@
 
 <body style="background-color: #dcf0ff;">
   <!-- Header -->
-  <header>
-    <?php
-    include "header.php";
-    ?>
-
-    <!-- Navi -->
-    <?php
-    include "nav.php"
-      ?>
-  </header>
+  <?php
+  include "Ressourcen/header.php";
+  phpversion();
+  ?>
+  <!-- nav -->
+  <?php
+  include "Ressourcen/nav.php";
+  ?>
 
   <!-- Neueste Angebote -->
   <!-- Bereich des neuesten Angebots -->
@@ -49,7 +47,16 @@
   <!-- Box für Liste Angebote -->
   <div style="height: auto; display: flex">
     <!-- erweiterte Suche -->
-    <div style="width: 20%; height: auto;background-color: #74c4ff"></div>
+    <div style="width: 20%; height: auto;background-color: #74c4ff">
+      <!-- Suche -->
+      Suche: <input type="text">
+      <br>
+      zu Verschenken
+      <br>
+      Garten
+      <br>
+
+    </div>
     <!-- Angebote -->
     <div style="width: 80%; height: auto;border: 2px solid #A4B4BF;">
       <table>
@@ -120,7 +127,7 @@
   </div>
   <!-- footer -->
   <?php
-  include "footer.php";
+  include "Ressourcen/footer.php";
   ?>
 </body>
 

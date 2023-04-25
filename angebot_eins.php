@@ -11,11 +11,11 @@
 <body style="background-color: #dcf0ff;">
     <!-- header -->
     <?php
-    include "header.php";
+    include "Ressourcen/header.php";
     ?>
     <!-- nav -->
     <?php
-    include "nav.php";
+    include "Ressourcen/nav.php";
     ?>
     <!-- Content -->
     <div style="height: 500px; border: 2px solid Black">
@@ -47,7 +47,7 @@
     </div>
     <!-- footer -->
     <?php
-    include "footer.php";
+    include "Ressourcen/footer.php";
     ?>
 </body>
 

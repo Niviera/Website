@@ -11,15 +11,17 @@
 <body style="background-color: #dcf0ff;">
     <!-- Header -->
     <?php
-    include "header.php";
+    include "Ressourcen/header.php";
     ?>
-
-    <!-- Navi -->
+    <!-- nav -->
     <?php
-    include "nav.php";
+    include "Ressourcen/nav.php";
     ?>
     <!-- Steiten inhalt -->
     <center>
+        <div>
+            <h3>Registrierung:</h3>
+        </div>
         <div style="border: 1px solid black;border-radius:75px ;width: 500px; margin: 50px; padding:20px">
             <form>
                 <table>
@@ -64,11 +66,6 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <th>Nickname:</th>
-                        <th><input type="text" required></th>
-                        <th></th>
-                    </tr>
-                    <tr>
                         <th> Password: </th>
                         <th> <input type="password" required></th>
                         <th></th>
@@ -89,7 +86,7 @@
     </center>
     <!-- footer -->
     <?php
-    include "footer.php";
+    include "Ressourcen/footer.php";
     ?>
 </body>
 
