@@ -25,7 +25,7 @@
     <div style="display: flex">
         <!-- Profilbild -->
         <div style="float:left; width:200px; height:auto">
-            <img src="Bilder/Lucas.jpeg" style="width: 175px; height: 175px; border-radius:75px">
+            <img src="Bilder/Lucas.jpeg" alt="Profilbild" style="width: 175px; height: 175px; border-radius:75px">
 
         </div>
         <!-- Benutzerdaten: -->
