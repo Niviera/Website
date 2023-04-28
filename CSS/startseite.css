@@ -1,0 +1,82 @@
+/* Design für die kleine Angebots übersicht */
+.Container_kleine_Angebote{
+    /* Größe */
+    width: 80%; 
+    height: auto;
+    border: 2px solid #A4B4BF;
+    /* Ausgabe */
+    display: flex;
+}
+
+.Container_kleine_Angebote > div{
+    /* Größe und äußeres Design */
+    width: 175px; 
+    height: 175px; 
+    border: 2px solid black;
+    margin: 20px;
+    /* Design innen */
+    display: grid;
+    grid-template-rows: 25% 25% 25%px 25%;
+    grid-template-columns: 25% 25% 25%px 25%;
+    
+}
+
+.Container_kleine_Angebote > div > .ueberschrift{
+    width: 100%;
+    text-align: center;
+
+    /*Position im grid*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.Container_kleine_Angebote > div > .beschreibung{
+    width: 100%;
+    height:100%;
+    text-align: left;
+
+    /*Position im grid*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.Container_kleine_Angebote > div > .autor{
+    width: 100%;
+    text-align: right;
+
+    /*Position im grid*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+/* Navigation Angebotsübersicht */
+
+
+.erweitertes_Such_Navi{
+    /* Größe */
+    width: 20%; 
+    height: auto;
+
+    /* Design */
+    background-color: #74c4ff
+}
+
+.erweitertes_Such_Navi > ul{
+    list-style-type: none;
+    width: auto;
+}
+
+.erweitertes_Such_Navi > ul > li > a{
+    display: block;
+}
+
+.erweitertes_Such_Navi > ul> li> a:hover{
+    background-color: black;
+    color: white;
+}
