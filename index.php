@@ -5,6 +5,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="CSS/navigation.css">
+  <link rel="stylesheet" type="text/css" href="CSS/startseite.css">
+
   <title>Document</title>
 </head>
 
@@ -12,11 +16,6 @@
   <!-- Header -->
   <?php
   include "Ressourcen/header.php";
-  phpversion();
-  ?>
-  <!-- nav -->
-  <?php
-  include "Ressourcen/nav.php";
   ?>
 
   <!-- Neueste Angebote -->
@@ -45,84 +44,69 @@
   <!-- Trennstrich -->
   <div style="background-color: #74c4ff; height:30px"></div>
   <!-- Box für Liste Angebote -->
-  <div style="height: auto; display: flex">
+  <div style="height: auto; display: flex; width: 100%">
     <!-- erweiterte Suche -->
-    <div style="width: 20%; height: auto;background-color: #74c4ff">
+    <div class="erweitertes_Such_Navi">
       <!-- Suche -->
-      Suche: <input type="text">
-      <br>
-      zu Verschenken
-      <br>
-      Garten
-      <br>
+      <form>
+        Suche: <input type="text">
+      </form>
+      <ul>
+        <li> <a>Garten</a> </li>
+        <li><a>Zu Verschenken</a> </li>
+      </ul>
 
     </div>
     <!-- Angebote -->
-    <div style="width: 80%; height: auto;border: 2px solid #A4B4BF;">
-      <table>
-        <tr>
-          <!-- Angebot 1 -->
-          <th>
-            <div style="width: 175px; height: 175px; margin: 20px; border: 2px solid black">
-              <!-- Kategorie -->
-              <div style="width: 171px; height: 23px; text-align:center; margin: 2px"> zu Verschenken </div>
-              <!-- kurzbeschreibung -->
-              <div style="width: 171px; height: 121px; text-align:left; margin: 2px"> Hey, dies ist ein einfacher
-                beispiel text </div>
-              <!-- Ersteller -->
-              <div style="width: 171px; height: 23px; text-align:right; margin: 2px">Lucas Christoffers</div>
-            </div>
-          </th>
-          <!-- Angebot 2 -->
-          <th>
-            <div style="width: 175px; height: 175px; margin: 20px; border: 2px solid black">
-              <!-- Kategorie -->
-              <div style="width: 171px; height: 23px; text-align:center; margin: 2px"> zu Verschenken </div>
-              <!-- kurzbeschreibung -->
-              <div style="width: 171px; height: 121px; text-align:left; margin: 2px"> Hey, dies ist ein einfacher
-                beispiel text </div>
-              <!-- Ersteller -->
-              <div style="width: 171px; height: 23px; text-align:right; margin: 2px">Lucas Christoffers</div>
-            </div>
-          </th>
-          <!-- Angebot 3 -->
-          <th>
-            <div style="width: 175px; height: 175px; margin: 20px; border: 2px solid black">
-              <!-- Kategorie -->
-              <div style="width: 171px; height: 23px; text-align:center; margin: 2px"> zu Verschenken </div>
-              <!-- kurzbeschreibung -->
-              <div style="width: 171px; height: 121px; text-align:left; margin: 2px"> Hey, dies ist ein einfacher
-                beispiel text </div>
-              <!-- Ersteller -->
-              <div style="width: 171px; height: 23px; text-align:right; margin: 2px">Lucas Christoffers</div>
-            </div>
-          </th>
-          <!-- Angebot 4 -->
-          <th>
-            <div style="width: 175px; height: 175px; margin: 20px; border: 2px solid black">
-              <!-- Kategorie -->
-              <div style="width: 171px; height: 23px; text-align:center; margin: 2px"> zu Verschenken </div>
-              <!-- kurzbeschreibung -->
-              <div style="width: 171px; height: 121px; text-align:left; margin: 2px"> Hey, dies ist ein einfacher
-                beispiel text </div>
-              <!-- Ersteller -->
-              <div style="width: 171px; height: 23px; text-align:right; margin: 2px">Lucas Christoffers</div>
-            </div>
-          </th>
-          <!-- Angebot 5 -->
-          <th>
-            <div style="width: 175px; height: 175px; margin: 20px; border: 2px solid black">
-              <!-- Kategorie -->
-              <div style="width: 171px; height: 23px; text-align:center; margin: 2px"> zu Verschenken </div>
-              <!-- kurzbeschreibung -->
-              <div style="width: 171px; height: 121px; text-align:left; margin: 2px"> Hey, dies ist ein einfacher
-                beispiel text </div>
-              <!-- Ersteller -->
-              <div style="width: 171px; height: 23px; text-align:right; margin: 2px">Lucas Christoffers</div>
-            </div>
-          </th>
-        </tr>
-      </table>
+    <div class="Container_kleine_Angebote">
+      <!-- Angebot 1 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 2 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 3 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 4 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 5 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 6 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 7 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 8 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
     </div>
   </div>
   <!-- footer -->
