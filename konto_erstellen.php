@@ -16,10 +16,6 @@
     <?php
     include "Ressourcen/header.php";
     ?>
-    <!-- nav -->
-    <?php
-    include "Ressourcen/nav.php";
-    ?>
     <!-- Steiten inhalt -->
     <center>
         <div>

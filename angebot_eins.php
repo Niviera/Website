@@ -16,10 +16,6 @@
     <?php
     include "Ressourcen/header.php";
     ?>
-    <!-- nav -->
-    <?php
-    include "Ressourcen/nav.php";
-    ?>
     <!-- Content -->
     <div style="height: 500px; border: 2px solid Black">
         <!-- Title -->

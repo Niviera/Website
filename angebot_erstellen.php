@@ -16,10 +16,6 @@
     <?php
     include "Ressourcen/header.php";
     ?>
-    <!-- nav -->
-    <?php
-    include "Ressourcen/nav.php";
-    ?>
     <!-- Content -->
     <div style="width: 100%; text-align: center">
         <h3> Angebot erstellen: </h3>

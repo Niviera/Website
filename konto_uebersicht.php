@@ -16,10 +16,6 @@
     <?php
     include "Ressourcen/header.php";
     ?>
-    <!-- nav -->
-    <?php
-    include "Ressourcen/nav.php";
-    ?>
     <!-- Seiten inhalt -->
     <!-- Überschrift -->
     <div style="width: 100%; text-align:center;">

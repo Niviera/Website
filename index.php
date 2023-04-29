@@ -8,7 +8,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="CSS/navigation.css">
   <link rel="stylesheet" type="text/css" href="CSS/startseite.css">
-  
+
   <title>Document</title>
 </head>
 
@@ -16,10 +16,6 @@
   <!-- Header -->
   <?php
   include "Ressourcen/header.php";
-  ?>
-  <!-- nav -->
-  <?php
-  include "Ressourcen/nav.php";
   ?>
 
   <!-- Neueste Angebote -->
@@ -82,6 +78,30 @@
         <p class="autor">Lucas Christoffers</p>
       </div>
       <!-- Angebot 4 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 5 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 6 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 7 -->
+      <div>
+        <p class="ueberschrift"> Hallo </p>
+        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+        <p class="autor">Lucas Christoffers</p>
+      </div>
+      <!-- Angebot 8 -->
       <div>
         <p class="ueberschrift"> Hallo </p>
         <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
