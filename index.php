@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="CSS/startseite.css">
   <link rel="stylesheet" type="text/css" href="CSS/navigation.css">
+  <link rel="stylesheet" type="text/css" href="CSS/startseite.css">
+  
   <title>Document</title>
 </head>
 
