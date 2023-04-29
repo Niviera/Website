@@ -16,8 +16,8 @@
     margin: 20px;
     /* Design innen */
     display: grid;
-    grid-template-rows: 25% 25% 25%px 25%;
-    grid-template-columns: 25% 25% 25%px 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 25% 25% 25% 25%;
     
 }
 
@@ -55,28 +55,3 @@
     grid-row-end: 4;
 }
 
-/* Navigation Angebotsübersicht */
-
-
-.erweitertes_Such_Navi{
-    /* Größe */
-    width: 20%; 
-    height: auto;
-
-    /* Design */
-    background-color: #74c4ff
-}
-
-.erweitertes_Such_Navi > ul{
-    list-style-type: none;
-    width: auto;
-}
-
-.erweitertes_Such_Navi > ul > li > a{
-    display: block;
-}
-
-.erweitertes_Such_Navi > ul> li> a:hover{
-    background-color: black;
-    color: white;
-}

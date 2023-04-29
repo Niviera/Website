@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="CSS/startseite.css">
+  <link rel="stylesheet" type="text/css" href="CSS/navigation.css">
   <title>Document</title>
 </head>
 
@@ -46,7 +47,7 @@
   <!-- Trennstrich -->
   <div style="background-color: #74c4ff; height:30px"></div>
   <!-- Box für Liste Angebote -->
-  <div style="height: auto; display: flex">
+  <div style="height: auto; display: flex; width: 100%">
     <!-- erweiterte Suche -->
     <div class="erweitertes_Such_Navi">
       <!-- Suche -->
@@ -86,10 +87,11 @@
         <p class="autor">Lucas Christoffers</p>
       </div>
     </div>
-    <!-- footer -->
-    <?php
-    include "Ressourcen/footer.php";
-    ?>
+  </div>
+  <!-- footer -->
+  <?php
+  include "Ressourcen/footer.php";
+  ?>
 </body>
 
 </html>

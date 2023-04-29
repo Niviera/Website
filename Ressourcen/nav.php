@@ -1,14 +1,11 @@
-<div class="navi" style="background-color: #74c4ff; height:30px">
-      <div style="float: left;">
-            <a href="index.php" style="margin: 5px;"> Startseite </a>
-            <a href="konto_uebersicht.php" style="margin: 5px;"> Konto </a>
-            <a href="uebersicht.php" style="margin: 5px"> Übersicht </a>
-            <a href="angebot_erstellen.php" style="margin: 5px"> Angebot erstellen </a>
-      </div>
-
-      <div style="float: right">
-            <a href="konto_erstellen.php" style="margin: 5px"> Registrieren </a>
-            <a href="login.php" style="margin: 5px;"> Login </a>
-            <a href="index.php" style="margin: 5px;">Abmelden</a>
-      </div>
+<div class="navi">
+      <ul>
+            <li><a href="index.php">Startseite</a></li>
+            <li><a href="konto_uebersicht.php">Konto</a></li>
+            <li><a href="uebersicht.php">Übersicht</a></li>
+            <li><a href="angebot_erstellen.php">Angebot erstellen</a></li>
+            <li style="float: right;"><a href="konto_erstellen.php"> Registrieren </a></li>
+            <li style="float: right;"><a href="login.php"> Login </a></li>
+            <li style="float: right;"><a href="index.php">Abmelden</a></li>
+      </ul>
 </div>
