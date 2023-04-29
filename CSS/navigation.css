@@ -3,6 +3,7 @@
 .navi{
     background-color: #74c4ff; 
     display: flex;
+    position: fixed;
 }
 
 .navi ul{
