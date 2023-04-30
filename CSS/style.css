@@ -1,0 +1,152 @@
+/* Allgemeine Seitenoptionen */
+body {
+    background-color: #dcf0ff;
+}
+/* Neueste Nachricht */
+
+/* Allgemeine Navigations */
+.navi{
+    background-color: #74c4ff; 
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+/* Design Box Angebotsübersicht */
+.Container_kleine_Angebote{
+    /* Größe */
+    width: 100%; 
+    height: auto;
+    border: 2px solid #A4B4BF;
+    overflow: scroll;
+    
+    /* Ausgabe */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+}
+
+.Container_kleine_Angebote div{
+    /* Größe und äußeres Design */
+    width: 175px; 
+    height: 175px; 
+    border: 2px solid black;
+    margin: 20px;
+    /* Design innen */
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 25% 25% 25% 25%;
+    
+}
+
+.Container_kleine_Angebote .ueberschrift{
+    width: 100%;
+    text-align: center;
+
+    /*Position im grid*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.Container_kleine_Angebote .beschreibung{
+    width: 100%;
+    height:100%;
+    text-align: left;
+
+    /*Position im grid*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.Container_kleine_Angebote .autor{
+    width: 100%;
+    text-align: right;
+
+    /*Position im grid*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+
+
+
+
+/* Kleine geräte Smartphone */
+@media(max-width: 600px){
+    /* Navigation Angebotsübersicht */
+    .erweitertes_Such_Navi{
+      display: none;
+    }
+}
+
+@media(max-width:750px){
+    .erweitertes_Such_Navi .suche{
+        display: none;
+    }
+}
+
+/* Tablet, Laptop etc */
+@media(min-width: 600px){
+    /* Seiten navigations */
+    
+    .navi ul{
+        list-style-type: none;
+        width: 100%;
+        /* Damit die Liste keinen Abstand hat */
+        margin: 0;
+        padding: 0;
+    }
+    
+    .navi li{
+       float: left;
+    }
+    
+    .navi a{
+        display: block;
+        padding: 10px 5px;
+        text-align: center;
+        border: 1px solid #5693BF;
+        border-right: 0px;
+    }
+    
+    .navi a:hover{
+        background-color: #5693BF;
+        color: white;
+    }
+
+    /* Navigation Angebotsübersicht */
+    .erweitertes_Such_Navi{
+        /* Größe */
+        width: 20%; 
+        height: auto;
+
+        /* Design */
+        background-color: #74c4ff;
+    }
+
+    .erweitertes_Such_Navi ul{
+        list-style-type: none;
+
+        /* Damit die Liste keinen Abstand hat */
+        margin: 0;
+        padding: 0;
+    }
+
+    .erweitertes_Such_Navi a{
+        display: block;
+        padding: 10px 5px;
+        text-decoration: none;
+    }
+
+    .erweitertes_Such_Navi a:hover{
+        background-color: #5693BF;
+        color: white;
+    }
+}
+
