@@ -40,15 +40,19 @@
 
   <!-- Auflistung aller Angebote. -->
   <!-- Trennstrich -->
-  <div style="background-color: #74c4ff; height:45px"></div>
+  <div class="needAName">
+    <div class="suche">
+      <form>
+        <input type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
+      </form>
+    </div>
+  </div>
   <!-- Box für Liste Angebote -->
-  <div style="height: auto; display: flex; width: 100%;">
+  <div style="display: flex;">
     <!-- erweiterte Suche -->
     <div class="erweitertes_Such_Navi">
       <!-- Suche -->
-      <form>
-        <p class="suche">Suche:</p> <input type="text">
-      </form>
+
       <ul>
         <li> <a>Garten</a> </li>
         <li><a>Zu Verschenken</a> </li>
