@@ -9,84 +9,67 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/registrierung.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <?php
-    include "Ressourcen/header.php";
-    ?>
-    <!-- Steiten inhalt -->
-    <center>
-        <div>
-            <h3>Registrierung:</h3>
-        </div>
-        <div style="border: 1px solid black;border-radius:75px ;width: 500px; margin: 50px; padding:20px">
-            <form>
-                <table>
-                    <tr>
-                        <th>Kontaktdaten:</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>Vorname:</th>
-                        <th><input type="text"></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>Nachname:</th>
-                        <th><input type="text"></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>Straße:</th>
-                        <th><input type="text"></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>PLZ, Stadt:</th>
-                        <th><input type="number"></th>
-                        <th><input type="number"></th>
-                    </tr>
-                    <tr>
-                        <th>Telefonnummer:</th>
-                        <th><input type="number"></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>E-Mail:</th>
-                        <th><input type="email" required></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th> E-Mail wdh.: </th>
-                        <th><input type="email" required></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th> Password: </th>
-                        <th> <input type="password" required></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>Password wdh.:</th>
-                        <th><input type="password" required></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th><Button>Konto erstellen</button></th>
-                        <th></th>
-                    </tr>
-                </table>
-            </form>
-        </div>
-    </center>
+    <div class="RegisterContainerMain">
+        <!-- Header -->
+        <?php
+        include "Ressourcen/header.php";
+        ?>
+        <!-- Steiten inhalt -->
+        <h3>Registrierung:</h3>
+        <form>
+            <div class="ContainerRubrik">
+                <legend style="margin-top: 10px;">Persönliche Daten:</legend>
+                <label for="vorname">Vorname:</label>
+                <input id="vorname" type="text" required>
+                <br>
+                <label for="nachname">Nachname:</label>
+                <input id="nachname" type="text">
+                <br>
+                <label for="tele">Tele.Nr.:</label>
+                <input id="tele" type="number">
+                <br>
+                <label for="straße">Straße:</label>
+                <input id="straße" type="text">
+                <br>
+                <label for="plz">PLZ:</label>
+                <input id="plz" type="number">
+                <br>
+                <label for="stadt">Stadt:</label>
+                <input id="stadt" type="text">
+            </div>
+
+            <div class="ContainerRubrik">
+                <legend>Konto:</legend>
+                <label for="eMail">E-Mail:</label>
+                <input id="eMail" type="email" required>
+                <br>
+                <label for="eMailwdh">E-Mail:</label>
+                <input id="eMailwdh" type="email" required>
+                <br>
+                <label for="passwort">Passwort:</label>
+                <input id="passwort" type="password" required>
+                <br>
+                <label for="passwortwdh">Passwort:</label>
+                <input id="passwortwhd" type="password" required>
+            </div>
+            <div class="ContainerButtons">
+                <button class="zurueckButton">Registrieren</button>
+                <a href="index.php" class="zurueckButton">Abbrechen</a>
+            </div>
+        </form>
+
+    </div>
     <!-- footer -->
-    <?php
-    include "Ressourcen/footer.php";
-    ?>
+    <footer>
+        <?php
+        include "Ressourcen/footer.php";
+        ?>
+    </footer>
+
 </body>
 
 </html>
