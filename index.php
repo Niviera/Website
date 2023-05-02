@@ -19,20 +19,18 @@
 
   <!-- Neueste Angebote -->
   <!-- Bereich des neuesten Angebots -->
-  <div style="height: 39em; display: flex; align-items: center;">
+  <div class="BereichNeuesteNachricht">
     <!-- Style Container für Angebot -->
-    <div style="height: 400px; width: 800px; display: flex; margin:auto; border: 1px solid black; border-radius:75px">
+    <div class="ContainerNeuesteNachricht">
       <!-- Container Bild mit Namen-->
-      <div style="width: 200px; float:left; margin:10px">
-        <img src="Bilder/Lucas.jpeg" alt="Profil Bild" style="width:200px; height: 200px; border-radius:75px">
-        <center>
-          <p>Lucas Christoffers</p>
-        </center>
+      <div class="ContainerBildName">
+        <img src="Bilder/Lucas.jpeg" alt="Profil Bild" class="profilePic">
+        <p>Lucas Christoffers</p>
       </div>
       <!-- Container für Angebots Details -->
-      <div style="580px">
-        <h1 style="text-align: center; width:100%"> zu Verschenken </h1>
-        <p style="text-align: left; width: 100%">Hey dies ist ein einfach demonstrationstext und hat keinerlei bedeutung
+      <div class="ContainerAngebotDetails">
+        <h1> zu Verschenken </h1>
+        <p>Hey dies ist ein einfach demonstrationstext und hat keinerlei bedeutung
         </p>
       </div>
     </div>
@@ -61,66 +59,74 @@
 
     </div>
     <!-- Angebote -->
-    <div class="Container_kleine_Angebote">
-      <!-- Angebot 1 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
+    <div class="Container_kleineAngebote_und_Buttons">
+      <div class="Container_kleine_Angebote">
+        <!-- Angebot 1 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 2 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 3 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 4 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 5 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 6 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 7 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 8 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 9 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
+        <!-- Angebot 10 -->
+        <div>
+          <p class="ueberschrift"> Hallo </p>
+          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
+          <p class="autor">Lucas Christoffers</p>
+        </div>
       </div>
-      <!-- Angebot 2 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 3 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 4 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 5 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 6 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 7 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 8 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 9 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
-      </div>
-      <!-- Angebot 10 -->
-      <div>
-        <p class="ueberschrift"> Hallo </p>
-        <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-        <p class="autor">Lucas Christoffers</p>
+      <!-- Buttons -->
+      <div class="Container_Buttons">
+        <div style="height:30px; width: 20%; background-color:pink; float:left;"></div>
+        <div style="height:30px; width: 80%;"></div>
+        <div style="height:30px; width: 20%; background-color:pink; float:right;"></div>
       </div>
     </div>
   </div>
