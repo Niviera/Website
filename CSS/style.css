@@ -23,7 +23,7 @@ body {
    
     display: flex; 
     margin:auto; 
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     
     /* Schattierung */
     box-shadow: 9px 15px 50px #6E7880;
@@ -135,7 +135,7 @@ body {
     /* Größe und äußeres Design */
     width: 175px; 
     height: 175px; 
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 20px;
     margin: auto;
     box-shadow: 9px 8px 6px #A4B4BF;
