@@ -1,5 +1,5 @@
 /* Allgemeine Seitenoptionen */
-body {
+body{
     background-color: #dcf0ff;
 }
 
@@ -60,16 +60,18 @@ body {
 
 
 /* Allgemeine Navigations */
-.navi{
-    width: 100%;
-    background-color: #74c4ff; 
-    display: flex;
+nav{
     position: sticky;
     top: 0;
+    background-color: #74c4ff; 
+}
+
+nav .navi{
+    display: flex;
     min-height: 30px;
 }
 
-.navi ul{
+nav ul{
     list-style-type: none;
     width: 100%;
     /* Damit die Liste keinen Abstand hat */
@@ -77,11 +79,11 @@ body {
     padding: 0;
 }
 
-.navi li{
+nav li{
     float: left;
  }
  
- .navi a{
+nav a{
     text-decoration: none;
     color: black;
     display: block;
@@ -91,7 +93,7 @@ body {
     border-right: 0px;
  }
 
-.navi a:hover{
+nav a:hover{
     background-color: #5693BF;
     color: white;
 }
@@ -212,15 +214,16 @@ body {
       display: none;
     }
 
-    .desktop {
+    /* Seitennavigation */
+    nav .desktop {
         display: none;
     }
 
-   .dropdownMenuPoint {
+    nav .dropdownMenuPoint {
         display: inline-block;
       }
 
-    .dropTrigger {
+    nav .dropTrigger {
         background-color: #74c4ff;
         color: black;
         border: 1px solid grey;
@@ -228,13 +231,13 @@ body {
 
       }
         
-    .dropdown-content {
+    nav .dropdown-content {
         display: none;
         position: absolute;
         background-color: #74c4ff;
       }
       /* Damit sich das menu ausklappt, verschwindet wieder sobald der Nutzer wo anders hinclickt */
-    .dropdownMenuPoint:hover .dropdown-content {
+    nav .dropdownMenuPoint:hover .dropdown-content {
         display: block;
     }
      
@@ -263,7 +266,7 @@ body {
 /* Tablet, Laptop etc */
 @media(min-width: 601px){
     /* Seiten navigations */    
-    .mobile {
+    nav .mobile {
         display: none;
     }
     
