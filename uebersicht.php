@@ -8,10 +8,10 @@
     <title>Document</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="CSS/navigation.css">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
 
-<body style="background-color: #dcf0ff;">
+<body>
     <?php
     include "Ressourcen/header.php";
     ?>
