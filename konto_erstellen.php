@@ -22,27 +22,27 @@
         <h3>Registrierung:</h3>
         <form>
             <div class="ContainerRubrik">
-                <legend style="margin-top: 10px;">Persönliche Daten:</legend>
-                <label for="vorname">Vorname:</label>
-                <input id="vorname" type="text" required>
+                <legend>Persönliche Daten:</legend>
+                <label>Vorname:</label>
+                <input id="vorname" name="vorname" type="text" required>
                 <br>
                 <label for="nachname">Nachname:</label>
-                <input id="nachname" type="text">
+                <input id="nachname" name="nachname" type="text">
                 <br>
                 <label for="tele">Tele.Nr.:</label>
-                <input id="tele" type="number">
+                <input id="tele" name="tele" type="number">
                 <br>
                 <label for="straße">Straße:</label>
-                <input id="straße" type="text">
+                <input id="straße" name="straße" type="text">
                 <br>
                 <label for="plz">PLZ:</label>
-                <input id="plz" type="number">
+                <input id="plz" name="plz" type="number">
                 <br>
                 <label for="stadt">Stadt:</label>
-                <input id="stadt" type="text">
+                <input id="stadt" name="stadt" type="text">
             </div>
             <div class="ContainerRubrik">
-                <legend>Konto:</legend>
+                <legend>Kontodaten:</legend>
                 <label for="eMail">E-Mail:</label>
                 <input id="eMail" type="email" required>
                 <br>
@@ -55,9 +55,14 @@
                 <label for="passwortwdh">Passwort:</label>
                 <input id="passwortwhd" type="password" required>
             </div>
+            <div class="ContainerRubrik">
+                <legend>Bild hochladen</legend>
+                <label for="dateiHochladen">Datei:</label>
+                <input id="dateiHochladen" name="dateiHochladen" type="file">
+            </div>
             <div class="ContainerButtons">
-                <button class="zurueckButton">Registrieren</button>
-                <a href="index.php" class="zurueckButton">Abbrechen</a>
+                <button class="buttonDesign allgemeinesDesign">Registrieren</button>
+                <a href="index.php" class="zurueckButton allgemeinesDesign">Abbrechen</a>
             </div>
         </form>
 
