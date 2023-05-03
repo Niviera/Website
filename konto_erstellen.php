@@ -41,7 +41,6 @@
                 <label for="stadt">Stadt:</label>
                 <input id="stadt" type="text">
             </div>
-
             <div class="ContainerRubrik">
                 <legend>Konto:</legend>
                 <label for="eMail">E-Mail:</label>
