@@ -111,6 +111,8 @@ nav a:hover{
     align-content: center;
     align-items: center;
     display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 
 }
 
@@ -129,7 +131,7 @@ nav a:hover{
 /* Design Box Angebotsübersicht */
 .Container_kleine_Angebote{
     /* Größe */
-    width: 100%; 
+    width: 99.6%; 
     height: auto;
     border: 2px solid #A4B4BF;
     /* Ausgabe */
@@ -253,7 +255,8 @@ nav a:hover{
     .BereichNeuesteNachricht {
         height: 30em; 
         background-repeat: no-repeat;
-        background-position: 10% -70%;
+        background-position: 10% -50%;
+        background-origin: content-box;   
         background-size: 175%;
     }
 
