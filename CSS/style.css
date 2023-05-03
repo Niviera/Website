@@ -17,10 +17,12 @@ body{
     width: 100%;
     display: flex; 
     align-items: center;
+    background-image: url("hintergrund/NeuesteNachricht.jpeg");
+    
 }
 
 .BereichNeuesteNachricht .ContainerNeuesteNachricht{
-   
+    background-color: #dcf0ff;
     display: flex; 
     margin:auto; 
     /*border: 1px solid black;*/
@@ -250,6 +252,9 @@ nav a:hover{
 
     .BereichNeuesteNachricht {
         height: 30em; 
+        background-repeat: no-repeat;
+        background-position: 10% -70%;
+        background-size: 175%;
     }
 
     .BereichNeuesteNachricht .profilePic{
@@ -318,6 +323,7 @@ nav a:hover{
 
     .BereichNeuesteNachricht {
         height: 39em; 
+        background-size: 100%;
     }
 
     .BereichNeuesteNachricht .ContainerNeuesteNachricht{
