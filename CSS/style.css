@@ -17,8 +17,8 @@ body{
     width: 100%;
     display: flex; 
     align-items: center;
-    background-image: url("hintergrund/NeuesteNachricht.jpeg");
-    
+    background-image: url("hintergrund/NeuesteNachricht.jpeg");  
+   
 }
 
 .BereichNeuesteNachricht .ContainerNeuesteNachricht{
@@ -121,11 +121,18 @@ nav a:hover{
 }
 
 .needAName .suche .suchEingabe {
+    margin-right: 0px;
     width: 200px;
     height: 35px;
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     border-style: none;
 
+}
+
+.needAName .suche button{
+    border: none;
+    height: 37px;
 }
 
 /* Design Box Angebotsübersicht */
@@ -195,15 +202,13 @@ nav a:hover{
     grid-row-end: 5;
 }
 
+/* Buttons listennavigation */
 .Container_Buttons{
     display: flex;
     height:fit-content;
-    width: 100%;
-
-    /* Border */
-    border-left: 2px solid #A4B4BF;
-    border-right: 2px solid #A4B4BF;
-    border-bottom: 2px solid #A4B4BF;
+    width: 99.6%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .Container_kleineAngebote_und_Buttons{
@@ -211,6 +216,13 @@ nav a:hover{
     width: 100%;
 }
 
+.Container_Buttons button{
+    background-color: white;
+    border-radius: 15px;
+    border: 0.5px solid black;
+    width:100%;
+    height:100%
+}
 
 /* Kleine geräte Smartphone */
 @media(max-width: 600px){
@@ -247,7 +259,6 @@ nav a:hover{
     }
      
     /* Neueste Nachricht */
-
     .BereichNeuesteNachricht .ContainerBildName p{
         font-size: 0.7em;
     }
@@ -318,8 +329,7 @@ nav a:hover{
     
     }
 
-    /* Spezifische Neueste Nachricht */
-
+    /* Neueste Nachricht */
     .BereichNeuesteNachricht .ContainerBildName p{
         font-size: 0.9em;
     }
