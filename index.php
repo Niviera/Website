@@ -42,6 +42,7 @@
     <div class="suche">
       <form>
         <input type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
+        <button id="suche" name="suche">Suchen</button>
       </form>
     </div>
   </div>
@@ -51,12 +52,10 @@
     <!-- erweiterte Suche -->
     <div class="erweitertes_Such_Navi">
       <!-- Suche -->
-
       <ul>
         <li> <a>Garten</a> </li>
         <li><a>Zu Verschenken</a> </li>
       </ul>
-
     </div>
     <!-- Angebote -->
     <div class="Container_kleineAngebote_und_Buttons">
@@ -124,9 +123,9 @@
       </div>
       <!-- Buttons -->
       <div class="Container_Buttons">
-        <div style="height:30px; width: 20%; background-color:pink; float:left;"></div>
+        <div style="height:30px; width: 20%; float:left;"><button id="zurueck" name="zurueck">Zurück</button></div>
         <div style="height:30px; width: 80%;"></div>
-        <div style="height:30px; width: 20%; background-color:pink; float:right;"></div>
+        <div style="height:30px; width: 20%; float:right;"><button id="weiter" name="weiter">Weiter</button></div>
       </div>
     </div>
   </div>
