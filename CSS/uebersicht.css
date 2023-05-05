@@ -1,0 +1,9 @@
+.angebots_container {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    background-color: white;
+    width: fit-content;
+    border: 2px solid black;
+    margin: center;
+
+}
