@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrieren</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
@@ -57,7 +57,7 @@
                 <input id="passwortwdh" name="passwortwdh" type="password" required>
             </div>
             <div class="ContainerRubrik">
-                <legend>Bild hochladen</legend>
+                <legend>Bild hochladen:</legend>
                 <label for="dateiHochladen">Datei:</label>
                 <input id="dateiHochladen" name="dateiHochladen" type="file">
             </div>
