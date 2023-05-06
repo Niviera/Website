@@ -2,6 +2,10 @@
 .RegisterContainerMain {
     width: 100%;
     text-align: center;
+    background-image: url("hintergrund/Registrierung.jpg");
+    background-repeat: no-repeat;
+   
+   
 }
 
 .RegisterContainerMain legend{
@@ -19,17 +23,18 @@
 
 .ContainerRubrik label{
     text-align: left;
-    margin-left: 10px;
+    margin-left: 20px;
     float: left;
     margin-top: 3px;
     margin-bottom: 3px;
 }
 
 .RegisterContainerMain .ContainerRubrik {
+    background-color: #dcf0ff;
     border-radius: 25px;
     min-width: 310px;
-    width: fit-content;
-    max-width: 500px;
+    width: 75%;
+    max-width: 700px;
     padding-bottom: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -81,12 +86,22 @@
     grid-column-end:  2;   
 }
 
+/* Smartphone */
 @media(max-width: 601px) {
+    .RegisterContainerMain{
+        background-size: 120%;
+        background-position: 10% 147%;
+       
+    }
     .ContainerRubrik label{
-        width: 70px;
+        width: 40%;
+        
+    }
+    .ContainerRubrik input{
+        width: 45%;
     }
 
-    .RegisterContainerMain .ContainerButtons{
+    #RegisterContainerMain .ContainerButtons{
         width: 300px;
         height: 60px;
     }
@@ -103,18 +118,24 @@
     
 }
 
+/* Laptop etc */
 @media(min-width:601px){
+    .RegisterContainerMain{
+        background-size: 50%;
+        background-position: right bottom;
+    }
+
     .ContainerRubrik legend{
         font-size: 1.3em;
     }
     .ContainerRubrik label{
         font-size: 1.3em;
-        width: 120px;
+        width: 30%;
     }
 
     .ContainerRubrik input{
         height:20px;
-        width: 180px;
+        width: 60%;
     }
     /* Buttons */
     .RegisterContainerMain .ContainerButtons{

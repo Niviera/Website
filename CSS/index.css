@@ -1,0 +1,284 @@
+/* Styles spezifisch für die Startseite */
+
+/* Neueste Nachricht */
+.BereichNeuesteNachricht {
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    background-image: url("hintergrund/NeuesteNachricht.jpeg");  
+   
+}
+
+.BereichNeuesteNachricht .ContainerNeuesteNachricht{
+    background-color: #dcf0ff;
+    display: flex; 
+    margin:auto; 
+    /*border: 1px solid black;*/
+    
+    /* Schattierung */
+    box-shadow: 9px 15px 50px #6E7880;
+}
+
+.BereichNeuesteNachricht .ContainerBildName{
+    float:left;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+.BereichNeuesteNachricht h1{
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 1px black solid;
+    padding-bottom: 10px;
+}
+
+.BereichNeuesteNachricht p{
+    text-align: left;
+    font-size: 1.1em;
+    padding-bottom: 10px;
+}
+
+.BereichNeuesteNachricht .ContainerBildName p{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+}
+
+.BereichNeuesteNachricht .ContainerAngebotDetails{
+    border-left: solid black 0.5px;
+    margin: auto;
+    padding-left: 5px;
+}
+
+/*  */
+.needAName {
+    height: 45px;
+    width: 100%;
+    background-color: #74c4ff; 
+    align-content: center;
+    align-items: center;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.needAName .suche {
+    margin: auto;
+}
+
+.needAName .suche .suchEingabe {
+    margin-right: 0px;
+    width: 200px;
+    height: 35px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-style: none;
+
+}
+
+.needAName .suche button{
+    border: none;
+    height: 37px;
+}
+
+.needAName label{
+    display: none;
+}
+
+/* Design Box Angebotsübersicht */
+.Container_kleine_Angebote{
+    /* Größe */
+    width: 99%; 
+    height: auto;
+    border: 2px solid #A4B4BF;
+    /* Ausgabe */
+    display: flex;
+    flex-wrap: wrap;
+
+    /*
+        old grid based
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 2fr));
+        grid-auto-rows: 190px;
+    */
+}
+
+.Container_kleine_Angebote div{
+    /* Größe und äußeres Design */
+    width: 175px; 
+    height: 175px; 
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 9px 8px 6px #A4B4BF;
+    /* Design innen */
+    display: grid;
+    grid-template-rows: 5% 20% 25% 25% 20% 5%;
+    grid-template-columns: 5% 20% 25% 25% 20% 5%;
+    
+}
+
+.Container_kleine_Angebote .ueberschrift{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+
+    /*Position im grid*/
+    grid-column: 2/6;
+    grid-row: 2/2;
+}
+
+.Container_kleine_Angebote .beschreibung{
+    width: 100%;
+    height:100%;
+    text-align: left;
+    margin:0;
+
+    /*Position im grid*/
+    grid-column: 2/6;
+    grid-row: 3/5;
+}
+
+.Container_kleine_Angebote .autor{
+    width: 100%;
+    text-align: right;
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.0em;
+    margin-top: 16px;
+    margin-bottom: 0px;
+    /*Position im grid*/
+    grid-column: 2/6;
+    grid-row: 5/5
+}
+
+/* Buttons listennavigation */
+.Container_Buttons{
+    display: flex;
+    height:fit-content;
+    width: 99.6%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Container_kleineAngebote_und_Buttons{
+    height:fit-content;
+    width: 100%;
+}
+
+.Container_Buttons button{
+    background-color: white;
+    border-radius: 15px;
+    border: 0.5px solid black;
+    width:100%;
+    height:100%
+}
+
+/* Kleine geräte Smartphone */
+@media(max-width: 600px){
+    /* Navigation Angebotsübersicht */
+    .erweitertes_Such_Navi{
+      display: none;
+    }
+
+    /* Neueste Nachricht */
+    .BereichNeuesteNachricht .ContainerBildName p{
+        font-size: 1em;
+    }
+
+    .BereichNeuesteNachricht {
+        height: 30em; 
+        background-repeat: no-repeat;
+        background-position: 10% -50%;
+        background-origin: content-box;   
+        background-size: 175%;
+    }
+
+    .BereichNeuesteNachricht .profilePic{
+        width:auto; 
+        height: 100px; 
+        border-radius:37.5px;
+    }
+
+    .BereichNeuesteNachricht .ContainerNeuesteNachricht{
+        height: 200px; 
+        width: 400px; 
+        border-radius:37.5px; 
+    }
+       
+}
+
+
+
+/* Tablet, Laptop etc */
+@media(min-width: 601px){
+    /* Navigation Angebotsübersicht */
+    .erweitertes_Such_Navi{
+        /* Größe */
+        width: 20%; 
+        max-width: fit-content;
+        height: auto;
+
+        /* Design */
+        background-color: #74c4ff;
+    }
+
+    .erweitertes_Such_Navi ul{
+        list-style-type: none;
+
+        /* Damit die Liste keinen Abstand hat */
+        margin: 0;
+        padding: 0;
+    }
+
+    .erweitertes_Such_Navi a{
+        display: block;
+        padding: 10px 5px;
+        text-decoration: none;
+    }
+
+    .erweitertes_Such_Navi a:hover{
+        background-color: #5693BF;
+        color: white;
+    }
+
+    .needAName .suche .suchEingabe {
+        width: 400px;
+    
+    }
+
+    /* Neueste Nachricht */
+    .BereichNeuesteNachricht .ContainerBildName p{
+        font-size: 0.9em;
+    }
+
+    .BereichNeuesteNachricht {
+        height: 39em; 
+        background-size: 100%;
+    }
+
+    .BereichNeuesteNachricht .ContainerNeuesteNachricht{
+        height: 400px; 
+        width: 800px; 
+        border-radius:75px; 
+    }
+
+    .BereichNeuesteNachricht .profilePic{
+        width:auto; 
+        height: 180px; 
+        border-radius:75px;
+    }
+
+    .Container_kleine_Angebote{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 2fr));
+        grid-auto-rows: 190px;
+    }
+}
+

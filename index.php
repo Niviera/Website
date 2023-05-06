@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <link rel="stylesheet" type="text/css" href="CSS/index.css">
 
   <title>Document</title>
 </head>
@@ -41,7 +42,8 @@
   <div class="needAName">
     <div class="suche">
       <form>
-        <input type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
+        <label for="sucheingabe">Suche:</label>
+        <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
         <button id="suche" name="suche">Suchen</button>
       </form>
     </div>
