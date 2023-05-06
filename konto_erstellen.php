@@ -13,17 +13,18 @@
 </head>
 
 <body>
-    <div class="RegisterContainerMain">
-        <!-- Header -->
-        <?php
-        include "Ressourcen/header.php";
-        ?>
+
+    <!-- Header -->
+    <?php
+    include "Ressourcen/header.php";
+    ?>
+    <div id="RegisterContainerMain" class="RegisterContainerMain">
         <!-- Steiten inhalt -->
         <h3>Registrierung:</h3>
         <form>
             <div class="ContainerRubrik">
                 <legend>Persönliche Daten:</legend>
-                <label>Vorname:</label>
+                <label for="vorname">Vorname:</label>
                 <input id="vorname" name="vorname" type="text" required>
                 <br>
                 <label for="nachname">Nachname:</label>
@@ -53,7 +54,7 @@
                 <input id="passwort" type="password" required>
                 <br>
                 <label for="passwortwdh">Passwort:</label>
-                <input id="passwortwhd" type="password" required>
+                <input id="passwortwdh" name="passwortwdh" type="password" required>
             </div>
             <div class="ContainerRubrik">
                 <legend>Bild hochladen</legend>
