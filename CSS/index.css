@@ -82,6 +82,8 @@
 .needAName .suche button{
     border: none;
     height: 37px;
+    color: black;
+    font-size: 1em;
 }
 
 .needAName label{
@@ -91,7 +93,7 @@
 /* Design Box Angebotsübersicht */
 .Container_kleine_Angebote{
     /* Größe */
-    width: 99%; 
+    width: 99.7%; 
     height: auto;
     border: 2px solid #A4B4BF;
     /* Ausgabe */

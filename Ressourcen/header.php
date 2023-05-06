@@ -1,5 +1,6 @@
 <header>
       <div id="header">
+            <div class="seitenname">Nachbarschaftshilfe</div>
       </div>
 </header>
 <nav>

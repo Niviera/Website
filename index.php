@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <link rel="stylesheet" type="text/css" href="CSS/index.css">
 
-  <title>Document</title>
+  <title>Startseite</title>
 </head>
 
 <body>
@@ -30,8 +30,8 @@
       </div>
       <!-- Container für Angebots Details -->
       <div class="ContainerAngebotDetails">
-        <h1> zu Verschenken </h1>
-        <p>Hey dies ist ein einfach demonstrationstext und hat keinerlei bedeutung
+        <h1> zu verschenken </h1>
+        <p>Hey dies ist ein einfacher demonstrations text und hat keinerlei bedeutung
         </p>
       </div>
     </div>
@@ -56,7 +56,7 @@
       <!-- Suche -->
       <ul>
         <li> <a>Garten</a> </li>
-        <li><a>Zu Verschenken</a> </li>
+        <li><a>Zu verschenken</a> </li>
       </ul>
     </div>
     <!-- Angebote -->
