@@ -13,4 +13,8 @@ GitHub
 - https://github.com/Niviera/Website
 
 Validatoren:
-- https://validator.w3.org/#validate_by_input
+  HTML:
+    - https://validator.w3.org/#validate_by_input
+  CSS:
+    - https://jigsaw.w3.org/css-validator/
+
