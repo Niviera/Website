@@ -90,7 +90,7 @@
 
 }
 
-@media(max-width: 425px){
+@media(max-width: 715px){
     .Main_Container_Konto_Uebersicht .layout_Konto_Uebersicht {
         padding-right: 20px;
         height: fit-content;
@@ -129,7 +129,7 @@
         
     }
     .Main_Container_Konto_Uebersicht{
-        height: 100vh;
+        height: 110vh;
     }
 
     
