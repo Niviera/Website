@@ -19,23 +19,21 @@
   ?>
 
   <!-- Neueste Angebote -->
-  <!-- TODO: Überarbeiten -- austauschen gegen "About this Site"-->
-  <!-- Bereich des neuesten Angebots -->
+  <!-- Bereich des "About Us" -->
   <div class="Bereich_Neueste_Nachricht">
-    <!-- Style Container für Angebot -->
+    <!-- Style Container für "About Us" -->
     <div class="Container_Neueste_Nachricht">
-      <!-- Container Bild mit Namen-->
-      <div class="Container_Bild_Name">
-        <img src="./Bilder/profile/Lucas.jpeg" alt="Profil Bild" class="profile_Pic">
-        <p>Lucas Christoffers</p>
+      <div class="willkommen">Moin Moin!</div>
+      <div class="info">
+        Hier kannst du schnell und einfach deinem Nachbarn helfen.
+        Scroll dafür einfach zum Schwarzen Brett.
+        Natürlich darfst du ebenfalls um Hilfe bitten.
       </div>
-      <!-- Container für Angebots Details -->
-      <div class="Container_Angebot_Details">
-        <h1> zu verschenken </h1>
-        <p>Hey dies ist ein einfacher demonstrations text und hat keinerlei bedeutung
-        </p>
+      <div class="nachricht">
+        <div>Viel Spaß!</div>
       </div>
     </div>
+
   </div>
 
   <!-- Auflistung aller Angebote. -->

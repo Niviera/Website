@@ -2,6 +2,8 @@
 
 /* Neueste Nachricht */
 .Bereich_Neueste_Nachricht {
+    height: 35em; 
+    background-size: 100%;
     width: 100%;
     display: flex; 
     align-items: center;
@@ -10,47 +12,54 @@
 }
 
 .Bereich_Neueste_Nachricht .Container_Neueste_Nachricht{
+    height: 300px;
+    width: 650px;
+    border-radius:75px; 
+
     background-color: #dcf0ff;
-    display: flex; 
     margin:auto; 
     /*border: 1px solid black;*/
-    
     /* Schattierung */
     box-shadow: 9px 15px 50px #6E7880;
+
+    display: grid; 
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
 
-.Bereich_Neueste_Nachricht .Container_Bild_Name{
-    float:left;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left:10px;
-    margin-right: 10px;
-}
-
-.Bereich_Neueste_Nachricht h1{
+.Bereich_Neueste_Nachricht .willkommen{
+    /*Position*/
+    grid-row: 1/1;
+    grid-column: 1/5;
+    font-size: 2em;
+    margin-top: 20px;
     text-align: center;
-    font-size: 1.5em;
-    border-bottom: 1px black solid;
-    padding-bottom: 10px;
+    width: 100%;
+    font-style: italic;
 }
 
-.Bereich_Neueste_Nachricht p{
-    text-align: left;
-    font-size: 1.1em;
-    padding-bottom: 10px;
+.Bereich_Neueste_Nachricht .info{
+    /*Position*/
+    grid-row: 5/9;
+    grid-column: 2/4;
+    font-size: 1.4em;
+    
+    height: 100%;
+    width: 100%;
 }
 
-.Bereich_Neueste_Nachricht .Container_Bild_Name p{
-    text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+.Bereich_Neueste_Nachricht .nachricht{
+    /*Position*/
+    grid-row: 8/9;
+    grid-column: 4/5;
+
     margin: auto;
 }
-
-.Bereich_Neueste_Nachricht .Container_Angebot_Details{
-    border-left: solid black 0.5px;
-    margin: auto;
-    padding-left: 5px;
+.nachricht div{
+    font-size: 1.8em;
+    transform: rotate(-40deg);
 }
+
 
 /*  */
 .needAName {
@@ -99,13 +108,6 @@
     /* Ausgabe */
     display: flex;
     flex-wrap: wrap;
-
-    /*
-        old grid based
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(190px, 2fr));
-        grid-auto-rows: 190px;
-    */
 }
 
 .Container_kleine_Angebote div{
@@ -202,30 +204,39 @@
       display: none;
     }
 
-    /* Neueste Nachricht */
-    .Bereich_Neueste_Nachricht .Container_Bild_Name p{
-        font-size: 1em;
-    }
-
+    /* Überdiese Seite */
     .Bereich_Neueste_Nachricht {
-        height: 30em; 
+        height: 35em; 
         background-repeat: no-repeat;
         background-position: 10% -50%;
         background-origin: content-box;   
         background-size: 175%;
     }
 
-    .Bereich_Neueste_Nachricht .profile_Pic{
-        width:auto; 
-        height: 100px; 
-        border-radius:37.5px;
+    .Bereich_Neueste_Nachricht.Bereich_Neueste_Nachricht .willkommen{
+        font-size: 1.8em;
     }
 
     .Bereich_Neueste_Nachricht .Container_Neueste_Nachricht{
-        height: 200px; 
-        width: 400px; 
+        height: 280px; 
+        width: 350px; 
         border-radius:37.5px; 
     }
+
+    .Bereich_Neueste_Nachricht .nachricht{
+        /*Position*/
+        grid-row: 7/9;
+        grid-column: 3/6;
+    }    
+
+    .Bereich_Neueste_Nachricht .info{
+        /*Position*/
+        grid-row: 4/9;
+        grid-column: 1/3;
+        font-size: 1em;
+        margin-left: 20px;
+    }
+
        
 }
 
@@ -264,32 +275,10 @@
     }
 
     .needAName .suche .suchEingabe {
-        width: 400px;
- 
-    
+        width: 400px;  
     }
 
-    /* Neueste Nachricht */
-    .Bereich_Neueste_Nachricht .Container_Bild_Name p{
-        font-size: 0.9em;
-    }
-
-    .Bereich_Neueste_Nachricht {
-        height: 39em; 
-        background-size: 100%;
-    }
-
-    .Bereich_Neueste_Nachricht .Container_Neueste_Nachricht{
-        height: 400px; 
-        width: 800px; 
-        border-radius:75px; 
-    }
-
-    .Bereich_Neueste_Nachricht .profile_Pic{
-        width:auto; 
-        height: 180px; 
-        border-radius:75px;
-    }
+    /* Bereich "Über diese Seite" */
 
     .Container_kleine_Angebote{
         display: grid;
