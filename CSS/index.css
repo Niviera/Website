@@ -1,7 +1,7 @@
 /* Styles spezifisch für die Startseite */
 
 /* Neueste Nachricht */
-.BereichNeuesteNachricht {
+.Bereich_Neueste_Nachricht {
     width: 100%;
     display: flex; 
     align-items: center;
@@ -9,7 +9,7 @@
    
 }
 
-.BereichNeuesteNachricht .ContainerNeuesteNachricht{
+.Bereich_Neueste_Nachricht .Container_Neueste_Nachricht{
     background-color: #dcf0ff;
     display: flex; 
     margin:auto; 
@@ -19,7 +19,7 @@
     box-shadow: 9px 15px 50px #6E7880;
 }
 
-.BereichNeuesteNachricht .ContainerBildName{
+.Bereich_Neueste_Nachricht .Container_Bild_Name{
     float:left;
     margin-top: auto;
     margin-bottom: auto;
@@ -27,26 +27,26 @@
     margin-right: 10px;
 }
 
-.BereichNeuesteNachricht h1{
+.Bereich_Neueste_Nachricht h1{
     text-align: center;
     font-size: 1.5em;
     border-bottom: 1px black solid;
     padding-bottom: 10px;
 }
 
-.BereichNeuesteNachricht p{
+.Bereich_Neueste_Nachricht p{
     text-align: left;
     font-size: 1.1em;
     padding-bottom: 10px;
 }
 
-.BereichNeuesteNachricht .ContainerBildName p{
+.Bereich_Neueste_Nachricht .Container_Bild_Name p{
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: auto;
 }
 
-.BereichNeuesteNachricht .ContainerAngebotDetails{
+.Bereich_Neueste_Nachricht .Container_Angebot_Details{
     border-left: solid black 0.5px;
     margin: auto;
     padding-left: 5px;
@@ -162,11 +162,14 @@
 
 /* Buttons listennavigation */
 .Container_Buttons{
-    display: flex;
-    height:fit-content;
+    height:30px;
     width: 99.6%;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1% 20% 59% 20%;
+    grid-row: 100%;
 }
 
 .Container_kleineAngebote_und_Buttons{
@@ -182,6 +185,16 @@
     height:100%
 }
 
+.Container_Buttons .buttonLinks{
+    grid-row: 1/1;
+    grid-column: 2/2;
+}
+
+.Container_Buttons .buttonRechts{
+    grid-row: 1/1;
+    grid-column: 4/4;
+}
+
 /* Kleine geräte Smartphone */
 @media(max-width: 600px){
     /* Navigation Angebotsübersicht */
@@ -190,11 +203,11 @@
     }
 
     /* Neueste Nachricht */
-    .BereichNeuesteNachricht .ContainerBildName p{
+    .Bereich_Neueste_Nachricht .Container_Bild_Name p{
         font-size: 1em;
     }
 
-    .BereichNeuesteNachricht {
+    .Bereich_Neueste_Nachricht {
         height: 30em; 
         background-repeat: no-repeat;
         background-position: 10% -50%;
@@ -202,13 +215,13 @@
         background-size: 175%;
     }
 
-    .BereichNeuesteNachricht .profilePic{
+    .Bereich_Neueste_Nachricht .profile_Pic{
         width:auto; 
         height: 100px; 
         border-radius:37.5px;
     }
 
-    .BereichNeuesteNachricht .ContainerNeuesteNachricht{
+    .Bereich_Neueste_Nachricht .Container_Neueste_Nachricht{
         height: 200px; 
         width: 400px; 
         border-radius:37.5px; 
@@ -252,26 +265,27 @@
 
     .needAName .suche .suchEingabe {
         width: 400px;
+ 
     
     }
 
     /* Neueste Nachricht */
-    .BereichNeuesteNachricht .ContainerBildName p{
+    .Bereich_Neueste_Nachricht .Container_Bild_Name p{
         font-size: 0.9em;
     }
 
-    .BereichNeuesteNachricht {
+    .Bereich_Neueste_Nachricht {
         height: 39em; 
         background-size: 100%;
     }
 
-    .BereichNeuesteNachricht .ContainerNeuesteNachricht{
+    .Bereich_Neueste_Nachricht .Container_Neueste_Nachricht{
         height: 400px; 
         width: 800px; 
         border-radius:75px; 
     }
 
-    .BereichNeuesteNachricht .profilePic{
+    .Bereich_Neueste_Nachricht .profile_Pic{
         width:auto; 
         height: 180px; 
         border-radius:75px;

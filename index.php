@@ -19,17 +19,18 @@
   ?>
 
   <!-- Neueste Angebote -->
+  <!-- TODO: Überarbeiten -- austauschen gegen "About this Site"-->
   <!-- Bereich des neuesten Angebots -->
-  <div class="BereichNeuesteNachricht">
+  <div class="Bereich_Neueste_Nachricht">
     <!-- Style Container für Angebot -->
-    <div class="ContainerNeuesteNachricht">
+    <div class="Container_Neueste_Nachricht">
       <!-- Container Bild mit Namen-->
-      <div class="ContainerBildName">
-        <img src="Bilder/Lucas.jpeg" alt="Profil Bild" class="profilePic">
+      <div class="Container_Bild_Name">
+        <img src="Bilder/Lucas.jpeg" alt="Profil Bild" class="profile_Pic">
         <p>Lucas Christoffers</p>
       </div>
       <!-- Container für Angebots Details -->
-      <div class="ContainerAngebotDetails">
+      <div class="Container_Angebot_Details">
         <h1> zu verschenken </h1>
         <p>Hey dies ist ein einfacher demonstrations text und hat keinerlei bedeutung
         </p>
@@ -42,9 +43,11 @@
   <div class="needAName">
     <div class="suche">
       <form>
-        <label for="sucheingabe">Suche:</label>
-        <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
-        <button id="suche" name="suche">Suchen</button>
+        <div>
+          <label for="sucheingabe">Suche:</label>
+          <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
+          <button id="suche" name="suche">Suchen</button>
+        </div>
       </form>
     </div>
   </div>
@@ -125,9 +128,8 @@
       </div>
       <!-- Buttons -->
       <div class="Container_Buttons">
-        <div style="height:30px; width: 20%; float:left;"><button id="zurueck" name="zurueck">Zurück</button></div>
-        <div style="height:30px; width: 80%;"></div>
-        <div style="height:30px; width: 20%; float:right;"><button id="weiter" name="weiter">Weiter</button></div>
+        <button id="zurueck" name="zurueck" class="buttonLinks">Zurück</button>
+        <button id="weiter" name="weiter" class="buttonRechts">Weiter</button>
       </div>
     </div>
   </div>
