@@ -26,7 +26,7 @@
     <div class="Container_Neueste_Nachricht">
       <!-- Container Bild mit Namen-->
       <div class="Container_Bild_Name">
-        <img src="Bilder/Lucas.jpeg" alt="Profil Bild" class="profile_Pic">
+        <img src="./Bilder/profile/Lucas.jpeg" alt="Profil Bild" class="profile_Pic">
         <p>Lucas Christoffers</p>
       </div>
       <!-- Container für Angebots Details -->
