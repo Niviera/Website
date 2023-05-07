@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -63,11 +63,14 @@
             </div>
             <div class="ContainerButtons">
                 <button class="buttonDesign allgemeinesDesign">Registrieren</button>
-                <a href="index.php" class="zurueckButton allgemeinesDesign">Abbrechen</a>
+                <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
+                </div>
             </div>
         </form>
 
     </div>
+
+
     <!-- footer -->
     <footer>
         <?php

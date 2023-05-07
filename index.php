@@ -19,22 +19,21 @@
   ?>
 
   <!-- Neueste Angebote -->
-  <!-- Bereich des neuesten Angebots -->
-  <div class="BereichNeuesteNachricht">
-    <!-- Style Container für Angebot -->
-    <div class="ContainerNeuesteNachricht">
-      <!-- Container Bild mit Namen-->
-      <div class="ContainerBildName">
-        <img src="Bilder/Lucas.jpeg" alt="Profil Bild" class="profilePic">
-        <p>Lucas Christoffers</p>
+  <!-- Bereich des "About Us" -->
+  <div class="Bereich_Neueste_Nachricht">
+    <!-- Style Container für "About Us" -->
+    <div class="Container_Neueste_Nachricht">
+      <div class="willkommen">Moin Moin!</div>
+      <div class="info">
+        Hier kannst du schnell und einfach deinem Nachbarn helfen.
+        Scroll dafür einfach zum Schwarzen Brett.
+        Natürlich darfst du ebenfalls um Hilfe bitten.
       </div>
-      <!-- Container für Angebots Details -->
-      <div class="ContainerAngebotDetails">
-        <h1> zu verschenken </h1>
-        <p>Hey dies ist ein einfacher demonstrations text und hat keinerlei bedeutung
-        </p>
+      <div class="nachricht">
+        <div>Viel Spaß!</div>
       </div>
     </div>
+
   </div>
 
   <!-- Auflistung aller Angebote. -->
@@ -42,9 +41,11 @@
   <div class="needAName">
     <div class="suche">
       <form>
-        <label for="sucheingabe">Suche:</label>
-        <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
-        <button id="suche" name="suche">Suchen</button>
+        <div>
+          <label for="sucheingabe">Suche:</label>
+          <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
+          <button id="suche" name="suche">Suchen</button>
+        </div>
       </form>
     </div>
   </div>
@@ -125,9 +126,8 @@
       </div>
       <!-- Buttons -->
       <div class="Container_Buttons">
-        <div style="height:30px; width: 20%; float:left;"><button id="zurueck" name="zurueck">Zurück</button></div>
-        <div style="height:30px; width: 80%;"></div>
-        <div style="height:30px; width: 20%; float:right;"><button id="weiter" name="weiter">Weiter</button></div>
+        <button id="zurueck" name="zurueck" class="buttonLinks">Zurück</button>
+        <button id="weiter" name="weiter" class="buttonRechts">Weiter</button>
       </div>
     </div>
   </div>
