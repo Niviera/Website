@@ -7,7 +7,7 @@ body{
     height: 135px;
     width: 100%;
 
-    background-image: url("hintergrund/HeaderKlein.jpg");
+    background-image: url("../Bilder/hintergrund/Header/HeaderKlein.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 10% 0%;
@@ -77,13 +77,13 @@ nav a:hover{
 }
 @media(min-width:800px) {
     #header{
-        background-image: url("hintergrund/Header.jpg");
+        background-image: url("../Bilder/hintergrund/Header/Header.jpg");
     }
 }
 
 @media(min-width:1700px){
     #header{
-        background-image: url("hintergrund/HeaderGroß.jpg");
+        background-image: url("../Bilder/hintergrund/Header/HeaderGroß.jpg");
     }
 }
 

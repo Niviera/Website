@@ -63,7 +63,8 @@
             </div>
             <div class="ContainerButtons">
                 <button class="buttonDesign allgemeinesDesign">Registrieren</button>
-                <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="">Abbrechen</a></div>
+                <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
+                </div>
             </div>
         </form>
 

@@ -1,0 +1,136 @@
+/* Alle Styles für die Konto übersicht Seite */
+.Main_Container_Konto_Uebersicht{
+    display: flex;
+    height: 65vh;
+    width: 100%;
+}
+
+/* Profilbild */
+.layout_Konto_Uebersicht .profil_Bild{
+    display: flex;
+    width: 25%;
+}
+
+
+
+.layout_Konto_Uebersicht img{  
+    margin: auto;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 175px;
+}
+
+
+
+.layout_Konto_Uebersicht .kontoinformationen{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width:70%;
+    
+}
+
+/*Schrift und größe */
+
+.layout_Konto_Uebersicht .schrift{
+    font-size: 1.3em;
+}
+
+.kontoinformationen .doppelpunkt{
+    grid-row: 1/1;
+    grid-column: 2/2;
+}
+
+.kontoinformationen .kategorie{
+    grid-row: 1/1;
+    grid-column: 1/2;
+}
+
+.kontoinformationen .layout_kategorie{
+    text-align: left;
+    width: 25%;
+    height: 10%;
+
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 100%;
+  
+}
+
+.kontoinformationen .info{
+    text-align: left;
+    width: 75%;
+}
+
+.layout_Konto_Uebersicht h3{
+    max-height: 40px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+
+    /* Laptop Tablet*/
+}
+
+.Main_Container_Konto_Uebersicht .layout_Konto_Uebersicht {
+    padding-bottom: 20px;
+    padding-left: 20px;
+
+    height: 60%;
+    width: 80%;
+    margin: auto;
+    max-width: 1000px;
+    max-height: 330px;
+    display: flex;
+    flex-wrap: wrap;
+
+    /**/
+    border: 0.5px solid #6E7880;
+    border-radius: 50px;
+    box-shadow: 9px 10px 40px #6E7880;
+
+}
+
+@media(max-width: 425px){
+    .Main_Container_Konto_Uebersicht .layout_Konto_Uebersicht {
+        padding-right: 20px;
+        height: fit-content;
+        max-height: fit-content;
+        
+    }
+
+    .layout_Konto_Uebersicht h3{
+        margin-top: 20px;
+    }
+
+    .layout_Konto_Uebersicht .profil_Bild{
+        margin-top: 30px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .layout_Konto_Uebersicht .kontoinformationen{
+        width:100%;  
+    }
+
+    .kontoinformationen .layout_kategorie{
+        
+        width: 100%;
+        grid-template-columns: max-content max-content;
+        grid-template-rows: 100%;
+
+    }
+
+    .kontoinformationen .info{
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        padding-left: 10px;
+        border-bottom: 1px dashed black;
+        
+    }
+    .Main_Container_Konto_Uebersicht{
+        height: 100vh;
+    }
+
+    
+}
