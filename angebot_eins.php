@@ -42,7 +42,7 @@
             <!-- Ersteller -->
             <div style="height:200px;width:400px ;display: flex">
                 <!-- Bild -->
-                <img src="Bilder/Lucas.jpeg" alt="Profil Bild"
+                <img src="Bilder/profile/Lucas.jpeg" alt="Profil Bild"
                     style="width:175px; height: 175px; border-radius:75px; float:left">
                 <!-- Name -->
                 <p style="float: right; margin-top:75px; margin-left: 10px">Lucas Christoffers</p>

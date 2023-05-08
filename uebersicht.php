@@ -37,7 +37,6 @@
             </table>
             <button type="button">Löschen</button>
         </div>
-
     </center>
     <!-- footer -->
     <?php

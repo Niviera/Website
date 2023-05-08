@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer" style="background-color: #74c4ff; height: 30px">
+    <div class="footer">
         <a href="impressum.php"> Impressum </a>
     </div>
 </footer>
