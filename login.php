@@ -24,8 +24,10 @@
 
                 <label for="E-Mail">E-Mail</label>
                 <div id="E-Mail" class="login">
+                    <th><input type="text" required></th>
                     <label for="Password"> Password </label>
                     <div id="Password" class="Password">
+                        <th><input type="text" required></th>
 
                     </div>
                 </div>

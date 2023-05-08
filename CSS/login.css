@@ -5,6 +5,10 @@
     width: fit-content;
     text-align: center;
     margin: center;
+    margin-top: 250px;
+    border-radius: 25px;
+    border: 0.5px solid #6E7880;
+    box-shadow: 9px 10px 15px #6E7880;
 
 
 }
