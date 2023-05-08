@@ -33,7 +33,6 @@
         <div>Viel Spaß!</div>
       </div>
     </div>
-
   </div>
 
   <!-- Auflistung aller Angebote. -->
@@ -41,10 +40,10 @@
   <div class="needAName">
     <div class="suche">
       <form>
-        <div>
+        <div class="suche_layout">
           <label for="sucheingabe">Suche:</label>
           <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
-          <button id="suche" name="suche">Suchen</button>
+          <button id="suche" name="suche"></button>
         </div>
       </form>
     </div>
