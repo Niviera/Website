@@ -37,7 +37,7 @@ form #layout{
 
 form .Container_Label_doppelpunkt{
     width: 20%;
-    height: 17px;
+    height: 20px;
     display: grid;
     grid-template-columns: 90% 10%;    
 }
@@ -47,8 +47,13 @@ form .Container_Label_doppelpunkt{
 }
 
 form input{
-    height: 17px;
+    height: 20px;
     width: 78%;
+    margin-bottom: 5px;
+}
+
+form label{
+    font-size: 1.2em;
 }
 
 form #Container_Buttons{
@@ -101,7 +106,7 @@ form #Container_Buttons{
 }
 
 
-@media(max-width:500px){
+@media(max-width:719px){
     #Container_Main_Login form{
         width: 95%;
     }
@@ -115,5 +120,9 @@ form #Container_Buttons{
         height: 17px;
         display: grid;
         grid-template-columns: auto auto;    
+    }
+
+    form label{
+        font-size: 1.1em;
     }
 }
