@@ -18,27 +18,23 @@
     ?>
     <!-- Content -->
     <div style="width:100%; text-align:center">
-        <h3>Login: </h3>
-    </div>
-    <center>
-        <form>
-            <table>
-                <tr>
-                    <th>Email:</th>
-                    <th><input type="text" required></th>
-                </tr>
-                <tr>
-                    <th>Password:</th>
-                    <th><input type="password" required></th>
-                </tr>
-                <tr>
-                    <th><button> Login </button></th>
+        <div id="login" class="login">
+            <h3>Login: </h3>
+            <form>
 
-                    <th><a href="konto_erstellen.php">Registrieren </a></th>
-                </tr>
-            </table>
+                <label for="E-Mail">E-Mail</label>
+                <div id="E-Mail" class="login">
+                    <th><input type="text" required></th>
+                    <label for="Password"> Password </label>
+                    <div id="Password" class="Password">
+                        <th><input type="text" required></th>
+
+                    </div>
+                </div>
+        </div>
+
         </form>
-    </center>
+    </div>
     <!-- footer -->
     <?php
     include "Ressourcen/footer.php";
