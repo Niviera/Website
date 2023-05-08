@@ -9,6 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/login.css">
 </head>
 
 <body>
@@ -17,22 +18,25 @@
     include "Ressourcen/header.php";
     ?>
     <!-- Content -->
-    <div style="width:100%; text-align:center">
-        <div id="login" class="login">
-            <h3>Login: </h3>
-            <form>
-
-                <label for="E-Mail">E-Mail</label>
-                <div id="E-Mail" class="login">
-                    <th><input type="text" required></th>
-                    <label for="Password"> Password </label>
-                    <div id="Password" class="Password">
-                        <th><input type="text" required></th>
-
-                    </div>
+    <div id="Container_Main_Login">
+        <form>
+            <div id="layout">
+                <h1>Login:</h1>
+                <div class="Container_Label_doppelpunkt">
+                    <label for="email">E-Mail:</label>
                 </div>
-        </div>
-
+                <input id="email" type="email">
+                <div class="Container_Label_doppelpunkt">
+                    <label for="passwort">Passwort:</label>
+                </div>
+                <input id="passwort" type="password">
+                <div id="Container_Buttons">
+                    <button type="submit" class="allgemeines_Button_Design ">Login</button>
+                    <div class="allgemeines_Button_Design button_Abbruch"><a href="index.php"
+                            class="pseudo_Button">Abbrechen</a></div>
+                    <div id="pwvergessen"><a>Passwort vergessen</a></div>
+                </div>
+            </div>
         </form>
     </div>
     <!-- footer -->
