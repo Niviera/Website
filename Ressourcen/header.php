@@ -7,7 +7,7 @@
       <div class="navi desktop">
             <ul>
                   <li><a href="index.php">Startseite</a></li>
-                  <li><a href="konto_uebersicht.php">Konto</a></li>
+                  <li><a href="eigenes_konto.php">Konto</a></li>
                   <li><a href="uebersicht.php">Übersicht</a></li>
                   <li><a href="angebot_erstellen.php">Angebot erstellen</a></li>
                   <li style="float: right;"><a href="konto_erstellen.php"> Registrieren </a></li>
@@ -29,7 +29,7 @@
             <div class="dropdownMenuPoint size">
                   <button class="dropTrigger">Konto</button>
                   <div class="dropdown-content right_Drop">
-                        <a href="konto_uebersicht.php">Eigene Daten</a>
+                        <a href="eigenes_konto.php">Eigene Daten</a>
                         <a href="konto_erstellen.php"> Registrieren </a>
                         <a href="login.php"> Login </a>
                         <a href="index.php">Abmelden</a>

@@ -1,14 +1,15 @@
 .Container_Main_Eigenes{
     display: flex;
-    min-height: 80vh;
+    min-height: 70vh;
     width: 100%;
+    
 }
 
 .Container_Main_Eigenes form{
     display: flex;
     margin: auto;
     width: 75%;
-
+    max-width: 800px;
     /* 3d-Effekt*/
     border: 0.5px solid #6E7880;
     border-radius: 25px;
@@ -29,10 +30,11 @@
     margin-bottom: 5px;
     border-radius: 25px;
     border: 0.5px solid grey;
+    font-size: 1.1em
 }
 
 .layout label{
-    width: 32%;
+    width: 30%;
     font-size: 1.1em;
 }
 
@@ -41,20 +43,18 @@
     margin-bottom: 10px;
     width: 100%;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 .layout button{
     height: 30px;
     width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0.5px grey solid;
     margin-bottom: 20px;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 
 
-    /**/
     font-size: 13.3333px;
     border: 1px solid #6E7880;
     color: black;
@@ -65,5 +65,19 @@
 }
 
 @media(max-width: 680px){
+    .Container_Main_Eigenes{
+        min-height: 75vh;
+    }
 
+    .Container_Main_Eigenes form{
+        width: 85%;
+    }
+
+    .layout input{
+        width: 100%;
+    }
+
+    .layout label{
+        width: 100%;
+    }
 }
