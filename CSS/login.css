@@ -36,7 +36,7 @@ form #layout{
 }
 
 form .Container_Label_doppelpunkt{
-    width: 20%;
+    width: 19%;
     height: 20px;
     display: grid;
     grid-template-columns: 90% 10%;    
@@ -48,7 +48,7 @@ form .Container_Label_doppelpunkt{
 
 form input{
     height: 20px;
-    width: 78%;
+    width: 76%;
     margin-bottom: 5px;
 }
 
@@ -90,10 +90,10 @@ form #Container_Buttons{
 
 #Container_Buttons .allgemeines_Button_Design{
     font-size: 13.3333px;
-    border: 1px solid #6E7880;
+    border:1px solid #6E7880;
     color: black;
     border-radius: 25px;
-    margin: auto;
+    margin:auto;
     font-family: Arial;
     background-color: #efefef;
     box-shadow: 9px 6px 15px #6E7880;

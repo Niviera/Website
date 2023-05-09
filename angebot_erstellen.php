@@ -9,7 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="styleshee" type="text/css" href="CSS/angebot_erstellen.css">
+    <link rel="stylesheet" type="text/css" href="CSS/angeboterstellen.css">
 </head>
 
 <body>
@@ -18,28 +18,18 @@
     include "Ressourcen/header.php";
     ?>
     <!-- Content -->
-    <div style="width: 100%; text-align: center">
-        <h3> Angebot erstellen: </h3>
-    </div>
-    <div id="Angebot" class="Angebot">
+    <div class="Container_Main_Erstellen">
 
-        <tr>
-            <th>Title: </th>
-            <th><input type="text" required></th>
-        </tr>
-        <tr>
-            <!-- TODO: Kategorie sollte später durch datenbank vorgegeben werden (Auswahl liste)-->
-            <th>Kategorie: </th>
-            <th><input type="text" required></th>
-        </tr>
-        <tr>
-            <th>Beschreibung: </th>
-            <th><textarea required></textarea></th>
-        </tr>
-        <tr>
-            <th></th>
-            <th><button> Erstellen </button></th>
-        </tr>
+        <form>
+            <div class="layout">
+                <h1>Angebot erstellen:</h1>
+                <label for="title">Titel:</label><input id="title" type="text" required>
+                <label for="kategorie">Kategorie:</label><input id="kategorie" type="text" required>
+                <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" type="text"
+                    required></textarea>
+                <button type="submit">Erstellen</button>
+            </div>
+        </form>
     </div>
     <!-- footer -->
     <?php
