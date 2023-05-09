@@ -153,16 +153,21 @@
 }
 
 .Container_kleine_Angebote .autor{
-    width: 100%;
     text-align: right;
-    text-transform: capitalize;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.0em;
-    margin-top: 16px;
+    width: 100%;
     margin-bottom: 0px;
     /*Position im grid*/
     grid-column: 2/6;
     grid-row: 5/5
+}
+
+.Container_kleine_Angebote a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.0em;
+    margin-top: 16px;
 }
 
 /* Buttons listennavigation */
@@ -246,7 +251,6 @@
     .Container_kleine_Angebote div{
         width: 80%;
     }  
-
 }
 
 /* Tablet, Laptop etc */
