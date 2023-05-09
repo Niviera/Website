@@ -9,7 +9,7 @@
     display: flex;
     margin: auto;
     width: 75%;
-
+    max-width: 800px;
     /* 3d-Effekt*/
     border: 0.5px solid #6E7880;
     border-radius: 25px;
@@ -66,7 +66,11 @@
 
 @media(max-width: 680px){
     .Container_Main_Eigenes{
-        min-height: 80vh;
+        min-height: 75vh;
+    }
+
+    .Container_Main_Eigenes form{
+        width: 85%;
     }
 
     .layout input{
@@ -76,5 +80,4 @@
     .layout label{
         width: 100%;
     }
-
 }

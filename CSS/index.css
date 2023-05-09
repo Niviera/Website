@@ -320,3 +320,9 @@
         background-size: 30%;
     }
 }
+
+@media(min-width:1920px){
+    .Container_kleine_Angebote{
+        grid-template-columns: repeat(auto-fill, minmax(275px, 2fr));
+    }
+}

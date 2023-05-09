@@ -81,4 +81,8 @@
         width: 60%;
         height: 40px;
     }
+
+    .Container_Main_Erstellen form textarea{
+        min-height: 75px;
+    }
 }
