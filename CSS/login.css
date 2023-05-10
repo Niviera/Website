@@ -1,10 +1,15 @@
 #Container_Main_Login{
+    background-size: 40%;
     height: 70vh;
     width: 100%;
     display: flex;
+    background-image: url("../Bilder/hintergrund/Login/Login.jpg");
+    background-repeat: no-repeat;  
+    background-position: left;
 }
 
 #Container_Main_Login form{
+    background-color: #dcf0ff;
     height: max-content;
     width: 60%;
     max-width: 500px;
@@ -107,6 +112,11 @@ form #Container_Buttons{
 
 
 @media(max-width:719px){
+    #Container_Main_Login{
+        background-size: 80%;
+        background-position: -72% 117%;
+    }
+
     #Container_Main_Login form{
         width: 95%;
     }
@@ -124,5 +134,10 @@ form #Container_Buttons{
 
     form label{
         font-size: 1.1em;
+    }
+}
+@media(min-width:1445px){
+    #Container_Main_Login{
+        background-size: 30%;
     }
 }

@@ -95,6 +95,7 @@
     background-image: url(../Bilder/buttons/Lupe.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    color: #EFEFEF;
 }
 
 .needAName label{
