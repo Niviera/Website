@@ -43,7 +43,7 @@
         <div class="suche_layout">
           <label for="sucheingabe">Suche:</label>
           <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
-          <button id="suche" name="suche">Suche</button>
+          <button id="suche" name="suche"></button>
         </div>
       </form>
     </div>
