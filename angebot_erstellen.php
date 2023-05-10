@@ -1,50 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Angebot erstellen</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/angeboterstellen.css">
 </head>
 
-<body style="background-color: #dcf0ff;">
+<body>
     <!-- header -->
     <?php
     include "Ressourcen/header.php";
     ?>
-    <!-- nav -->
-    <?php
-    include "Ressourcen/nav.php";
-    ?>
     <!-- Content -->
-    <div style="width: 100%; text-align: center">
-        <h3> Angebot erstellen: </h3>
-    </div>
-    <center>
-        <form>
-            <table>
-                <tr>
-                    <th>Title: </th>
-                    <th><input type="text" required></th>
-                </tr>
-                <tr>
-                    <!-- TODO: Kategorie sollte später durch datenbank vorgegeben werden (Auswahl liste)-->
-                    <th>Kategorie: </th>
-                    <th><input type="text" required></th>
-                </tr>
-                <tr>
-                    <th>Beschreibung: </th>
-                    <th><textarea required></textarea></th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th><button> Erstellen </button></th>
-                </tr>
+    <div class="Container_Main_Erstellen">
 
-            </table>
+        <form>
+            <div class="layout">
+                <h1>Angebot erstellen:</h1>
+                <label for="title">Titel:</label><input id="title" type="text" required>
+                <label for="kategorie">Kategorie:</label><input id="kategorie" type="text" required>
+                <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" type="text"
+                    required></textarea>
+                <button type="submit">Erstellen</button>
+            </div>
         </form>
-    </center>
+    </div>
     <!-- footer -->
     <?php
     include "Ressourcen/footer.php";

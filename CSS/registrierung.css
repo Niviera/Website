@@ -1,0 +1,174 @@
+/* Stylesheet für die Registrierung */
+.RegisterContainerMain {
+    width: 100%;
+    text-align: center;
+    background-image: url("../Bilder/hintergrund/Registrierung/Registrierung.jpg");
+    background-repeat: no-repeat;
+}
+
+.RegisterContainerMain legend{
+    width: 99%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.ContainerRubrik input {
+    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.ContainerRubrik label{
+    text-align: left;
+    margin-left: 20px;
+    float: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.RegisterContainerMain .ContainerRubrik {
+    background-color: #dcf0ff;
+    border-radius: 25px;
+    min-width: 310px;
+    width: 75%;
+    max-width: 700px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* Es in in der mitte zentrieren*/
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 3d effekt für Rubrik-boxen */
+    border: 0.5px solid #6E7880;
+    box-shadow: 9px 10px 15px #6E7880;
+}
+/* Buttons Formular */
+.RegisterContainerMain .ContainerButtons{
+    margin-right:auto;
+    margin-left: auto;
+    border: 0px solid black;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+}
+
+.ContainerButtons .allgemeinesDesign{
+    font-size: 13.3333px;
+    border:1px solid #6E7880;
+    color: black;
+    border-radius: 25px;
+    margin:auto;
+    font-family: Arial;
+    background-color: #efefef;
+    box-shadow: 9px 6px 15px #6E7880;
+}
+
+.pseudoButton{
+    display: block;
+    margin: auto;
+    color: black;
+    text-decoration: none;
+    padding: 6px;
+}
+
+.ContainerButtons .buttonDesign{
+
+    /* Position im grid*/
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start:  1;
+    grid-column-end:  1;
+}
+
+.RegisterContainerMain .zurueckButton{
+    /* Position im grid*/
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start:  2;
+    grid-column-end:  2;   
+}
+
+/* Smartphone */
+@media(max-width: 601px) {
+    .RegisterContainerMain{
+        background-size: 100%;
+        /*background-position: 10% 147%;*/
+        background-position: right bottom;
+       
+    }
+    .ContainerRubrik label{
+        width: 40%;
+        
+    }
+    .ContainerRubrik input{
+        width: 45%;
+    }
+
+    #RegisterContainerMain .ContainerButtons{
+        width: 300px;
+        height: 60px;
+    }
+
+    .ContainerButtons .zurueckButton{
+        width: 100px;
+        height: 30px;
+    }
+
+    .ContainerButtons .buttonDesign{
+        width: 102px;
+        height: 32px;
+    }
+    
+}
+
+/* Laptop etc */
+@media(min-width:601px){
+    .RegisterContainerMain{
+        background-size: 40%;
+        background-position: right bottom;
+    }
+
+    .ContainerRubrik legend{
+        font-size: 1.3em;
+    }
+    .ContainerRubrik label{
+        font-size: 1.3em;
+        width: 30%;
+    }
+
+    .ContainerRubrik input{
+        height:20px;
+        width: 60%;
+    }
+    /* Buttons */
+    .RegisterContainerMain .ContainerButtons{
+        width: 400px;
+        height: 60px;
+    }
+
+    .ContainerButtons .zurueckButton{
+        width: 125px;
+        height: 30px;
+    }
+
+    .ContainerButtons .buttonDesign{
+        width: 127px;
+        height: 32px;
+    }
+}
+
+@media(min-width:1000px){
+    .RegisterContainerMain{
+        background-size: 40%;
+        background-position: right bottom;
+    }
+}
+
+@media(min-width:1500px){
+    .RegisterContainerMain{
+        background-size: 25%;
+        background-position: right bottom;
+    }
+}

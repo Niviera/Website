@@ -1,0 +1,97 @@
+.Container_Main_Erstellen{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    background-image: url("../Bilder/hintergrund/ueberuns/ueberuns.jpg");
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position: top left;
+}
+
+.Container_Main_Erstellen form{
+    background-color: #dcf0ff;
+    display: flex;
+    height: fit-content;
+    width: 75%;
+    margin: auto;
+    max-width: 600px;
+
+    /* 3d-Effekt*/
+    border: 0.5px solid #6E7880;
+    border-radius: 25px;
+    box-shadow: 9px 10px 15px #6E7880;
+}
+
+.Container_Main_Erstellen form .layout{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+}
+
+.Container_Main_Erstellen form h1{
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.Container_Main_Erstellen form label{
+    width: 32%;
+}
+
+.Container_Main_Erstellen form input{
+    width: 65%;
+    margin-bottom: 5px;
+}
+
+.Container_Main_Erstellen form textarea{
+    width: 65%;
+    min-height: 50px;
+    margin-bottom: 10px;
+}
+
+.Container_Main_Erstellen form button{
+    height: 30px;
+    width: 40%;
+    max-width: 200px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border: 0.5px grey solid;
+
+    font-size: 13.3333px;
+    border: 1px solid #6E7880;
+    color: black;
+    font-family: Arial;
+    background-color: #efefef;
+    box-shadow: 9px 6px 15px #6E7880;
+}
+
+
+@media(max-width: 680px){
+    .Container_Main_Erstellen{
+        background-size: 75%;
+    }
+
+    .Container_Main_Erstellen form input{
+        width: 100%;
+    }
+    
+    .Container_Main_Erstellen form textarea{
+        width: 100%;
+    }
+    .Container_Main_Erstellen form label{
+        width: 100%;
+    }
+
+    .Container_Main_Erstellen form button{
+        width: 60%;
+        height: 40px;
+    }
+
+    .Container_Main_Erstellen form textarea{
+        min-height: 75px;
+    }
+}
