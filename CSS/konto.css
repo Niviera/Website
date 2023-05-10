@@ -3,6 +3,12 @@
     display: flex;
     height: 66vh;
     width: 100%;
+
+    background-image: url("../Bilder/hintergrund/eigenesKonto/Eigenedaten.jpg");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 30%;
+
 }
 
 /* Profilbild */
@@ -71,6 +77,7 @@
 }
 
 .Main_Container_Konto_Uebersicht .layout_Konto_Uebersicht {
+    background-color: #dcf0ff;
     padding-bottom: 20px;
     padding-left: 20px;
 
