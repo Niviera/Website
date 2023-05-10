@@ -1,7 +1,69 @@
-.angeboteins {
-    width: fit-content;
+#angeboteins {
     margin-left: auto;
     margin-right: auto;
+    border-radius: 25px;
+    width: 80%;
+    padding: 30px;
+    display: table;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+.Container_Angebot .box2 .box1 {
+    width: 45%;
+    padding: 15px;
+}
+
+.Container_Angebot .box1 {
+    text-align: center;
+}
+
+.Container_Angebot .box2 {
+
+    width: 75%;
+    padding: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Container_Angebot .box3 {
+    width: 100%;
+    text-align: center;
+
+}
+
+.Container_Angebot .box4 {
+    font-size: 13.3333px;
+    border: 1px solid #6E7880;
+    color: black;
+    border-radius: 25px;
+    margin: auto;
+    font-family: Arial;
+    background-color: #efefef;
+    box-shadow: 9px 6px 15px #6E7880;
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 6px;
+    text-align: center;
+
+}
+
+img {
+    width: 175px;
+    height: 175px;
+    border-radius: 75px;
+    float: left;
+}
+
+.Container_Angebot {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+
+    /* 3D-Effekt */
     border: 0.5px solid #6E7880;
     box-shadow: 9px 10px 15px #6E7880;
     border-radius: 25px;
