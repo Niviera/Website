@@ -35,7 +35,7 @@
     </div>
     <!-- footer -->
     <?php
-    include "Ressourcen/footer.php";
+    include "../Ressourcen/footer.php";
     ?>
 </body>
 

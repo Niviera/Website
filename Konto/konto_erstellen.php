@@ -13,11 +13,6 @@
 </head>
 
 <body>
-    <!-- Datenbank -->
-    <?php
-    include "Datenbank/Script/db_Registrierung.php";
-    ?>
-
     <!-- Header -->
     <?php
     include "pfad_angabe.php";
@@ -77,11 +72,9 @@
 
 
     <!-- footer -->
-    <footer>
-        <?php
-        include "Ressourcen/footer.php";
-        ?>
-    </footer>
+    <?php
+    include "../Ressourcen/footer.php";
+    ?>
 
 </body>
 
