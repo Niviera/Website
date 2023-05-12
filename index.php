@@ -65,62 +65,62 @@
         <!-- Angebot 1 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 2 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 3 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 4 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 5 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 6 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 7 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 8 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 9 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
         <!-- Angebot 10 -->
         <div>
           <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
+          <a class="beschreibung" href="angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
+          <a class="autor" href="konto_uebersicht.php">Lucas Christoffers</a>
         </div>
       </div>
       <!-- Buttons -->

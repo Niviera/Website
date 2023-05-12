@@ -1,0 +1,34 @@
+CREATE DATABASE Nachbarschaftshilfe;
+USE Nachbarschaftshilfe;
+CREATE TABLE Kategorie(
+    ID int,
+    Name Varchar(20),
+    PRIMARY KEY(ID)
+);
+CREATE TABLE Stadt(
+    ID int,
+    PLZ int,
+    Name Varchar(20),
+    PRIMARY KEY(ID)
+);
+CREATE TABLE Nutzer(
+    ID int,
+    E-Mail VARCHAR(40),
+    Vorname VARCHAR(20),
+    Nachname VARCHAR(20),
+    Addresse VARCHAR(40),
+    Stadt int,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(Stadt) REFERENCES Stadt(ID)
+);
+CREATE TABLE Hilfsgesuch(
+    ID int,
+    Titel Varchar(20),
+    Beschreibung(50),
+    Kategorie int,
+    Ersteller int,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(Kategorie) REFERENCES Kategorie(ID),
+    FOREIGN KEY(Ersteller) REFERENCES Nutzer(ID)
+);
+
