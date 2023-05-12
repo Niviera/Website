@@ -1,7 +1,7 @@
 .Container_Main_Eigenes{
     background-size: 40%;
     background-position: 118% 108%;
-    background-image: url("../Bilder/hintergrund/eigenesKonto/Eigenedaten.jpg");
+    background-image: url("../../Bilder/hintergrund/eigenesKonto/Eigenedaten.jpg");
     background-repeat: no-repeat;
 
     display: flex;

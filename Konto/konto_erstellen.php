@@ -9,7 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/registrierung.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/registrierung.css">
 </head>
 
 <body>

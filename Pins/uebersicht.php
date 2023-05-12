@@ -10,7 +10,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/uebersicht.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Pins/uebersicht.css">
 </head>
 
 <body>

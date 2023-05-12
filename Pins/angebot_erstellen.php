@@ -10,7 +10,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/angeboterstellen.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboterstellen.css">
 </head>
 
 <body>

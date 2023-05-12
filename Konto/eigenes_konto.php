@@ -9,7 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/eigenes_konto.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/eigenes_konto.css">
 </head>
 
 <body>

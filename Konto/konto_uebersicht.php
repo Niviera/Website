@@ -9,7 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/eigenes_konto.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/konto.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <h3>Eigene Daten:</h3>
             <!-- Bild-->
             <div class="profil_Bild">
-                <img src="Bilder/profile/Lucas.jpeg" alt="Profil Bild">
+                <img src="../Bilder/profile/Lucas.jpeg" alt="Profil Bild">
             </div>
             <!-- Kontoinformationen -->
             <div class="kontoinformationen">

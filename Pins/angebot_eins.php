@@ -9,7 +9,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/angeboteins.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboteins.css">
 </head>
 
 <body>
