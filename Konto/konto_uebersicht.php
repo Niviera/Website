@@ -8,14 +8,15 @@
     <title>Kontodaten</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="CSS/konto.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/eigenes_konto.css">
 </head>
 
 <body>
     <!-- Header -->
     <?php
-    include "Ressourcen/header.php";
+    include "pfad_angabe.php";
+    include "../Ressourcen/header.php";
     ?>
     <!-- Seiteninhalt -->
     <div class="Main_Container_Konto_Uebersicht">

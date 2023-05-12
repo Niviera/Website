@@ -8,14 +8,15 @@
     <title>Login</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="CSS/login.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/login.css">
 </head>
 
 <body>
-    <!-- header -->
+    <!-- Header -->
     <?php
-    include "Ressourcen/header.php";
+    include "pfad_angabe.php";
+    include "../Ressourcen/header.php";
     ?>
     <!-- Content -->
     <div id="Container_Main_Login">

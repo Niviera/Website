@@ -6,25 +6,24 @@ CREATE TABLE Kategorie(
     PRIMARY KEY(ID)
 );
 CREATE TABLE Stadt(
-    ID int,
     PLZ int,
     Name Varchar(20),
-    PRIMARY KEY(ID)
+    PRIMARY KEY(PLZ)
 );
 CREATE TABLE Nutzer(
     ID int,
-    E-Mail VARCHAR(40),
+    EMail VARCHAR(40),
     Vorname VARCHAR(20),
     Nachname VARCHAR(20),
     Addresse VARCHAR(40),
-    Stadt int,
+    PLZ int,
     PRIMARY KEY(ID),
-    FOREIGN KEY(Stadt) REFERENCES Stadt(ID)
+    FOREIGN KEY(PLZ) REFERENCES Stadt(PLZ)
 );
 CREATE TABLE Hilfsgesuch(
     ID int,
     Titel Varchar(20),
-    Beschreibung(50),
+    Beschreibung Varchar(50),
     Kategorie int,
     Ersteller int,
     PRIMARY KEY(ID),

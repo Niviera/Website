@@ -8,14 +8,15 @@
     <title>Document</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="CSS/angeboteins.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/angeboteins.css">
 </head>
 
 <body>
-    <!-- header -->
+    <!-- Header -->
     <?php
-    include "Ressourcen/header.php";
+    include "pfad_angabe.php";
+    include "../Ressourcen/header.php";
     ?>
     <!-- Content -->
 
@@ -27,7 +28,7 @@
                 <h1> Zu verschenken </h1>
             </div>
             <div class="box1">
-                <img src="Bilder/profile/Lucas.jpeg" alt="Profil Bild">
+                <img src="../Bilder/profile/Lucas.jpeg" alt="Profil Bild">
                 <!-- Name -->
                 <p>Lucas Christoffers</p>
 

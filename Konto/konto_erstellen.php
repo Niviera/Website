@@ -8,20 +8,25 @@
     <title>Registrieren</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="CSS/registrierung.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/registrierung.css">
 </head>
 
 <body>
+    <!-- Datenbank -->
+    <?php
+    include "Datenbank/Script/db_Registrierung.php";
+    ?>
 
     <!-- Header -->
     <?php
-    include "Ressourcen/header.php";
+    include "pfad_angabe.php";
+    include "../Ressourcen/header.php";
     ?>
     <div id="RegisterContainerMain" class="RegisterContainerMain">
         <!-- Steiten inhalt -->
         <h3>Registrierung:</h3>
-        <form>
+        <form action="konto_erstellen.php" method="GET">
             <div class="ContainerRubrik">
                 <legend>Persönliche Daten:</legend>
                 <label for="vorname">Vorname:</label>
@@ -62,7 +67,7 @@
                 <input id="dateiHochladen" name="dateiHochladen" type="file">
             </div>
             <div class="ContainerButtons">
-                <button class="buttonDesign allgemeinesDesign">Registrieren</button>
+                <button type="submit" class="buttonDesign allgemeinesDesign">Registrieren</button>
                 <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
                 </div>
             </div>
