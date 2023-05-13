@@ -1,3 +1,7 @@
+<?php
+include "../Datenbank/db_AngebotErstellen.php";
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -22,14 +26,18 @@
     <!-- Content -->
     <div class="Container_Main_Erstellen">
 
-        <form>
+        <form action="angebot_erstellen.php" method="POST">
             <div class="layout">
                 <h1>Angebot erstellen:</h1>
-                <label for="title">Titel:</label><input id="title" type="text" required>
-                <label for="kategorie">Kategorie:</label><input id="kategorie" type="text" required>
-                <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" type="text"
-                    required></textarea>
-                <button type="submit">Erstellen</button>
+                <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
+                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" required>
+                    <?php
+                    include "../Datenbank/db_Kategorien.php";
+                    ?>
+                </select>
+                <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
+                    type="text" required></textarea>
+                <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
             </div>
         </form>
     </div>

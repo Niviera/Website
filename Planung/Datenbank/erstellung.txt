@@ -23,7 +23,7 @@ CREATE TABLE Nutzer(
     FOREIGN KEY(PLZ) REFERENCES Stadt(PLZ)
 );
 CREATE TABLE Hilfsgesuch(
-    ID int,
+    ID int NOT NULL AUTO_INCREMENT,
     Titel Varchar(20),
     Beschreibung Varchar(50),
     Kategorie int,
