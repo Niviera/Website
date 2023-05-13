@@ -21,7 +21,7 @@
     <div id="RegisterContainerMain" class="RegisterContainerMain">
         <!-- Steiten inhalt -->
         <h3>Registrierung:</h3>
-        <form action="konto_erstellen.php" method="GET">
+        <form action="konto_angelegt.php" method="POST">
             <div class="ContainerRubrik">
                 <legend>Persönliche Daten:</legend>
                 <label for="vorname">Vorname:</label>
@@ -44,14 +44,14 @@
             </div>
             <div class="ContainerRubrik">
                 <legend>Kontodaten:</legend>
-                <label for="eMail">E-Mail:</label>
-                <input id="eMail" type="email" required>
+                <label for="email">E-Mail:</label>
+                <input id="email" name="email" type="email" required>
                 <br>
                 <label for="eMailwdh">E-Mail:</label>
                 <input id="eMailwdh" type="email" required>
                 <br>
                 <label for="passwort">Passwort:</label>
-                <input id="passwort" type="password" required>
+                <input id="passwort" name="passwort" type="password" required>
                 <br>
                 <label for="passwortwdh">Passwort:</label>
                 <input id="passwortwdh" name="passwortwdh" type="password" required>
@@ -62,7 +62,8 @@
                 <input id="dateiHochladen" name="dateiHochladen" type="file">
             </div>
             <div class="ContainerButtons">
-                <button type="submit" class="buttonDesign allgemeinesDesign">Registrieren</button>
+                <button type="submit" name="abgeschickt" value="abgeschickt"
+                    class="buttonDesign allgemeinesDesign">Registrieren</button>
                 <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
                 </div>
             </div>
