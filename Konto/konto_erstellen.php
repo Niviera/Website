@@ -21,7 +21,7 @@
     <div id="RegisterContainerMain" class="RegisterContainerMain">
         <!-- Steiten inhalt -->
         <h3>Registrierung:</h3>
-        <form action="konto_angelegt.php" method="POST">
+        <form action="konto_angelegt.php" method="POST" enctype="multipart/form-data">
             <div class="ContainerRubrik">
                 <legend>Persönliche Daten:</legend>
                 <label for="vorname">Vorname:</label>
