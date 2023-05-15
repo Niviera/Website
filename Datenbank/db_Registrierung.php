@@ -26,8 +26,6 @@ if (isset($_POST['abgeschickt'])) {
     /* Handhabung des Bildes */
     if ($_FILES['dateiHochladen']['name'] <> "") {
         $bild = mysqli_real_escape_string($verbindung, $_FILES['dateiHochladen']['name']);
-        $test = $_FILES['dateiHochladen']['tmp_name'];
-        echo "'$test'";
         move_uploaded_file(
             $_FILES['dateiHochladen']['tmp_name'],
             '../Bilder/profile/' . $_FILES['dateiHochladen']['name']
