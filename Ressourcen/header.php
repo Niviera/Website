@@ -33,7 +33,7 @@
                   <div class="dropdown-content right_Drop">
                         <a href="<?php echo $konto . 'eigenes_konto.php' ?>">Eigene Daten</a>
                         <a href="<?php echo $konto . 'konto_erstellen.php' ?>"> Registrieren </a>
-                        <a href="<?php echo $konto . 'konto_erstellen.php' ?>"> Login </a>
+                        <a href="<?php echo $konto . 'login.php' ?>"> Login </a>
                         <a href="<?php echo $start . 'index.php' ?>">Abmelden</a>
                   </div>
             </div>

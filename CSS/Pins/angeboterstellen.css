@@ -46,6 +46,11 @@
     margin-bottom: 5px;
 }
 
+.Container_Main_Erstellen form select{
+    width: 66%;
+    margin-bottom: 5px;
+}
+
 .Container_Main_Erstellen form textarea{
     width: 65%;
     min-height: 50px;
@@ -73,6 +78,10 @@
 @media(max-width: 680px){
     .Container_Main_Erstellen{
         background-size: 75%;
+    }
+
+    .Container_Main_Erstellen form select{
+        width: 100%;
     }
 
     .Container_Main_Erstellen form input{

@@ -11,17 +11,19 @@ CREATE TABLE Stadt(
     PRIMARY KEY(PLZ)
 );
 CREATE TABLE Nutzer(
-    ID int,
+    ID int NOT NULL AUTO_INCREMENT,
     EMail VARCHAR(40),
     Vorname VARCHAR(20),
     Nachname VARCHAR(20),
     Addresse VARCHAR(40),
     PLZ int,
+    telnr int,
+    passwort VARCHAR(255),
     PRIMARY KEY(ID),
     FOREIGN KEY(PLZ) REFERENCES Stadt(PLZ)
 );
 CREATE TABLE Hilfsgesuch(
-    ID int,
+    ID int NOT NULL AUTO_INCREMENT,
     Titel Varchar(20),
     Beschreibung Varchar(50),
     Kategorie int,

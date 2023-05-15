@@ -4,6 +4,7 @@ Bekannte Fehler:
 
 Quellen:
 - Es wurde "https://www.w3schools.com" verwendet
+- https://www.php-kurs.com/upload-dateien-mit-php.htm
 
 Verwendete Programme:
 - Xampp 8.2.0-0
