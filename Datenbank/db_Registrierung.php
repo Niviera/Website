@@ -23,8 +23,7 @@ if (isset($_POST['abgeschickt'])) {
     $bild = "standart.jpeg";
     $erlaubteTypen = array(IMAGETYPE_PNG, IMAGETYPE_JPEG);
 
-
-    /* Handhabung des Bildes */
+    /* Handhabung von Bildern */
     if ($_FILES['dateiHochladen']['name'] <> "") {
         $fileType = exif_imagetype($_FILES['dateiHochladen']['tmp_name']);
         if (in_array($fileType, $erlaubteTypen)) {
@@ -36,8 +35,8 @@ if (isset($_POST['abgeschickt'])) {
         } else {
             echo "Es wurde ein Falsches Bildformat verwendet!";
         }
-
     }
+
 
     /* Querrys */
     $querry_Eintrag_Nutzer = "INSERT INTO Nutzer(EMail, Vorname, Nachname, Addresse, PLZ, telnr, passwort, bild) 
