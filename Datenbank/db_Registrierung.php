@@ -21,15 +21,22 @@ if (isset($_POST['abgeschickt'])) {
     $email = mysqli_real_escape_string($verbindung, $_POST['email']);
     $passwort = sha1(mysqli_real_escape_string($verbindung, $_POST['passwort']));
     $bild = "standart.jpeg";
+    $erlaubteTypen = array(IMAGETYPE_PNG, IMAGETYPE_JPEG);
 
 
     /* Handhabung des Bildes */
     if ($_FILES['dateiHochladen']['name'] <> "") {
-        $bild = mysqli_real_escape_string($verbindung, $_FILES['dateiHochladen']['name']);
-        move_uploaded_file(
-            $_FILES['dateiHochladen']['tmp_name'],
-            '../Bilder/profile/' . $_FILES['dateiHochladen']['name']
-        );
+        $fileType = exif_imagetype($_FILES['dateiHochladen']['tmp_name']);
+        if (in_array($fileType, $erlaubteTypen)) {
+            $bild = mysqli_real_escape_string($verbindung, $_FILES['dateiHochladen']['name']);
+            move_uploaded_file(
+                $_FILES['dateiHochladen']['tmp_name'],
+                '../Bilder/profile/' . $_FILES['dateiHochladen']['name']
+            );
+        } else {
+            echo "Es wurde ein Falsches Bildformat verwendet!";
+        }
+
     }
 
     /* Querrys */
