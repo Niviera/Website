@@ -3,7 +3,7 @@
     height: 70vh;
     width: 100%;
     display: flex;
-    background-image: url("../Bilder/hintergrund/Login/Login.jpg");
+    background-image: url("../../Bilder/hintergrund/Login/Login.jpg");
     background-repeat: no-repeat;  
     background-position: left;
 }

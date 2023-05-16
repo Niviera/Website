@@ -4,6 +4,9 @@ Bekannte Fehler:
 
 Quellen:
 - Es wurde "https://www.w3schools.com" verwendet
+    Bilder:
+    - https://www.php-kurs.com/upload-dateien-mit-php.htm
+    - https://stackoverflow.com/questions/6755192/how-to-check-uploaded-file-type-in-php
 
 Verwendete Programme:
 - Xampp 8.2.0-0

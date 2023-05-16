@@ -8,14 +8,15 @@
     <title>Login</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="CSS/login.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/login.css">
 </head>
 
 <body>
-    <!-- header -->
+    <!-- Header -->
     <?php
-    include "Ressourcen/header.php";
+    include "pfad_angabe.php";
+    include "../Ressourcen/header.php";
     ?>
     <!-- Content -->
     <div id="Container_Main_Login">
@@ -32,8 +33,8 @@
                 <input id="passwort" type="password">
                 <div id="Container_Buttons">
                     <button type="submit" class="allgemeines_Button_Design ">Login</button>
-                    <div class="allgemeines_Button_Design button_Abbruch"><a href="index.php"
-                            class="pseudo_Button">Abbrechen</a></div>
+                    <div class="allgemeines_Button_Design button_Abbruch"><a href="konto_erstellen.php"
+                            class="pseudo_Button">Registrieren?</a></div>
                     <div id="pwvergessen"><a>Passwort vergessen</a></div>
                 </div>
             </div>
@@ -41,7 +42,7 @@
     </div>
     <!-- footer -->
     <?php
-    include "Ressourcen/footer.php";
+    include "../Ressourcen/footer.php";
     ?>
 </body>
 

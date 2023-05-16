@@ -7,14 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="CSS/uebersicht.css">
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Pins/uebersicht.css">
 </head>
 
 <body>
+    <!-- Header -->
     <?php
-    include "Ressourcen/header.php";
+    include "pfad_angabe.php";
+    include "../Ressourcen/header.php";
     ?>
     <!-- Content -->
 
@@ -54,7 +57,7 @@
     </div>
     <!-- footer -->
     <?php
-    include "Ressourcen/footer.php";
+    include "../Ressourcen/footer.php";
     ?>
 
 </body>

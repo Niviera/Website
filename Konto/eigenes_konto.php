@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konto bearbeiten</title>
 
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="CSS/eigenes_konto.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/eigenes_konto.css">
 </head>
 
 <body>
-    <!-- header -->
+    <!-- Header -->
     <?php
-    include "Ressourcen/header.php";
+    include "pfad_angabe.php";
+    include "../Ressourcen/header.php";
     ?>
     <!-- Content -->
     <div class="Container_Main_Eigenes">
@@ -35,7 +37,7 @@
     </div>
     <!-- footer -->
     <?php
-    include "Ressourcen/footer.php";
+    include "../Ressourcen/footer.php";
     ?>
 </body>
 

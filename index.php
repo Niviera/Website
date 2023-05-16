@@ -15,6 +15,9 @@
 <body>
   <!-- Header -->
   <?php
+  $start = "";
+  $konto = "Konto/";
+  $pins = "Pins/";
   include "Ressourcen/header.php";
   ?>
 
@@ -34,7 +37,7 @@
       </div>
     </div>
   </div>
-
+  <!-- Schwarzes Brett -->
   <!-- Auflistung aller Angebote. -->
   <!-- Trennstrich -->
   <div class="needAName">
@@ -62,66 +65,9 @@
     <!-- Angebote -->
     <div class="Container_kleineAngebote_und_Buttons">
       <div class="Container_kleine_Angebote">
-        <!-- Angebot 1 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 2 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 3 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 4 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 5 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 6 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 7 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 8 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 9 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
-        <!-- Angebot 10 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <p class="beschreibung"> Dies ist ein kleiner beispieltext zum Testen </p>
-          <p class="autor"><a href="konto_uebersicht.php">Lucas Christoffers</a></p>
-        </div>
+        <?php
+        include "Datenbank/db_abfrageHilfsangebote.php";
+        ?>
       </div>
       <!-- Buttons -->
       <div class="Container_Buttons">
