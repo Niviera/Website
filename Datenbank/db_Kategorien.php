@@ -3,15 +3,13 @@
 include "db_Verbindung.php";
 
 /* Query */
-$query_Kategorien = "SELECT * FROM Kategorie";
+$query = "SELECT * FROM Kategorie";
+$ergebnis = $verbindung->query($query);
+$ergebnis = $ergebnis->fetchAll();
 
-$ergebnis = $verbindung->query($query_Kategorien);
-
-if ($ergebnis->num_rows > 0) {
-    while ($zeile = $ergebnis->fetch_assoc()) {
-        echo "<option value=" . $zeile["ID"] . ">" . $zeile["Name"] . "</option>";
-    }
+foreach ($ergebnis as $reihe) {
+    $wert = htmlentities($reihe["ID"]);
+    $bezeichnung = htmlentities($reihe["Name"]);
+    echo "<option value=" . $wert . ">" . $bezeichnung . "</option>";
 }
-
-$verbindung->close();
 ?>

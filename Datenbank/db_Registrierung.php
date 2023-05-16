@@ -11,15 +11,7 @@ include "db_Verbindung.php";
 /* Überbrüfen ob Daten übermittelt worden sind */
 
 if (isset($_POST['abgeschickt'])) {
-    /* Überprüfe auf "Angriffe" */
-    $vorname = mysqli_real_escape_string($verbindung, $_POST['vorname']);
-    $nachname = mysqli_real_escape_string($verbindung, $_POST['nachname']);
-    $adresse = mysqli_real_escape_string($verbindung, $_POST['straße']);
-    $telnr = mysqli_real_escape_string($verbindung, $_POST['tele']);
-    $plz = mysqli_real_escape_string($verbindung, $_POST['plz']);
-    $stadt = mysqli_real_escape_string($verbindung, $_POST['stadt']);
-    $email = mysqli_real_escape_string($verbindung, $_POST['email']);
-    $passwort = sha1(mysqli_real_escape_string($verbindung, $_POST['passwort']));
+
     $bild = "standart.jpeg";
     $erlaubteTypen = array(IMAGETYPE_PNG, IMAGETYPE_JPEG);
 
@@ -27,7 +19,7 @@ if (isset($_POST['abgeschickt'])) {
     if ($_FILES['dateiHochladen']['name'] <> "") {
         $fileType = exif_imagetype($_FILES['dateiHochladen']['tmp_name']);
         if (in_array($fileType, $erlaubteTypen)) {
-            $bild = mysqli_real_escape_string($verbindung, $_FILES['dateiHochladen']['name']);
+            $bild = $_FILES['dateiHochladen']['name'];
             move_uploaded_file(
                 $_FILES['dateiHochladen']['tmp_name'],
                 '../Bilder/profile/' . $_FILES['dateiHochladen']['name']
@@ -37,24 +29,35 @@ if (isset($_POST['abgeschickt'])) {
         }
     }
 
-
     /* Querrys */
-    $querry_Eintrag_Nutzer = "INSERT INTO Nutzer(EMail, Vorname, Nachname, Addresse, PLZ, telnr, passwort, bild) 
-                              VALUES ('$email ','$vorname','$nachname ','$adresse','$plz','$telnr','$passwort', '$bild')";
-    $querry_Stadt_Kontrolle = "SELECT * FROM Stadt WHERE PLZ = '$plz'";
-    $querry_Eintrag_Stadt = "INSERT INTO Stadt(PLZ, Name) VALUES ('$plz','$stadt')";
+    $querry_Eintrag_Nutzer = $verbindung->prepare("INSERT INTO Nutzer(EMail, Vorname, Nachname, Addresse, PLZ, telnr, passwort, bild) 
+                              VALUES (?,?,?,?,?,?,?,?)");
+    $querry_Stadt_Kontrolle = $verbindung->prepare("SELECT COUNT(PLZ) as anzahl FROM Stadt WHERE PLZ = ?");
+
 
     /* Kontrolle ob Stadt bereits bekannt ist */
-    $abfrage = $verbindung->query($querry_Stadt_Kontrolle);
-    if ($abfrage->num_rows == 0) {
-        $verbindung->query($querry_Eintrag_Stadt);
+    $querry_Stadt_Kontrolle->bindValue(1, $_POST['plz']);
+    $querry_Stadt_Kontrolle->execute();
+    $querry_Stadt_Kontrolle = $querry_Stadt_Kontrolle->fetch();
+    if ($querry_Stadt_Kontrolle['anzahl'] == '0') {
+        /* Stadt eintragen */
+        $querry_Eintrag_Stadt = $verbindung->prepare("INSERT INTO Stadt(PLZ, Name) VALUES (?,?)");
+        $querry_Eintrag_Stadt->bindValue(1, $_POST['plz']);
+        $querry_Eintrag_Stadt->bindValue(2, $_POST['stadt']);
     }
-    /* Eintragung des Nutzers */
-    $verbindung->query($querry_Eintrag_Nutzer);
 
+    /* Nutzer eintragen */
+    $querry_Eintrag_Nutzer->bindValue(1, $_POST['email']);
+    $querry_Eintrag_Nutzer->bindValue(2, $_POST['vorname']);
+    $querry_Eintrag_Nutzer->bindValue(3, $_POST['nachname']);
+    $querry_Eintrag_Nutzer->bindValue(4, $_POST['straße']);
+    $querry_Eintrag_Nutzer->bindValue(5, $_POST['plz']);
+    $querry_Eintrag_Nutzer->bindValue(6, $_POST['tele']);
+    $querry_Eintrag_Nutzer->bindValue(7, sha1($_POST['passwort']));
+    $querry_Eintrag_Nutzer->bindValue(8, $bild);
 
+    $querry_Eintrag_Nutzer->execute();
 
-    $verbindung->close();
     echo "Erfolg!";
 } else {
     echo "Nichts vorhanden!";
