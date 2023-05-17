@@ -43,10 +43,10 @@
   <div class="needAName">
     <div class="suche">
       <form>
-        <div class="suche_layout">
+        <div class="suche_layout" action="index.php" method="GET">
           <label for="sucheingabe">Suche:</label>
-          <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
-          <button id="suche" name="suche"></button>
+          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
+          <button type="submit" id="suche"></button>
         </div>
       </form>
     </div>
