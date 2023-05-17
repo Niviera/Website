@@ -3,9 +3,10 @@
 include "db_Verbindung.php";
 
 /* Query */
-$query = "SELECT * FROM Kategorie";
-$ergebnis = $verbindung->query($query);
-$ergebnis = $ergebnis->fetchAll();
+$query = $verbindung->prepare("SELECT * FROM Kategorie");
+
+$query->execute();
+$ergebnis = $query->fetchAll();
 
 foreach ($ergebnis as $reihe) {
     $wert = htmlentities($reihe["ID"]);

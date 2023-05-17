@@ -2,11 +2,26 @@
 include "db_Verbindung.php";
 
 
-/* Such anfrage */
-$query = "SELECT Hilfsgesuch.ID, Titel, Beschreibung, Nutzer.ID as nutzerID,Vorname, Nachname 
-          FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID";
+/* Such abfrage spezifizieren */
+if (isset($_GET['sucheingabe'])) {
+  $query = $verbindung->prepare("SELECT Hilfsgesuch.ID, Titel, Beschreibung, Nutzer.ID as nutzerID,Vorname, Nachname 
+            FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID 
+            WHERE Beschreibung LIKE '%" . $_GET['sucheingabe'] . "%' 
+            OR Vorname LIKE '%" . $_GET['sucheingabe'] . "%'
+            OR Nachname LIKE '%" . $_GET['sucheingabe'] . "%'
+            OR Titel LIKE '%" . $_GET['sucheingabe'] . "%'
+            ");
+  //$query->bindValue(1, $_GET['sucheingabe']);
+} else {
+  $query = $verbindung->prepare("SELECT Hilfsgesuch.ID, Titel, Beschreibung, Nutzer.ID as nutzerID,Vorname, Nachname 
+            FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID
+            ");
+}
 
-foreach ($verbindung->query($query) as $reihe) {
+$query->execute();
+$query = $query->fetchAll();
+
+foreach ($query as $reihe) {
   $titel = htmlentities($reihe['Titel']);
   $pin_ID = htmlentities($reihe['ID']);
   $beschreibung = htmlentities($reihe['Beschreibung']);
