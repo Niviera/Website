@@ -3,10 +3,14 @@ Bekannte Fehler:
 - versehentlich Inline-CSS verwendet
 
 Quellen:
-- Es wurde "https://www.w3schools.com" verwendet
+    HTML/CSS:
+        - Es wurde "https://www.w3schools.com" verwendet
     Bilder:
-    - https://www.php-kurs.com/upload-dateien-mit-php.htm
-    - https://stackoverflow.com/questions/6755192/how-to-check-uploaded-file-type-in-php
+        - https://www.php-kurs.com/upload-dateien-mit-php.htm
+        - https://stackoverflow.com/questions/6755192/how-to-check-uploaded-file-type-in-php
+    Datenbank:
+        - https://stackoverflow.com/questions/1661863/pdo-mysql-how-to-know-if-insert-was-successful
+    
 
 Verwendete Programme:
 - Xampp 8.2.0-0
