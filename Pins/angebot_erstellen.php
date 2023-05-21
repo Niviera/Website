@@ -30,10 +30,9 @@ include "../Datenbank/db_AngebotErstellen.php";
         <form action="angebot_erstellen.php" method="POST">
             <div class="layout">
                 <h1>Angebot erstellen:</h1>
-                <!-- TODO: Ändere Ersteller auf Richtigen, vermutlich erst mit Sessions! -->
-                <label for="ersteller" hidden>ersteller</label><input id="ersteller" name="ersteller" value="1" hidden>
                 <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
-                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" required>
+                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" maxlength="20"
+                    required>
                     <?php
                     include "../Datenbank/db_abfrage_Kategorien.php";
                     /* Darstellung */
@@ -45,7 +44,7 @@ include "../Datenbank/db_AngebotErstellen.php";
                     ?>
                 </select>
                 <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
-                    type="text" required></textarea>
+                    type="text" maxlength="50" required></textarea>
                 <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
             </div>
         </form>

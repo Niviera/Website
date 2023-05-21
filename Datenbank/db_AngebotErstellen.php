@@ -10,7 +10,7 @@ if (isset($_POST['abgeschickt'])) {
     $query->bindValue(1, $_POST['titel']);
     $query->bindValue(2, $_POST['beschreibung']);
     $query->bindValue(3, $_POST['kategorie']);
-    $query->bindValue(4, $_POST['ersteller']);
+    $query->bindValue(4, $_SESSION['UID']);
 
     /* Eintragung des Hilfsangebots */
     $query->execute();

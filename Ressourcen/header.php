@@ -18,7 +18,7 @@
                         <li class="eigenes_position"><a href="' . $konto . 'eigenes_konto.php">Konto</a></li>
                         <li class=uebersicht_position"><a href="' . $pins . 'uebersicht.php"> Übersicht</a></li>
                         <li class="erstellen_position"><a href="' . $pins . 'angebot_erstellen.php">Angebot erstellen</a></li>
-                        <li class="loginAbmelden_position"><a href="' . $start . 'index.php">Abmelden</a></li>';
+                        <li class="loginAbmelden_position"><a href="' . $konto . 'abmelden.php">Abmelden</a></li>';
                   }
                   ?>
 
@@ -34,13 +34,13 @@
                         if ($_SESSION['UID'] == "") {
                               echo '
                         <a href="' . $konto . 'konto_erstellen.php"> Registrieren</a>
-                        <a href="' . $konto . 'login_formular"> Login </a>';
+                        <a href="' . $konto . 'login_formular.php"> Login </a>';
                         } else {
                               echo '
                         <a href="' . $konto . 'eigenes_konto.php">Konto</a>
                         <a href="' . $pins . 'uebersicht.php"> Übersicht</a>
                         <a href="' . $pins . 'angebot_erstellen.php">Angebot erstellen</a>
-                        <a href="' . $start . 'index.php">Abmelden</a>';
+                        <a href="' . $konto . 'abmelden.php">Abmelden</a>';
                         }
                         ?>
                   </div>

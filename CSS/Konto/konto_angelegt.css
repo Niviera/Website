@@ -1,13 +1,13 @@
-.Container_Main_Angelegt{
+.Container_Main{
     width: 100%;
     height: 70vh;
     display: flex;
 }
 
-.Container_Main_Angelegt .Nachricht_Angelegt{
+.Container_Main .nachricht{
     width: 60%;
-    height: fit-content;
-    text-align: center;
+    height: 50%;
+    display: flex;
     margin: auto;
     /**/
     border: 0.5px solid #6E7880;
@@ -16,8 +16,8 @@
     
 }
 
-.Nachricht_Angelegt h1{
+.nachricht h1{
+    margin: auto;
     font-size: 1.3em;
-    margin-top: 10px;
-    margin-bottom: 20px;
+
 }

@@ -21,8 +21,8 @@ session_start();
     include "../Ressourcen/header.php";
     ?>
     <!-- Inhalt -->
-    <div class="Container_Main_Angelegt">
-        <div class="Nachricht_Angelegt">
+    <div class="Container_Main">
+        <div class="nachricht">
             <?php
             include "../Datenbank/db_Registrierung.php";
             ?>
