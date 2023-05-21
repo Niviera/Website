@@ -1,5 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +11,7 @@
     <title>Konto erstellt</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/konto_angelegt.css">
 </head>
 
 <body>
@@ -17,9 +21,13 @@
     include "../Ressourcen/header.php";
     ?>
     <!-- Inhalt -->
-    <?php
-    include "../Datenbank/db_Registrierung.php";
-    ?>
+    <div class="Container_Main_Angelegt">
+        <div class="Nachricht_Angelegt">
+            <?php
+            include "../Datenbank/db_Registrierung.php";
+            ?>
+        </div>
+    </div>
     <!-- footer -->
     <?php
     include "../Ressourcen/footer.php";

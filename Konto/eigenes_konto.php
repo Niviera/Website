@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "../Datenbank/db_KontoInformationAbfrage.php"
+    ?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -24,12 +28,12 @@
 
             <div class="layout">
                 <h1> Eigenes Konto </h1>
-                <label for="vorname">Vorname:</label><input id="vorname" type="text" value="Lucas">
-                <label for="nachname">Nachname:</label><input id="nachname" type="text" value="Christoffers">
-                <label for="straße">Straße:</label><input id="straße" type="text" value="Igelstraße 9a">
-                <label for="plz">PLZ:</label><input id="plz" type="text" value="26655">
-                <label for="stadt">Stadt:</label><input id="stadt" type="text" value="Westerstede">
-                <label for="email">Email:</label><input id="email" type="email" value="lucaschristoffers1@gmail.com">
+                <label for="vorname">Vorname:</label><input id="vorname" type="text" value=<?php echo $ergebnis['Vorname'] ?>>
+                <label for="nachname">Nachname:</label><input id="nachname" type="text" value=<?php echo $ergebnis['Nachname'] ?>>
+                <label for="straße">Straße:</label><input id="straße" type="text" value=<?php echo $ergebnis['Addresse'] ?>>
+                <label for="plz">PLZ:</label><input id="plz" type="text" value=<?php echo $ergebnis['PLZ'] ?>>
+                <label for="stadt">Stadt:</label><input id="stadt" type="text" value=<?php echo $ergebnis['Name'] ?>>
+                <label for="email">Email:</label><input id="email" type="email" value=<?php echo $ergebnis['EMail'] ?>>
                 <label for="bearbeiten">Daten bearbeiten:</label><input id="bearbeiten" type="checkbox" required>
                 <button type="submit">Ändern</button>
             </div>

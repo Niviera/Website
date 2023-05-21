@@ -1,8 +1,11 @@
 <?php
+
+session_start();
+
 include "../Datenbank/db_KontoInformationAbfrage.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -65,7 +68,9 @@ include "../Datenbank/db_KontoInformationAbfrage.php";
                     <div class="kategorie">Stadt</div>
                     <div class="doppelpunkt">:</div>
                 </div>
-                <div class="info schrift">Westerstede</div>
+                <div class="info schrift">
+                    <?php echo $ergebnis['Name'] ?>
+                </div>
                 <div class="layout_kategorie schrift">
                     <div class="kategorie">Tel-Nr.</div>
                     <div class="doppelpunkt">:</div>

@@ -56,10 +56,17 @@ if (isset($_POST['abgeschickt'])) {
     $querry_Eintrag_Nutzer->bindValue(7, sha1($_POST['passwort']));
     $querry_Eintrag_Nutzer->bindValue(8, $bild);
 
-    $querry_Eintrag_Nutzer->execute();
+    if ($querry_Eintrag_Nutzer->execute()) {
+        $query = "SELECT ID FROM Nutzer WHERE EMail = ?";
+        $query = $verbindung->prepare($query);
+        $query->bindValue(1, $_POST['email']);
+        $query->execute();
+        $query = $query->fetch();
+        $_SESSION['UID'] = $query['ID'];
+    }
+    echo "Alles hat geklappt <br> Herzlich wilkommen " . $_POST['vorname'] . " " . $_POST['nachname'];
 
-    echo "Erfolg!";
 } else {
-    echo "Nichts vorhanden!";
+    echo "<h1>Nichts vorhanden!</h1>";
 }
 ?>

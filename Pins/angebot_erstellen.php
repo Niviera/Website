@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../Datenbank/db_AngebotErstellen.php";
 ?>
 
@@ -34,7 +35,13 @@ include "../Datenbank/db_AngebotErstellen.php";
                 <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
                 <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" required>
                     <?php
-                    include "../Datenbank/db_Kategorien.php";
+                    include "../Datenbank/db_abfrage_Kategorien.php";
+                    /* Darstellung */
+                    foreach ($query as $reihe) {
+                        $wert = htmlentities($reihe["ID"]);
+                        $bezeichnung = htmlentities($reihe["Name"]);
+                        echo "<option value=" . $wert . ">" . $bezeichnung . "</option>";
+                    }
                     ?>
                 </select>
                 <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"

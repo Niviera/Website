@@ -103,6 +103,10 @@
 }
 
 /* Design Box Angebotsübersicht */
+.Container_Schwarzes_Brett{
+    display: flex;
+}
+
 .Container_kleine_Angebote{
     /* Größe */
     width: 99.7%; 
@@ -111,7 +115,10 @@
     /* Ausgabe */
     display: flex;
     flex-wrap: wrap;
+    min-height: 408px;
 }
+
+
 
 .Container_kleine_Angebote div{
     /* Größe und äußeres Design */
@@ -275,6 +282,7 @@
     }
 
     .erweitertes_Such_Navi a{
+        color: black;
         display: block;
         padding: 10px 5px;
         text-decoration: none;
@@ -283,6 +291,10 @@
     .erweitertes_Such_Navi a:hover{
         background-color: #5693BF;
         color: white;
+    }
+
+    .erweitertes_Such_Navi .active{
+        background-color: #5693BF;
     }
 
     /* Bereich "Über diese Seite" */
