@@ -26,7 +26,7 @@ CREATE TABLE Nutzer(
 CREATE TABLE Hilfsgesuch(
     ID int NOT NULL AUTO_INCREMENT,
     Titel Varchar(20),
-    Beschreibung Varchar(50),
+    Beschreibung Varchar(1200),
     Kategorie int,
     Ersteller int,
     PRIMARY KEY(ID),
