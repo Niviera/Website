@@ -1,6 +1,6 @@
 <?php
 include "db_Verbindung.php";
-$query = "SELECT Hilfsgesuch.ID, Titel, Beschreibung, Kategorie ,Nutzer.ID as nutzerID,Vorname, Nachname 
+$query = "SELECT Hilfsgesuch.ID, Titel, SUBSTRING(Hilfsgesuch.Beschreibung, 1, 100) AS Beschreibung, Kategorie ,Nutzer.ID as nutzerID,Vorname, Nachname 
             FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID";
 $query_Zusatz_1 = "";
 $query_Zusatz_2 = "";

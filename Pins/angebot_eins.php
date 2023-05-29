@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "../Datenbank/db_Detail_Angebot.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,29 +29,23 @@ session_start();
         <!-- Title -->
         <div class="Container_Angebot">
             <div class="box3">
-                <h1> Zu verschenken </h1>
+                <h1> <?php echo $ergebnis['Titel'] ?> </h1>
             </div>
             <div class="box1">
-                <img src="../Bilder/profile/Lucas.jpeg" alt="Profil Bild">
+                <img src= <?php  echo '../Bilder/profile/'. $ergebnis['bild'] ?> alt="Profil Bild">
                 <!-- Name -->
-                <p>Lucas Christoffers</p>
+                <p><?php echo $ergebnis['Vorname']. ' '. $ergebnis['Nachname'] ?></p>
 
             </div>
 
             <!-- Beschreibung -->
             <div class="box2">
                 <p>
-                    Hey, dies ist mal wieder ein einfach quatsch Text, der ausgedacht worden ist. Denn damit soll
-                    einfach getestet werden, wie der Text tatsächlich aussieht und wie man damit herumspielen kann.
-                    Besonders wichtig ist es, sobald er mal ein klein wenig länger ausfällt. Aber irgendwie wird es
-                    immer schwerer sich quatsch auszudenken... vielleicht hätte ich einfach versuchen sollen einen
-                    richtigen Text zu schreiben, nun bin aber schon relativ weit hiermit und höre bestimmt nicht auf.
-                    Also setzen wir diesen sinnlosen Roman fort und dass nur für den simplen Grund, um längere Texte mal
-                    auszuprobieren.
+                    <?php echo $ergebnis['Beschreibung'] ?>
                 </p>
             </div>
             <div class="box4">
-                <a href="mailto:">Nachricht</a>
+                <a href= <?php echo "mailto:".$ergebnis['EMail']?>>Nachricht</a>
             </div>
         </div>
     </div>

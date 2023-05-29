@@ -54,7 +54,7 @@ nav .navi{
 nav ul{
     display: grid;
     grid-template-rows: 40px;
-    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-columns: 10% 10% 16% 10% 4% 10% 10% 10% 10%;
     grid-template-areas: 
     "Startseite Uebersicht Erstellen EigenesKonto Nichts Nichts Nichts Nichts Registrieren LoginAbmelden";
     width: 100%;
@@ -121,9 +121,8 @@ nav a:hover{
 
 @media(min-width:800px) {
     nav ul{
-        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-        grid-template-areas: 
-        "Startseite Uebersicht Erstellen EigenesKonto Nichts Nichts Nichts Nichts Registrieren LoginAbmelden";
+        grid-template-columns: 10% 10% 16% 10% 4% 10% 10% 10% 10%;
+        grid-template-areas: "Startseite Uebersicht Erstellen EigenesKonto Nichts Nichts Nichts Nichts Registrieren LoginAbmelden";
     }
 
     #header{

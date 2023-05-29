@@ -35,6 +35,7 @@ if (isset($_POST['abgeschickt'])) {
     $querry_Stadt_Kontrolle = $verbindung->prepare("SELECT COUNT(PLZ) as anzahl FROM Stadt WHERE PLZ = ?");
 
 
+    /* TODO: Lagere Stadt abfrage aus */
     /* Kontrolle ob Stadt bereits bekannt ist */
     $querry_Stadt_Kontrolle->bindValue(1, $_POST['plz']);
     $querry_Stadt_Kontrolle->execute();

@@ -16,7 +16,7 @@
                   } else {
                         echo '
                         <li class="eigenes_position"><a href="' . $konto . 'eigenes_konto.php">Konto</a></li>
-                        <li class=uebersicht_position"><a href="' . $pins . 'uebersicht.php"> Übersicht</a></li>
+                        <li class="uebersicht_position"><a href="' . $pins . 'uebersicht.php"> Übersicht</a></li>
                         <li class="erstellen_position"><a href="' . $pins . 'angebot_erstellen.php">Angebot erstellen</a></li>
                         <li class="loginAbmelden_position"><a href="' . $konto . 'abmelden.php">Abmelden</a></li>';
                   }

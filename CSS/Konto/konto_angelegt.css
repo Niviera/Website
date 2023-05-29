@@ -21,3 +21,10 @@
     font-size: 1.3em;
 
 }
+
+@media(max-width: 680px){
+    .Container_Main .nachricht{
+        width: 75%;
+    }
+
+}

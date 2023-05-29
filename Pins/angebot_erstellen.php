@@ -31,8 +31,7 @@ include "../Datenbank/db_AngebotErstellen.php";
             <div class="layout">
                 <h1>Angebot erstellen:</h1>
                 <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
-                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" maxlength="20"
-                    required>
+                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie">
                     <?php
                     include "../Datenbank/db_abfrage_Kategorien.php";
                     /* Darstellung */
@@ -44,7 +43,7 @@ include "../Datenbank/db_AngebotErstellen.php";
                     ?>
                 </select>
                 <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
-                    type="text" maxlength="50" required></textarea>
+                    required></textarea>
                 <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
             </div>
         </form>

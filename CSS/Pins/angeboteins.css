@@ -10,19 +10,14 @@
 }
 
 
-.Container_Angebot .box2 .box1 {
-    width: 45%;
-    padding: 15px;
-}
-
 .Container_Angebot .box1 {
+    margin: auto;
+    width: 25%;
     text-align: center;
 }
 
 .Container_Angebot .box2 {
-
     width: 75%;
-    padding: 30px;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -50,10 +45,9 @@
 }
 
 img {
-    width: 175px;
-    height: 175px;
+    width: 75%;
+    max-width: 175px;
     border-radius: 75px;
-    float: left;
 }
 
 .Container_Angebot {
@@ -67,4 +61,15 @@ img {
     border: 0.5px solid #6E7880;
     box-shadow: 9px 10px 15px #6E7880;
     border-radius: 25px;
+}
+
+@media(max-width: 601px){
+    .Container_Angebot .box1 {
+        width: 100%;
+    }
+
+    .Container_Angebot .box2 {
+        width: 100%;
+    }
+
 }

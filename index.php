@@ -49,8 +49,8 @@ session_start();
       <form name="test" action="index.php" method="GET">
         <div class="suche_layout">
           <label for="sucheingabe">Suche:</label>
-          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder=<?php echo $_GET['sucheingabe'] ?>>
-          <button type="submit" id="suche"></button>
+          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="<?php echo $_GET['sucheingabe'] ?>">
+          <button type="submit" value="suche" id="suche"></button>
         </div>
       </form>
     </div>
@@ -99,10 +99,9 @@ session_start();
 
           echo '<div>
                 <p class="ueberschrift"> ' . $titel . ' </p>
-                <a class="beschreibung" href="Pins/angebot_eins.php?id=' . $pin_ID . '"> ' . $beschreibung . '</a>
+                <a class="beschreibung" href="Pins/angebot_eins.php?id=' . $pin_ID . '"> ' . $beschreibung . '...</a>
                 <a class="autor" href="Konto/konto_uebersicht.php?id=' . $nutzer_ID . '">' . $vorname . ' ' . $nachname . '</a>
               </div>';
-
         }
 
         ?>
