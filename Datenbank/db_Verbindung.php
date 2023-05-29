@@ -4,9 +4,10 @@ $benutzer = 'Lucas';
 $passwort = '6vgW.pyxaGckAKW5';
 $datenbank = 'Nachbarschaftshilfe';
 
-$verbindung = new mysqli($host, $benutzer, $passwort, $datenbank);
-
-if ($verbindung->connect_error) {
-    die("Connection failed: " . $verbindung->connect_error);
+try {
+    $verbindung = new PDO('mysql:host=' . $host . ';dbname=' . $datenbank . ';charset=utf8', $benutzer, $passwort);
+} catch (Exception $e) {
+    echo $e->getMessage();
 }
+
 ?>

@@ -6,35 +6,43 @@
 <nav>
       <div class="navi desktop">
             <ul>
-                  <li><a href="<?php echo $start . 'index.php' ?>">Startseite</a></li>
-                  <li><a href="<?php echo $konto . 'eigenes_konto.php' ?>">Konto</a></li>
-                  <li><a href="<?php echo $pins . 'uebersicht.php' ?>"> Übersicht</a></li>
-                  <li><a href="<?php echo $pins . 'angebot_erstellen.php' ?>">Angebot erstellen</a></li>
-                  <li style="float: right;"><a href="<?php echo $konto . 'konto_erstellen.php' ?>"> Registrieren
-                        </a></li>
-                  <li style="float: right;"><a href="<?php echo $konto . 'login.php' ?>"> Login </a>
-                  </li>
-                  <li style="float: right;"><a href="<?php echo $start . 'index.php' ?>">Abmelden</a></li>
+                  <li class="start_position"><a href="<?php echo $start . 'index.php' ?>">Startseite</a></li>
+                  <?php
+                  if ($_SESSION['UID'] == "") {
+                        echo '
+                        <li class="registrieren_position"><a href="' . $konto . 'konto_erstellen.php"> Registrieren</a></li>
+                        <li class="loginAbmelden_position"><a href="' . $konto . 'login_formular.php"> Login </a>
+                        </li>';
+                  } else {
+                        echo '
+                        <li class="eigenes_position"><a href="' . $konto . 'eigenes_konto.php">Konto</a></li>
+                        <li class="uebersicht_position"><a href="' . $pins . 'uebersicht.php"> Übersicht</a></li>
+                        <li class="erstellen_position"><a href="' . $pins . 'angebot_erstellen.php">Angebot erstellen</a></li>
+                        <li class="loginAbmelden_position"><a href="' . $konto . 'abmelden.php">Abmelden</a></li>';
+                  }
+                  ?>
+
             </ul>
       </div>
 
       <div class="navi mobile">
-            <a class="size" href="<?php echo $start . 'index.php' ?>">Startseite</a>
-            <div class="dropdownMenuPoint size">
-                  <button class=" dropTrigger">Angebot</button>
+            <a href="<?php echo $start . 'index.php' ?>">Startseite</a>
+            <div class="dropdownMenuPoint">
+                  <button class=" dropTrigger">Menü</button>
                   <div class="dropdown-content">
-                        <a href="<?php echo $pins . 'angebot_erstellen.php' ?>">Angebot erstellen</a>
-                        <a href="<?php echo $pins . 'uebersicht.php' ?>">Übersicht</a>
-                  </div>
-            </div>
-            <div style="width: 40%"></div>
-            <div class="dropdownMenuPoint size">
-                  <button class="dropTrigger">Konto</button>
-                  <div class="dropdown-content right_Drop">
-                        <a href="<?php echo $konto . 'eigenes_konto.php' ?>">Eigene Daten</a>
-                        <a href="<?php echo $konto . 'konto_erstellen.php' ?>"> Registrieren </a>
-                        <a href="<?php echo $konto . 'login.php' ?>"> Login </a>
-                        <a href="<?php echo $start . 'index.php' ?>">Abmelden</a>
+                        <?php
+                        if ($_SESSION['UID'] == "") {
+                              echo '
+                        <a href="' . $konto . 'konto_erstellen.php"> Registrieren</a>
+                        <a href="' . $konto . 'login_formular.php"> Login </a>';
+                        } else {
+                              echo '
+                        <a href="' . $konto . 'eigenes_konto.php">Konto</a>
+                        <a href="' . $pins . 'uebersicht.php"> Übersicht</a>
+                        <a href="' . $pins . 'angebot_erstellen.php">Angebot erstellen</a>
+                        <a href="' . $konto . 'abmelden.php">Abmelden</a>';
+                        }
+                        ?>
                   </div>
             </div>
       </div>

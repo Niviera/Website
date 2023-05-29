@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../Datenbank/db_AngebotErstellen.php";
 ?>
 
@@ -29,16 +30,20 @@ include "../Datenbank/db_AngebotErstellen.php";
         <form action="angebot_erstellen.php" method="POST">
             <div class="layout">
                 <h1>Angebot erstellen:</h1>
-                <!-- TODO: Ändere Ersteller auf Richtigen, vermutlich erst mit Sessions! -->
-                <label for="ersteller" hidden>ersteller</label><input id="ersteller" name="ersteller" value="1" hidden>
                 <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
-                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" required>
+                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie">
                     <?php
-                    include "../Datenbank/db_Kategorien.php";
+                    include "../Datenbank/db_abfrage_Kategorien.php";
+                    /* Darstellung */
+                    foreach ($query as $reihe) {
+                        $wert = htmlentities($reihe["ID"]);
+                        $bezeichnung = htmlentities($reihe["Name"]);
+                        echo "<option value=" . $wert . ">" . $bezeichnung . "</option>";
+                    }
                     ?>
                 </select>
                 <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
-                    type="text" required></textarea>
+                    required></textarea>
                 <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
             </div>
         </form>

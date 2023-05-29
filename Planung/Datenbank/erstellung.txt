@@ -16,6 +16,7 @@ CREATE TABLE Nutzer(
     Vorname VARCHAR(20),
     Nachname VARCHAR(20),
     Addresse VARCHAR(40),
+    bild VARCHAR(40),
     PLZ int,
     telnr int,
     passwort VARCHAR(255),

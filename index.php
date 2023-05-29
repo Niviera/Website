@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -37,94 +41,70 @@
       </div>
     </div>
   </div>
-
+  <!-- Schwarzes Brett -->
   <!-- Auflistung aller Angebote. -->
   <!-- Trennstrich -->
   <div class="needAName">
     <div class="suche">
-      <form>
+      <form name="test" action="index.php" method="GET">
         <div class="suche_layout">
           <label for="sucheingabe">Suche:</label>
-          <input id="sucheingabe" type="text" class="suchEingabe" placeholder="Auf '...' Suchen">
-          <button id="suche" name="suche"></button>
+          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="<?php echo $_GET['sucheingabe'] ?>">
+          <button type="submit" value="suche" id="suche"></button>
         </div>
       </form>
     </div>
   </div>
 
   <!-- Box für Liste Angebote -->
-  <div style="display: flex;">
+  <div class="Container_Schwarzes_Brett">
     <!-- erweiterte Suche -->
     <div class="erweitertes_Such_Navi">
       <!-- Suche -->
       <ul>
-        <li> <a>Garten</a> </li>
-        <li><a>Zu verschenken</a> </li>
+        <?php
+        include "Datenbank/db_abfrage_Kategorien.php";
+        /* Darstellung */
+        $active = "";
+        if ($_GET['kategorie'] == '') {
+          $active = "active";
+        }
+        echo '<li> <a class="' . $active . '" href="index.php?sucheingabe=' . $_GET['sucheingabe'] . '&kategorie=">Alles</a></li>';
+
+        foreach ($query as $reihe) {
+          $wert = htmlentities($reihe["ID"]);
+          $bezeichnung = htmlentities($reihe["Name"]);
+          $active = "";
+          if ($_GET['kategorie'] == $wert) {
+            $active = "active";
+          }
+          echo '<li> <a class="' . $active . '" href="index.php?sucheingabe=' . $_GET['sucheingabe'] . '&kategorie=' . $wert . '">' . $bezeichnung . '</a> </li>';
+        }
+        ?>
       </ul>
     </div>
     <!-- Angebote -->
     <div class="Container_kleineAngebote_und_Buttons">
       <div class="Container_kleine_Angebote">
-        <!-- Angebot 1 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 2 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 3 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 4 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 5 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 6 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 7 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 8 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 9 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
-        <!-- Angebot 10 -->
-        <div>
-          <p class="ueberschrift"> Hallo </p>
-          <a class="beschreibung" href="Pins/angebot_eins.php"> Dies ist ein kleiner beispieltext zum Testen </a>
-          <a class="autor" href="Konto/konto_uebersicht.php">Lucas Christoffers</a>
-        </div>
+        <?php
+        include "Datenbank/db_abfrageHilfsangebote.php";
+        /* Darstellung */
+        foreach ($query as $reihe) {
+          $titel = htmlentities($reihe['Titel']);
+          $pin_ID = htmlentities($reihe['ID']);
+          $beschreibung = htmlentities($reihe['Beschreibung']);
+          $nutzer_ID = htmlentities($reihe['nutzerID']);
+          $vorname = htmlentities($reihe['Vorname']);
+          $nachname = htmlentities($reihe['Nachname']);
+
+          echo '<div>
+                <p class="ueberschrift"> ' . $titel . ' </p>
+                <a class="beschreibung" href="Pins/angebot_eins.php?id=' . $pin_ID . '"> ' . $beschreibung . '...</a>
+                <a class="autor" href="Konto/konto_uebersicht.php?id=' . $nutzer_ID . '">' . $vorname . ' ' . $nachname . '</a>
+              </div>';
+        }
+
+        ?>
       </div>
       <!-- Buttons -->
       <div class="Container_Buttons">

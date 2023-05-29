@@ -23,7 +23,7 @@
         <h3>Registrierung:</h3>
         <form action="konto_angelegt.php" method="POST" enctype="multipart/form-data">
             <div class="ContainerRubrik">
-                <legend>Persönliche Daten:</legend>
+                <div class="legend">Persönliche Daten:</div>
                 <label for="vorname">Vorname:</label>
                 <input id="vorname" name="vorname" type="text" required>
                 <br>
@@ -43,7 +43,7 @@
                 <input id="stadt" name="stadt" type="text">
             </div>
             <div class="ContainerRubrik">
-                <legend>Kontodaten:</legend>
+                <div class="legend">Kontodaten:</div>
                 <label for="email">E-Mail:</label>
                 <input id="email" name="email" type="email" required>
                 <br>
@@ -57,7 +57,7 @@
                 <input id="passwortwdh" name="passwortwdh" type="password" required>
             </div>
             <div class="ContainerRubrik">
-                <legend>Bild hochladen:</legend>
+                <div class="legend">Bild hochladen:</div>
                 <label for="dateiHochladen">Datei:</label>
                 <input id="dateiHochladen" name="dateiHochladen" type="file">
             </div>
