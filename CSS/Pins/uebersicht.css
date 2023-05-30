@@ -21,15 +21,15 @@
 }
 
 #Container_Main_uebersicht .Container_Liste {
-    height: 100%;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 250px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-    grid-auto-rows: 30px;
+    grid-template-columns: repeat(auto-fill, 40% 25% 13% 22%);
+    grid-auto-rows: auto;
+    row-gap: 10px;
     border-radius: 25px;
     border: 0.5px solid #6E7880;
     box-shadow: 9px 10px 15px #6E7880;
@@ -39,6 +39,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    border-bottom: 1px solid black;
 }
 
 .Container_Liste .eintrag {
@@ -47,13 +48,66 @@
     text-align: center;
 }
 
-@media(max-width:455px) {
+.eintrag .fakeButton{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.eintrag a{
+    text-decoration: none;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 25px;
+    width: 50%;
+    background-color: #EFEFEF;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.Container_Liste .Container_Button{
+    grid-column: 1/5;
+    display: flex;
+    width: 100%;
+}
+
+
+
+.Container_Button button{
+    width: 33%;
+    height: 40px;
+    border-radius: 25px;
+    border: 0.5px solid black;
+    margin: auto;
+}
+
+
+
+
+@media(max-width:651px) {
     #Container_Main_uebersicht .Container_Liste {
-        width: 90%;
-        grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, 50% 25% 25%);
     }
 
     .Container_Liste .Kategorie_aktiv {
         display: none;
     }
+
+
+.Container_Liste .Container_Button{
+    grid-column: 1/4;
+    }
+
+    .Container_Button button{
+        width: 50%;
+    }
+
+    .eintrag a{
+        width: 70%;
+    }
+
 }
+

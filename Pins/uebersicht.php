@@ -1,5 +1,8 @@
 <?php
 session_start();
+include "../Datenbank/db_Angebot_Loeschen.php";
+include "../Datenbank/db_Abfrage_Eigene_Angebote.php";
+$_SESSION['CheckDelete'] = array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,37 +29,28 @@ session_start();
 
     <div id="Container_Main_uebersicht">
         <h3> Uebersicht: </h3>
-        <div class="Container_Liste">
+        <form class="Container_Liste" action="uebersicht.php" method="POST">
             <!-- Überschrift -->
-            <div class="ueberschrift">Nummer:</div>
             <div class="ueberschrift">Titel:</div>
             <div class="ueberschrift Kategorie_aktiv">Kategorie:</div>
             <div class="ueberschrift">Loeschen:</div>
             <div class="ueberschrift">Aendern:</div>
             <!-- Listeneinträge -->
-            <!-- Angebot 1 -->
-            <div class="eintrag">1</div>
-            <div class="eintrag">abzugeben</div>
-            <div class="eintrag Kategorie_aktiv">abzugeben</div>
-            <div class="eintrag"><input type="checkbox" id="löschen" name="löschen" value="löschen">
+            <?php
+            foreach($ergebnis as $row){
+                array_push($_SESSION['CheckDelete'], 'entferne'.$row['ID']);
+                echo 
+                '<div class="eintrag">'.$row['Titel'].'</div>
+                <div class="eintrag Kategorie_aktiv">'.$row['Name'].'</div>
+                <div class="eintrag"><input type="checkbox" id="id" name="entferne'.$row['ID'].'" value="'.$row['ID'].'">
+                </div>
+                <div class="eintrag"> <a class="fakeButton" href="angebot_aendern.php?ID='.$row['ID'].'">Ändern</a></div>';
+            }
+            ?>
+            <div class="Container_Button">
+                <button type="submit" value="loeschen" name="loeschen"> Löschen </button>
             </div>
-            <div class="eintrag"> <button type="button">Ändern </button></div>
-            <!-- Angebot 2 -->
-            <div class="eintrag">2</div>
-            <div class="eintrag">abzugeben</div>
-            <div class="eintrag Kategorie_aktiv">abzugeben</div>
-            <div class="eintrag"><input type="checkbox" id="löschen" name="löschen" value="löschen">
-            </div>
-            <div class="eintrag"> <button type="button">Ändern</button></div>
-            <!-- Angebot 3 -->
-            <div class="eintrag">3</div>
-            <div class="eintrag">abzugeben</div>
-            <div class="eintrag Kategorie_aktiv">abzugeben</div>
-            <div class="eintrag"><input type="checkbox" id="löschen" name="löschen" value="löschen">
-            </div>
-            <div class="eintrag"> <button type="button">Ändern </button> </div>
-
-        </div>
+        </form>
     </div>
     <!-- footer -->
     <?php
