@@ -44,7 +44,7 @@ $_SESSION['CheckDelete'] = array();
                 <div class="eintrag Kategorie_aktiv">'.$row['Name'].'</div>
                 <div class="eintrag"><input type="checkbox" id="id" name="entferne'.$row['ID'].'" value="'.$row['ID'].'">
                 </div>
-                <div class="eintrag"> <button type="button">Ändern </button></div>';
+                <div class="eintrag"> <a class="fakeButton" href="angebot_aendern.php?ID='.$row['ID'].'">Ändern</a></div>';
             }
             ?>
             <div class="Container_Button">

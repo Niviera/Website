@@ -27,7 +27,7 @@
     margin-bottom: 250px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, 40% 30% 15% 15%);
+    grid-template-columns: repeat(auto-fill, 40% 25% 13% 22%);
     grid-auto-rows: auto;
     row-gap: 10px;
     border-radius: 25px;
@@ -48,11 +48,32 @@
     text-align: center;
 }
 
+.eintrag .fakeButton{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.eintrag a{
+    text-decoration: none;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 25px;
+    width: 50%;
+    background-color: #EFEFEF;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
 .Container_Liste .Container_Button{
     grid-column: 1/5;
     display: flex;
     width: 100%;
 }
+
+
 
 .Container_Button button{
     width: 33%;
@@ -63,10 +84,12 @@
 }
 
 
-@media(max-width:455px) {
+
+
+@media(max-width:651px) {
     #Container_Main_uebersicht .Container_Liste {
-        width: 90%;
-        grid-template-columns: repeat(auto-fill, 60% 20% 20%);
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, 50% 25% 25%);
     }
 
     .Container_Liste .Kategorie_aktiv {
@@ -81,4 +104,10 @@
     .Container_Button button{
         width: 50%;
     }
+
+    .eintrag a{
+        width: 70%;
+    }
+
 }
+
