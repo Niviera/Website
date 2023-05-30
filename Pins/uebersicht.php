@@ -40,21 +40,30 @@ session_start();
             <div class="eintrag Kategorie_aktiv">abzugeben</div>
             <div class="eintrag"><input type="checkbox" id="löschen" name="löschen" value="löschen">
             </div>
-            <div class="eintrag"> <button type="button">Ändern </button></div>
+            <div class="eintrag"> <button type="button"> <a href="<?php echo $start . 'angebot_aendern.php' ?>">
+                        < </a>Ändern
+                </button>
+            </div>
             <!-- Angebot 2 -->
             <div class="eintrag">2</div>
             <div class="eintrag">abzugeben</div>
             <div class="eintrag Kategorie_aktiv">abzugeben</div>
             <div class="eintrag"><input type="checkbox" id="löschen" name="löschen" value="löschen">
             </div>
-            <div class="eintrag"> <button type="button">Ändern</button></div>
+            <div class="eintrag"> <button type="button"> <a href="<?php echo $start . 'angebot_aendern.php' ?>">
+                        < </a>Ändern
+                </button>
+            </div>
             <!-- Angebot 3 -->
             <div class="eintrag">3</div>
             <div class="eintrag">abzugeben</div>
             <div class="eintrag Kategorie_aktiv">abzugeben</div>
             <div class="eintrag"><input type="checkbox" id="löschen" name="löschen" value="löschen">
             </div>
-            <div class="eintrag"> <button type="button">Ändern </button> </div>
+            <div class="eintrag"> <button type="button"> <a href="<?php echo $start . 'angebot_aendern.php' ?>">
+                        < </a>
+                            Ändern
+                </button> </div>
 
         </div>
     </div>
