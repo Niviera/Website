@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../Datenbank/db_AngebotErstellen.php";
+include "../Datenbank/db_angebot_aendern.php";
 
 ?>
 
@@ -11,7 +11,7 @@ include "../Datenbank/db_AngebotErstellen.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angebot erstellen</title>
+    <title>Angebot ändern</title>
 
 
     <!-- Stylesheets -->
@@ -28,24 +28,30 @@ include "../Datenbank/db_AngebotErstellen.php";
     <!-- Content -->
     <div class="Container_Main_Erstellen">
 
-        <form action="angebot_erstellen.php" method="POST">
+        <form action="angebot_aendern.php" method="POST">
             <div class="layout">
-                <h1>Angebot erstellen:</h1>
-                <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
-                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie">
+                <h1>Angebot ändern:</h1>
+                <label for="title">Titel:</label><input id="title" name="titel" type="text" required value="<?php echo $ergebnis['Titel'] ?>">
+                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" required>
                     <?php
                     include "../Datenbank/db_abfrage_Kategorien.php";
                     /* Darstellung */
+                    $zaehler = 0;
                     foreach ($query as $reihe) {
                         $wert = htmlentities($reihe["ID"]);
                         $bezeichnung = htmlentities($reihe["Name"]);
-                        echo "<option value=" . $wert . ">" . $bezeichnung . "</option>";
+                        $zaehler++;
+                        if($zaehler == intval($ergebnis["Kategorie"])){
+                            echo "<option selected value=" . $wert . ">" . $bezeichnung . "</option>";
+                        }else{
+                            echo "<option value=" . $wert . ">" . $bezeichnung . "</option>";
+                        }                   
                     }
                     ?>
                 </select>
                 <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
-                    required></textarea>
-                <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
+                    type="text" required><?php echo $ergebnis['Beschreibung'] ?></textarea>
+                <button type="submit" name="ID" value="<?php echo $id ?>">Ändern</button>
             </div>
         </form>
     </div>
