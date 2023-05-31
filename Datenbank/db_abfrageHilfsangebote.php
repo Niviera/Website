@@ -1,25 +1,30 @@
 <?php
 include "db_Verbindung.php";
+$query = "SELECT Hilfsgesuch.ID, Titel, SUBSTRING(Hilfsgesuch.Beschreibung, 1, 100) AS Beschreibung, Kategorie ,Nutzer.ID as nutzerID,Vorname, Nachname 
+            FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID";
+$query_Zusatz_1 = "";
+$query_Zusatz_2 = "";
 
 
-/* Such anfrage */
-$query = "SELECT Hilfsgesuch.ID, Titel, Beschreibung, Nutzer.ID as nutzerID,Vorname, Nachname 
-          FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID";
-
-foreach ($verbindung->query($query) as $reihe) {
-  $titel = htmlentities($reihe['Titel']);
-  $pin_ID = htmlentities($reihe['ID']);
-  $beschreibung = htmlentities($reihe['Beschreibung']);
-  $nutzer_ID = htmlentities($reihe['nutzerID']);
-  $vorname = htmlentities($reihe['Vorname']);
-  $nachname = htmlentities($reihe['Nachname']);
-
-  echo '<div>
-        <p class="ueberschrift"> ' . $titel . ' </p>
-        <a class="beschreibung" href="Pins/angebot_eins.php?id=' . $pin_ID . '"> ' . $beschreibung . '</a>
-        <a class="autor" href="Konto/konto_uebersicht.php?id=' . $nutzer_ID . '">' . $vorname . ' ' . $nachname . '</a>
-      </div>';
-
+/* Such abfrage spezifizieren */
+if ($_GET['sucheingabe'] != '') {
+  $query_Zusatz_1 = "Beschreibung LIKE '%" . $_GET['sucheingabe'] . "%' 
+            OR Vorname LIKE '%" . $_GET['sucheingabe'] . "%'
+            OR Nachname LIKE '%" . $_GET['sucheingabe'] . "%'
+            OR Titel LIKE '%" . $_GET['sucheingabe'] . "%'
+            ";
+}
+if ($_GET['kategorie'] != '') {
+  $query_Zusatz_2 = "Kategorie = " . $_GET['kategorie'];
 }
 
+/* Query bauen */
+if ($_GET['sucheingabe'] != '' && $_GET['kategorie'] != '') {
+  $query = $query . " WHERE (" . $query_Zusatz_1 . ") AND (" . $query_Zusatz_2 . ")";
+} else if ($_GET['sucheingabe'] != '' || $_GET['kategorie'] != '') {
+  $query = $query . " WHERE " . $query_Zusatz_1 . "" . $query_Zusatz_2;
+}
+$query = $verbindung->prepare($query);
+$query->execute();
+$query = $query->fetchAll();
 ?>

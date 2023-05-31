@@ -14,7 +14,7 @@
     background-color: #dcf0ff;
     display: flex;
     margin: auto;
-    width: 75%;
+    width: 80%;
     max-width: 800px;
     /* 3d-Effekt*/
     border: 0.5px solid #6E7880;
@@ -25,8 +25,27 @@
 .Container_Main_Eigenes form .layout{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+}
+
+.layout .Container_konto{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+}
+
+.layout .profil_Bild{
+    display: flex;
+    width: 20%;
+    margin: auto
+}
+
+
+
+.layout img{  
     margin: auto;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 175px;
 }
 
 .layout input{
@@ -76,8 +95,23 @@
         background-size: 60%;
     }
 
+    .Container_Main_Eigenes form .layout{
+        width: 80%;
+        margin: auto;
+    }
+    
+    .layout .Container_konto{
+        width: 100%;
+    }
+
+    .layout .profil_Bild{
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
     .Container_Main_Eigenes{
-        min-height: 75vh;
+        min-height: 100vh;
     }
 
     .Container_Main_Eigenes form{

@@ -103,6 +103,10 @@
 }
 
 /* Design Box Angebotsübersicht */
+.Container_Schwarzes_Brett{
+    display: flex;
+}
+
 .Container_kleine_Angebote{
     /* Größe */
     width: 99.7%; 
@@ -111,12 +115,15 @@
     /* Ausgabe */
     display: flex;
     flex-wrap: wrap;
+    min-height: 408px;
 }
+
+
 
 .Container_kleine_Angebote div{
     /* Größe und äußeres Design */
     min-width: 175px;
-    width: 175px;
+    width: 80%;
     height: 175px; 
     border: 1px solid black;
     border-radius: 20px;
@@ -127,7 +134,7 @@
     box-shadow: 9px 8px 6px #A4B4BF;
     /* Design innen */
     display: grid;
-    grid-template-rows: 5% 20% 25% 25% 20% 5%;
+    grid-template-rows: 5% 23% 22% 25% 20% 5%;
     grid-template-columns: 5% 20% 25% 25% 20% 5%;
     
 }
@@ -275,6 +282,7 @@
     }
 
     .erweitertes_Such_Navi a{
+        color: black;
         display: block;
         padding: 10px 5px;
         text-decoration: none;
@@ -285,6 +293,10 @@
         color: white;
     }
 
+    .erweitertes_Such_Navi .active{
+        background-color: #5693BF;
+    }
+
     /* Bereich "Über diese Seite" */
     .Bereich_Neueste_Nachricht{
         background-position: -18% 123%;
@@ -292,7 +304,7 @@
 
     .Container_kleine_Angebote{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(190px, 2fr));
+        grid-template-columns: repeat(auto-fill, minmax(230px, 2fr));
         grid-auto-rows: 200px;
     }
 }

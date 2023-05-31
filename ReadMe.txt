@@ -1,6 +1,8 @@
+Verwendet:
+Es wurde eine Datenbank verwendet. Die Struktur befindet sich in dem Ordner Planung/Datenbank mit ein paar bsp Daten.
+
 Bekannte Fehler:
-- center ---> wird auf den nächsten Blatt mit CSS gelöst
-- versehentlich Inline-CSS verwendet
+
 
 Quellen:
     HTML/CSS:

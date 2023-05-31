@@ -45,26 +45,51 @@ nav{
     background-color: #74c4ff; 
 }
 
+
+
 nav .navi{
-    display: flex;
-    min-height: 30px;
+    height: 41px;
 }
 
 nav ul{
-    list-style-type: none;
+    display: grid;
+    grid-template-rows: 40px;
+    grid-template-columns: 10% 10% 16% 10% 4% 10% 10% 10% 10%;
+    grid-template-areas: 
+    "Startseite Uebersicht Erstellen EigenesKonto Nichts Nichts Nichts Nichts Registrieren LoginAbmelden";
     width: 100%;
+    list-style-type: none;
     /* Damit die Liste keinen Abstand hat */
     margin: 0;
     padding: 0;
 }
 
-nav li{
-    float: left;
+.start_position{
+   grid-area: Startseite;
+}
+
+.uebersicht_position{
+    grid-area: Uebersicht;
  }
- 
+
+ .erstellen_position{
+    grid-area: Erstellen;
+ }
+
+ .registrieren_position{
+    grid-area: Registrieren;
+ }
+
+ .loginAbmelden_position{
+    grid-area: LoginAbmelden;
+ }
+
+ .eigenes_position{
+    grid-area: EigenesKonto;
+ }
+
+
 nav a{
-    min-width: 100px;
-    width: fit-content;
     text-decoration: none;
     color: black;
     display: block;
@@ -78,7 +103,28 @@ nav a:hover{
     background-color: #5693BF;
     color: white;
 }
+
+@media(min-width: 601px){
+    /* Seiten navigations */    
+    nav .mobile {
+        display: none;
+    }
+
+    nav ul{
+        grid-template-columns: 15% 15% 22% 15% 3% 15% 15%;
+        grid-template-areas: 
+        "Startseite Uebersicht Erstellen EigenesKonto Nichts Registrieren LoginAbmelden";
+    }
+
+
+}
+
 @media(min-width:800px) {
+    nav ul{
+        grid-template-columns: 10% 10% 16% 10% 4% 10% 10% 10% 10%;
+        grid-template-areas: "Startseite Uebersicht Erstellen EigenesKonto Nichts Nichts Nichts Nichts Registrieren LoginAbmelden";
+    }
+
     #header{
         background-image: url("../Bilder/hintergrund/Header/Header.jpg");
     }
@@ -90,20 +136,23 @@ nav a:hover{
     }
 }
 
-@media(min-width: 601px){
-    /* Seiten navigations */    
-    nav .mobile {
-        display: none;
-    }
-}
 @media(max-width: 600px){
     /* Seitennavigation */
 
     nav .desktop {
         display: none;
     }
+
+    nav .mobile{
+        display: grid;
+        grid-template-columns: 30% 43% 27%;
+        grid-template-rows: 40px;
+    }
+
     nav .dropdownMenuPoint {
         display: inline-block;
+        grid-row: 1/1;
+        grid-column: 3/4;
     }
 
     nav .dropTrigger {
@@ -113,9 +162,6 @@ nav a:hover{
         height:100%;
         width: 100%;
 
-    }
-    nav .size{
-        width: 20%;
     }
 
     nav .right_Drop{
