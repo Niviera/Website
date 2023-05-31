@@ -4,3 +4,19 @@ INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('3','abzugeben');
 INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('4','Renovierung');
 INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('5','Reparatur');
 INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('6','Familie');
+
+INSERT INTO `Stadt`(`PLZ`, `Name`) VALUES ('26655','Westerstede');
+INSERT INTO `Stadt`(`PLZ`, `Name`) VALUES ('26121','Oldenburg');
+INSERT INTO `Stadt`(`PLZ`, `Name`) VALUES ('26160','Bad Zwischenahn');
+
+INSERT INTO `Nutzer`(`ID`, `EMail`, `Vorname`, `Nachname`, `Addresse`, `PLZ`, `telnr`, `bild`, `passwort`) VALUES ('1','lucaschristoffers1@gmail.com','Lucas','Christoffers','Igelstraße 9a','26655','12414124','Lucas.jpeg','a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
+INSERT INTO `Nutzer`(`ID`, `EMail`, `Vorname`, `Nachname`, `Addresse`, `PLZ`, `telnr`, `bild`, `passwort`) VALUES ('2','fritz@gmail.com','Fritz','Walter','Bsp 9a','26121','12414124','standart.jpeg','a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
+
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('1', 'Rasenmähen', 'Ich suche jemanden, der meinen Rasen mähen kann.', '1', '1');
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('2', 'Umzugshilfe', 'Ich benötige Unterstützung beim Umzug in eine neue Wohnung.', '2', '2');
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('3', 'Möbel abzugeben', 'Ich habe einige Möbel, die ich nicht mehr benötige und gerne verschenken möchte.', '3', '1');
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('4', 'Wände streichen', 'Ich brauche Hilfe beim Streichen meiner Wohnzimmerwände.', '4', '2');
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('5', 'Klempnerarbeiten', 'Es gibt ein Leck in meinem Badezimmer, das repariert werden muss.', '5', '1');
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('6', 'Kinderbetreuung', 'Ich suche jemanden, der auf meine Kinder aufpassen kann.', '6', '2');
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('7', 'Malerarbeiten im Wohnzimmer', 'Ich suche jemanden, der mir beim Streichen meines Wohnzimmers hilft. Die Wände sollen in einer neutralen Farbe gestrichen werden. Die Fläche beträgt ca. 40 Quadratmeter. Ich werde alle benötigten Materialien bereitstellen. Es wäre toll, wenn du Erfahrung mit Malerarbeiten hast und mir bei diesem Projekt zur Seite stehen könntest.', '5', '1');
+INSERT INTO Hilfsgesuch(ID, Titel, Beschreibung, Kategorie, Ersteller) VALUES ('8', 'Nachhilfe in Französisch', 'Ich benötige Unterstützung in Französisch, insbesondere bei der Aussprache und dem Schreiben. Ich lerne die Sprache seit einigen Monaten und möchte meine Fähigkeiten weiter verbessern. Der Nachhilfelehrer sollte fließend Französisch sprechen und Erfahrung im Unterrichten haben. Ich bevorzuge persönlichen Unterricht, bin jedoch auch offen für Online-Unterricht.', '6', '2');
