@@ -33,8 +33,13 @@ if(isset($_POST['bestaetigt'])){
     }
     $query = $query . " WHERE ID = ".$_SESSION['UID'];
 
-    $query = $verbindung->prepare($query);
-    $query->execute();
+    try{
+        $query = $verbindung->prepare($query);
+        $query->execute();
+    }catch(Exception $e){
+
+    }
+
 
 }
 ?>

@@ -63,7 +63,7 @@ if (isset($_POST['abgeschickt'])) {
         $querry_Eintrag_Nutzer->bindValue(4, $_POST['straße']);
         $querry_Eintrag_Nutzer->bindValue(5, $_POST['plz']);
         $querry_Eintrag_Nutzer->bindValue(6, $_POST['tele']);
-        $querry_Eintrag_Nutzer->bindValue(7, sha1($_POST['passwort']));
+        $querry_Eintrag_Nutzer->bindValue(7, password_hash($_POST['passwort'], PASSWORD_DEFAULT));
         $querry_Eintrag_Nutzer->bindValue(8, $bild);
 
         if ($querry_Eintrag_Nutzer->execute()) {

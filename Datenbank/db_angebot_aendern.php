@@ -12,10 +12,14 @@ if (isset($_GET['ID'])) {
 } else {
     $id = $_POST['ID'];
 }
-$query = $verbindung->prepare("SELECT * FROM Hilfsgesuch WHERE Hilfsgesuch.ID = ?");
-$query->bindValue(1, $id);
-$query->execute();
-$ergebnis = $query->fetch();
+try{
+    $query = $verbindung->prepare("SELECT * FROM Hilfsgesuch WHERE Hilfsgesuch.ID = ?");
+    $query->bindValue(1, $id);
+    $query->execute();
+    $ergebnis = $query->fetch();
+}catch(Exception $e){
+
+}
 
 
 ?>

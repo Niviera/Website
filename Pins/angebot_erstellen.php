@@ -1,4 +1,5 @@
 <?php
+$pfad = "../Datenbank/";
 session_start();
 include "../Datenbank/db_AngebotErstellen.php";
 

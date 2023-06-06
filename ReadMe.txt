@@ -2,6 +2,11 @@ Verwendet:
 Es wurde eine Datenbank verwendet. Die Struktur befindet sich in dem Ordner Planung/Datenbank mit ein paar bsp Daten.
 
 Bekannte Fehler:
+- MVC & PDO Pattern nicht vorhanden
+- bsp Nutzer passwort wird falsch eingtragen, da in bsp daten ein kleiner teil des String als 
+  Globale Variable erkannt wird
+- 
+
 
 
 Quellen:
