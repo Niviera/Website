@@ -1,5 +1,7 @@
 <?php
 class Kontroller_Registrierung{
+    private $template = "tp_Register_Form";
+    private $template_erfolg = "tp_Sucess";
     private $model;
     private $view;
     
@@ -15,7 +17,7 @@ class Kontroller_Registrierung{
             $this->view->set_nachricht("Wilkommen");
             $this->view->set_alte_Werte("vorname", $_SESSION['UName']);           
             $this->view->set_alte_Werte("nachname", $_SESSION['UNachname']);         
-            return $this->view->lade_Template("tp_Sucess");
+            return $this->view->lade_Template($this->template_erfolg);
         }
         
         if(isset($_POST['email']) && isset($_POST['eMailwdh']) && 
@@ -29,14 +31,14 @@ class Kontroller_Registrierung{
                     /* Email falsch! */
                     $this->view->set_nachricht("Fehlerhafte Eingabe! Kontrolliere die Email");
                     include "../Klassen/utility/fehler_behandlung_Register.php";
-                    return $this->view->lade_Template("tp_Register_Form_error");
+                    return $this->view->lade_Template($this->template);
                 }
 
                 if(!$this->check_Password($_POST['passwort'], $_POST['passwortwdh'])){
                     /* Passwort nicht identisch! */
                     $this->view->set_nachricht("Fehlerhafte Eingabe! Passwörter unterschiedlich");
                     include "../Klassen/utility/fehler_behandlung_Register.php";
-                    return $this->view->lade_Template("tp_Register_Form_error");
+                    return $this->view->lade_Template($this->template);
 
                 }
                 /* Kümmere um die Stadt */
@@ -60,7 +62,7 @@ class Kontroller_Registrierung{
                     } else {
                         /* Fehlerhaftes Bildformat! */
                         $this->view->set_nachricht("Fehlerhafte Eingabe! Falsches Bildformat");
-                        return $this->view->lade_Template("tp_Register_Form");
+                        return $this->view->lade_Template($this->template);
                     }
                 }
 
@@ -81,11 +83,11 @@ class Kontroller_Registrierung{
                 $this->view->set_alte_Werte("vorname", $_POST['vorname']);           
                 $this->view->set_alte_Werte("nachname", $_POST['nachname']);
                 
-                return $this->view->lade_Template("tp_Sucess");
+                return $this->view->lade_Template($this->template_erfolg);
                
         }else{
                 /* Eine Sache minumum nicht gesetzt */
-                return $this->view->lade_Template("tp_Register_Form");
+                return $this->view->lade_Template($this->template);
         }
     }
 

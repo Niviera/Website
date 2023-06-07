@@ -2,6 +2,7 @@
     <form action="Login_formular.php" method="POST">
         <div id="layout">
             <h1>Login:</h1>
+            <div class="error"><?php echo $this->nachricht ?></div>
             <div class="Container_Label_doppelpunkt">
                 <label for="email">E-Mail:</label>
             </div>
