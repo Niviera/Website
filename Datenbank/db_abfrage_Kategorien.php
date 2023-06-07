@@ -4,9 +4,13 @@
 include "db_Verbindung.php";
 
 /* Query */
-$query = $verbindung->prepare("SELECT * FROM Kategorie");
+try{
+    $query = $verbindung->prepare("SELECT * FROM Kategorie");
 
-$query->execute();
-$query = $query->fetchAll();
+    $query->execute();
+    $query = $query->fetchAll();
+}catch(Exception $e){
+
+}
 
 ?>

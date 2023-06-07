@@ -1,5 +1,5 @@
 <?php
-
+$pfad = "../Datenbank/";
 session_start();
 
 include "../Datenbank/db_KontoInformationAbfrage.php";
