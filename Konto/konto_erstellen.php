@@ -2,7 +2,7 @@
 /* Einbindung der Klassen */
 include "../Klassen/Kontroller/Kontroller_Registrierung.php";
 include "../Klassen/Model/Model_Nutzer.php";
-include "../Klassen/View/View_Registrierung.php";
+include "../Klassen/View/View_Allgemein.php";
 
 
 session_start();

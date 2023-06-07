@@ -1,19 +1,19 @@
 <?php
 
 class Model_Nutzer{
-    private $verbindung;
-
+    private $db;
+    private $erg;
     public function __construct($pfad){
         //$db = new Datenbank($pfad);
         //$this->verbindung = $db->erstelleVerbindung();
         include "../Datenbank/db_Verbindung.php";
-        $this->verbindung = $verbindung;
+        $this->db = $verbindung;
     }
 
     /* Neue Eintragungen */
     public function neuer_Nutzer($email, $vorname, $nachname, $straße, $plz, $tele, $pw, $bild){
         try{
-            $query = $this->verbindung->prepare("INSERT INTO Nutzer(EMail, Vorname, Nachname, Addresse, PLZ, telnr, passwort, bild) 
+            $query = $this->db->prepare("INSERT INTO Nutzer(EMail, Vorname, Nachname, Addresse, PLZ, telnr, passwort, bild) 
             VALUES (?,?,?,?,?,?,?,?)");
 
             $query->bindValue(1, $email);
@@ -34,7 +34,7 @@ class Model_Nutzer{
 
     public function neue_Stadt($plz, $name){
         try{
-            $query = $this->verbindung->prepare("INSERT INTO Stadt(PLZ, Name) VALUES (?,?)");
+            $query = $this->db->prepare("INSERT INTO Stadt(PLZ, Name) VALUES (?,?)");
             $query->bindValue(1, $_POST['plz']);
             $query->bindValue(2, $_POST['stadt']);
             $query->execute();
@@ -46,10 +46,10 @@ class Model_Nutzer{
     /* Kontroll abfragen */
     public function kontrolliere_Email($email){
         try{
-            $query = "SELECT COUNT(*) FROM Nutzer WHERE EMail = ".$email;
-            $query = $this->verbindung->prepare($query);
-            $query->execute();
-            return $query->fetch();
+            $query = $this->db->prepare("SELECT COUNT(*) FROM Nutzer WHERE EMail = ?");
+            $query->execute([$email]);
+            $this->erg = $query->fetch();
+            return $this->erg;
         }catch(Exception $e){
 
         }
@@ -57,28 +57,29 @@ class Model_Nutzer{
 
     public function kontrolliere_Stadt($plz){
         try{
-            $query = "SELECT COUNT(*) FROM Stadt WHERE PLZ = ?";
-            $query = $this->verbindung->prepare($query);
-            $query->bindValue(1, $plz);
-            $query->execute();
-            return $query->fetch();
+            $query = $this->db->prepare("SELECT COUNT(*) FROM Stadt WHERE PLZ = ?");
+            $query->execute([$plz]);
+            $this->erg = $query->fetch();
+            return $this->erg;
         }catch(Exception $e){
 
         }
     }
 
     /* Abfragen nach Daten */
-    public function get_User_Data_EMail($email){
+    public function get_User_ID($email){
         try{
-            $query = "SELECT * FROM Nutzer LEFT JOIN Stadt ON Nutzer.PLZ = Stadt.PLZ WHERE ID = ".$email;
-            $query = $this->verbindung->prepare($query);
-            $query->execute();
-            return $query->fetch();
+            $query = $this->db->prepare("SELECT * FROM Nutzer WHERE EMail = ?");
+            $query->execute([$email]);
+            $this->erg = $query->fetch();
+            return $this->erg;
         }catch(Exception $e){
 
         }
 
     }
+
+    /*  */
 
     /* Update von Daten */
 

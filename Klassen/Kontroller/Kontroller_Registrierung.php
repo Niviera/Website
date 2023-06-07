@@ -1,5 +1,4 @@
 <?php
-session_start();
 class Kontroller_Registrierung{
     private $model;
     private $view;
@@ -7,7 +6,7 @@ class Kontroller_Registrierung{
 
     public function __construct(){
         $this->model = new Model_Nutzer("../Datenbank/");
-        $this->view = new View_Registrierung();
+        $this->view = new View_Allgmemein();
     }
 
     public function validate(){
@@ -53,7 +52,7 @@ class Kontroller_Registrierung{
                         );
                     } else {
                         /* Fehlerhaftes Bildformat! */
-                        $this->view->set_nachricht("Fehlerhafte Eingabe!");
+                        $this->view->set_nachricht("Fehlerhafte Eingabe! Falsches Bildformat");
                         return $this->view->lade_Template("tp_Register_Form");
                     }
                 }
@@ -66,10 +65,13 @@ class Kontroller_Registrierung{
 
                 
                 /* Speichere Nutzerdaten in Session */
-                $erg = $this->model->get_User_Data_EMail($_POST['email']);
+                $erg = $this->model->get_User_ID($_POST['email']);
                 $_SESSION['UID'] = $erg['ID'];
-                $_SESSION['UEMAIL'] = $erg['EMail'];
+                $_SESSION['UName'] = $_POST['vorname'];
 
+                
+                $this->view->set_nachricht($_POST['vorname']." ".$_POST['nachname']);
+                
                 return $this->view->lade_Template("tp_Register_Sucess");
                
         }else{
