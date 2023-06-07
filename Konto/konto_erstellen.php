@@ -1,11 +1,10 @@
 <?php
 /* Einbindung der Klassen */
+session_start();
 include "../Klassen/Kontroller/Kontroller_Registrierung.php";
 include "../Klassen/Model/Model_Nutzer.php";
 include "../Klassen/View/View_Allgemein.php";
 
-
-session_start();
 $Kontroller = new Kontroller_Registrierung();
 ?>
 <!DOCTYPE html>
@@ -20,6 +19,7 @@ $Kontroller = new Kontroller_Registrierung();
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/registrierung.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/sucess.css">
 </head>
 
 <body>
@@ -28,11 +28,11 @@ $Kontroller = new Kontroller_Registrierung();
     include "pfad_angabe.php";
     include "../Ressourcen/header.php";
     ?>
-    <div id="RegisterContainerMain" class="RegisterContainerMain">
+    
         <?php
             echo $Kontroller->validate();
         ?>
-    </div>
+    
 
 
     <!-- footer -->

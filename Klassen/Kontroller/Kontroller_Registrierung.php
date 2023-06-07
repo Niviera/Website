@@ -10,6 +10,13 @@ class Kontroller_Registrierung{
     }
 
     public function validate(){
+        /* Kleiner fix weil links zur zeit nicht richtig geladen werden */
+        if($_SESSION['UID'] != ""){
+            $this->view->set_nachricht("Wilkommen");
+            $this->view->set_alte_Werte("vorname", $_SESSION['UName']);           
+            $this->view->set_alte_Werte("nachname", $_SESSION['UNachname']);         
+            return $this->view->lade_Template("tp_Sucess");
+        }
         
         if(isset($_POST['email']) && isset($_POST['eMailwdh']) && 
             isset($_POST['nachname']) && isset($_POST['vorname']) &&
@@ -65,14 +72,16 @@ class Kontroller_Registrierung{
 
                 
                 /* Speichere Nutzerdaten in Session */
-                $erg = $this->model->get_User_ID($_POST['email']);
+                $erg = $this->model->get_User_Data($_POST['email']);
                 $_SESSION['UID'] = $erg['ID'];
                 $_SESSION['UName'] = $_POST['vorname'];
 
                 
-                $this->view->set_nachricht($_POST['vorname']." ".$_POST['nachname']);
+                $this->view->set_nachricht("Wilkommen");
+                $this->view->set_alte_Werte("vorname", $_POST['vorname']);           
+                $this->view->set_alte_Werte("nachname", $_POST['nachname']);
                 
-                return $this->view->lade_Template("tp_Register_Sucess");
+                return $this->view->lade_Template("tp_Sucess");
                
         }else{
                 /* Eine Sache minumum nicht gesetzt */

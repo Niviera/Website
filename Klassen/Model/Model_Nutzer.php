@@ -67,7 +67,7 @@ class Model_Nutzer{
     }
 
     /* Abfragen nach Daten */
-    public function get_User_ID($email){
+    public function get_User_Data($email){
         try{
             $query = $this->db->prepare("SELECT * FROM Nutzer WHERE EMail = ?");
             $query->execute([$email]);
