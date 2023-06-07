@@ -60,8 +60,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
             $erg = $this->model_Kategorien->get_erg();
             foreach($erg as $rslt){
                 $this->view->set_Werte($rslt['ID'], $rslt['Name']);
-            }
-            
+            }    
         }
     }
 }
