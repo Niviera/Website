@@ -11,8 +11,8 @@
                 $query_Loeschen = $query_Loeschen . $_POST[$kontrolle];
                 $kommaCheck = $_POST[$kontrolle];
             }
-            try{
-                $query_Loeschen = $query_Loeschen . ')';
+            $query_Loeschen = $query_Loeschen . ')';
+            try{                
                 $query_Loeschen = $verbindung->prepare($query_Loeschen);
                 $query_Loeschen->execute();     
             }catch(Exception $e){
