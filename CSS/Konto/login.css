@@ -33,6 +33,13 @@ form #layout{
     margin-right: auto;
 }
 
+#layout .error{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #9D0B0B;
+}
+
 #layout h1{
     width: 100%;
     text-align: center;

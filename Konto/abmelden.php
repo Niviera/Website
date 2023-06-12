@@ -14,7 +14,7 @@ session_destroy();
     <title>Konto erstellt</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Konto/konto_angelegt.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Konto/sucess.css">
 </head>
 
 <body>

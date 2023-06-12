@@ -4,6 +4,7 @@
     display: flex;
 }
 
+
 .Container_Main .nachricht{
     width: 60%;
     height: 50%;
@@ -13,6 +14,7 @@
     border: 0.5px solid #6E7880;
     border-radius: 50px;
     box-shadow: 9px 10px 40px #6E7880;
+    background: #dcf0ff;
     
 }
 
@@ -22,9 +24,9 @@
 
 }
 
-@media(max-width: 680px){
+@media(max-width:601px){
     .Container_Main .nachricht{
-        width: 75%;
+        width: 90%;        
     }
 
 }

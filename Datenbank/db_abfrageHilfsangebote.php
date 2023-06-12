@@ -24,6 +24,7 @@ if ($_GET['sucheingabe'] != '' && $_GET['kategorie'] != '') {
 } else if ($_GET['sucheingabe'] != '' || $_GET['kategorie'] != '') {
   $query = $query . " WHERE " . $query_Zusatz_1 . "" . $query_Zusatz_2;
 }
+
 try{
   $query = $verbindung->prepare($query);
   $query->execute();

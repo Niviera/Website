@@ -8,6 +8,7 @@
     background-position: top left;
 }
 
+
 .Container_Main_Erstellen form{
     background-color: #dcf0ff;
     display: flex;
@@ -20,6 +21,12 @@
     border: 0.5px solid #6E7880;
     border-radius: 25px;
     box-shadow: 9px 10px 15px #6E7880;
+}
+
+.layout .nachricht{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .Container_Main_Erstellen form .layout{

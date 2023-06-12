@@ -3,11 +3,16 @@
 class Model_Nutzer{
     private $db;
     private $erg;
+    /* Allgemeine funktionen */
     public function __construct($pfad){
         //$db = new Datenbank($pfad);
         //$this->verbindung = $db->erstelleVerbindung();
         include "../Datenbank/db_Verbindung.php";
         $this->db = $verbindung;
+    }
+
+    public function get_Daten(){
+        return $this->erg;
     }
 
     /* Neue Eintragungen */
@@ -60,28 +65,53 @@ class Model_Nutzer{
             $query = $this->db->prepare("SELECT COUNT(*) FROM Stadt WHERE PLZ = ?");
             $query->execute([$plz]);
             $this->erg = $query->fetch();
-            return $this->erg;
+            return true;
         }catch(Exception $e){
-
+            return false;
         }
     }
 
     /* Abfragen nach Daten */
-    public function get_User_ID($email){
+    public function get_User_Data($email){
         try{
             $query = $this->db->prepare("SELECT * FROM Nutzer WHERE EMail = ?");
             $query->execute([$email]);
             $this->erg = $query->fetch();
             return $this->erg;
         }catch(Exception $e){
+            return false;
+        }
+    }
 
+    public function get_User_Date_ID($id){
+        try{
+            $query = $this->db->prepare("SELECT * FROM Nutzer LEFT JOIN Stadt ON Nutzer.PLZ = Stadt.PLZ WHERE ID = ?");
+            $query->execute([$id]);
+            $this->erg = $query->fetch();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+    }
+
+    /* Update von Daten */
+    public function update_User_Data($id, $vorname, $nachname, $straße, $plz, $email){
+        try{
+            $query = $this->db->prepare("UPDATE Nutzer SET Vorname = ?, Nachname = ?, Addresse = ?, PLZ = ?, EMail = ? WHERE ID = ?");
+            $query->bindValue(1, $vorname);
+            $query->bindValue(2, $nachname);
+            $query->bindValue(3, $straße);
+            $query->bindValue(4, $plz);
+            $query->bindValue(5, $email);
+            $query->bindValue(6, $id);
+
+            $query->execute();
+            return true;
+        }catch(Exception $e){
+            return false;
         }
 
     }
-
-    /*  */
-
-    /* Update von Daten */
 
 
 }
