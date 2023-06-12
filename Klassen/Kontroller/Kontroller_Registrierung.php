@@ -120,11 +120,16 @@ class Kontroller_Registrierung{
     }
 
     private function stadt($plz, $name){
-        $erg = $this->model->kontrolliere_Stadt($plz);
-        if(intval($erg['COUNT(*)']) == 0){
-            return $this->model->neue_Stadt($plz, $name);
+        if($this->model->kontrolliere_Stadt($plz)){
+            $erg = $this->model->get_Daten();
+            if(intval($erg['COUNT(*)']) == 0){
+                return $this->model->neue_Stadt($plz, $name);
+            }
+            return true;
+        }else{
+            return false;
         }
-        return true;
+
     }
 
 }
