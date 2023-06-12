@@ -27,7 +27,10 @@ $Kontroller = new Kontroller_Konto_Uebersicht();
     ?>
     <!-- Content -->
     <div class="Container_Main_Eigenes">
-    <?php echo $Kontroller->work(); ?>
+    <?php 
+             $Kontroller->update();
+        echo $Kontroller->work(); 
+    ?>
     </div>
     <!-- footer -->
     <?php

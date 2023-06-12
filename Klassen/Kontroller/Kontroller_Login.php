@@ -45,6 +45,7 @@ class Kontroller_Login{
             $_SESSION['UID'] = $erg['ID'];
             $_SESSION['UName'] = $erg['Vorname'];
             $_SESSION['UNachname'] = $erg['Nachname'];
+            $_SESSION['UMail'] = $erg['EMail'];
 
             $this->view->set_nachricht($this->nachricht);
             $this->view->set_alte_Werte("vorname", $erg['Vorname']);
