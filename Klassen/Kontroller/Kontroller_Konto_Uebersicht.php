@@ -86,7 +86,7 @@ class Kontroller_Konto_Uebersicht{
                     if($this->model->update_User_Data($_SESSION['UID'], $_POST['vorname'], $_POST['nachname'], $_POST['straße'], $_POST['plz'], $_POST['email'])){
                         $this->view->set_nachricht("Erfolg: Ihre Daten wurden geupdatet.");
                     }else{
-                        $this->view->set_nachricht("Fehler: Ihre Daten konnten nicht geupdatet werden.");
+                        $this->view->set_nachricht("Fehler: Ihre Daten konnten nicht erfolgreich geupdatet werden.");
                     }
         
             }else{

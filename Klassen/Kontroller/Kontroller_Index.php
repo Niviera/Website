@@ -13,7 +13,7 @@ class Kontroller_Index{
 
 
     public function display_Hilfsangebote(){
-        if($this->model_Gesuche->hilfsgesuche()){
+        if($this->model_Gesuche->hilfsgesuche($_GET['kategorie'], $_GET['sucheingabe'])){
             $this->view = new View_Index();
             $erg = $this->model_Gesuche->get_ergebnisse();
             foreach($erg as $row){

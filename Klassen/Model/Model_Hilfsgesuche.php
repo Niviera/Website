@@ -34,10 +34,34 @@ class Model_Hilfsgesuche{
         }
     }
 
-    public function hilfsgesuche(){
+    public function hilfsgesuche($kategorie, $sucheingabe){
         try{
             $query = "SELECT Hilfsgesuch.ID as ID, Titel, SUBSTRING(Hilfsgesuch.Beschreibung, 1, 100) AS Beschreibung, Kategorie ,Nutzer.ID as nutzerID, Vorname, Nachname 
             FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID";
+
+            /* TODO: Überarbeite die Sucheingabe! */
+            $query_Zusatz_1 = "";
+            $query_Zusatz_2 = "";
+
+            /* Such abfrage spezifizieren */
+            if ($sucheingabe != '') {
+            $query_Zusatz_1 = "Beschreibung LIKE '%" . $sucheingabe . "%' 
+                        OR Vorname LIKE '%" . $sucheingabe . "%'
+                        OR Nachname LIKE '%" . $sucheingabe . "%'
+                        OR Titel LIKE '%" . $sucheingabe . "%'
+                        ";
+            }
+            if ($kategorie != '' && $kategorie != '0') {
+            $query_Zusatz_2 = "Kategorie = " . $kategorie;
+            }
+
+            /* Query bauen */
+            if ($query_Zusatz_1 != '' && $query_Zusatz_2 != '') {
+            $query = $query . " WHERE (" . $query_Zusatz_1 . ") AND (" . $query_Zusatz_2 . ")";
+            } else if ($query_Zusatz_1 != '' || $query_Zusatz_2 != '') {
+            $query = $query . " WHERE " . $query_Zusatz_1 . "" . $query_Zusatz_2;
+            }
+
             $query = $this->db->prepare($query);
             $query->execute();
             $this->erg = $query->fetchAll();
