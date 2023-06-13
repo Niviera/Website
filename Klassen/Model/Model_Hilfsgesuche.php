@@ -6,8 +6,12 @@ class Model_Hilfsgesuche{
     public function __construct($pfad){
         //$db = new Datenbank($pfad);
         //$this->verbindung = $db->erstelleVerbindung();
-        include "../Datenbank/db_Verbindung.php";
+        include $pfad."db_Verbindung.php";
         $this->db = $verbindung;
+    }
+
+    public function get_ergebnisse(){
+        return $this->erg;
     }
 
     public function neues_Hilfsgesuch($titel, $beschreibung, $kategorie){
@@ -28,6 +32,20 @@ class Model_Hilfsgesuche{
         }catch(Exception $e){
             return false;
         }
+    }
+
+    public function hilfsgesuche(){
+        try{
+            $query = "SELECT Hilfsgesuch.ID as ID, Titel, SUBSTRING(Hilfsgesuch.Beschreibung, 1, 100) AS Beschreibung, Kategorie ,Nutzer.ID as nutzerID, Vorname, Nachname 
+            FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID";
+            $query = $this->db->prepare($query);
+            $query->execute();
+            $this->erg = $query->fetchAll();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+
     }
 
 }

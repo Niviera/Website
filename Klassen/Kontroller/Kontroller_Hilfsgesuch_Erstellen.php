@@ -1,13 +1,14 @@
 <?php
+/* TODO: Rename zu Kontroller_Hilfsgesuche.php --> es steuert alles Hilfsgesuch spezifisches! */
 class Kontroller_Hiflsgesuch_Erstellen{
     private $template = "tp_Hilfsgesuch_Erstellen";
     private $model_Gesuche;
     private $model_Kategorien;
     private $view;
 
-    public function __construct(){
-        $this->model_Gesuche = new Model_Hilfsgesuche("../Datenbank/");
-        $this->model_Kategorien = new Model_Kategorien("../Datenbank/");
+    public function __construct($pfad){
+        $this->model_Gesuche = new Model_Hilfsgesuche($pfad);
+        $this->model_Kategorien = new Model_Kategorien($pfad);
         $this->view = new View_Hilfsgesuch();
     }
 

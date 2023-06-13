@@ -1,11 +1,11 @@
 <?php
-class View_Hilfsgesuch{
-    private $kategorien;
+class View_Index{
+    private $kategorien = array();
     private $nachricht;
 
     public function lade_Template($tpl){
         ob_start();
-        include "../Klassen/Templates/".$tpl.".php";
+        include "Klassen/Templates/".$tpl.".php";
         $ausgabe = ob_get_contents();
         ob_end_clean();
         return $ausgabe;
@@ -26,11 +26,14 @@ class View_Hilfsgesuch{
         $this->kategorien[] = $neu;
     }
 
-    public function set_Werte($wert1, $wert2){
+    public function set_Kategorie_Index($wert1, $wert2, $active, $such_eingabe){
         $neu = array();
         $neu[] = htmlentities($wert1);
         $neu[] = htmlentities($wert2);
+        $neu[] = htmlentities($active);
+        $neu[] = htmlentities($such_eingabe);
         $this->kategorien[] = $neu;
 	}
+
 
 }

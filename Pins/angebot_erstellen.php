@@ -4,7 +4,7 @@ include "../Klassen/Kontroller/Kontroller_Hilfsgesuch_Erstellen.php";
 include "../Klassen/Model/Model_Kategorien.php";
 include "../Klassen/Model/Model_Hilfsgesuche.php";
 include "../Klassen/View/View_Hilfsgesuch.php";
-$Kontroller = new Kontroller_Hiflsgesuch_Erstellen();
+$Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
 ?>
 
 <!DOCTYPE html>
