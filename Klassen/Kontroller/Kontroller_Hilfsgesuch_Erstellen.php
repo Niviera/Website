@@ -1,13 +1,14 @@
 <?php
+/* TODO: Rename zu Kontroller_Hilfsgesuche.php --> es steuert alles Hilfsgesuch spezifisches! */
 class Kontroller_Hiflsgesuch_Erstellen{
     private $template = "tp_Hilfsgesuch_Erstellen";
     private $model_Gesuche;
     private $model_Kategorien;
     private $view;
 
-    public function __construct(){
-        $this->model_Gesuche = new Model_Hilfsgesuche("../Datenbank/");
-        $this->model_Kategorien = new Model_Kategorien("../Datenbank/");
+    public function __construct($pfad){
+        $this->model_Gesuche = new Model_Hilfsgesuche($pfad);
+        $this->model_Kategorien = new Model_Kategorien($pfad);
         $this->view = new View_Hilfsgesuch();
     }
 
@@ -52,6 +53,32 @@ class Kontroller_Hiflsgesuch_Erstellen{
         }else{
             return $this->view->lade_Template($this->template);
         }
+    }
+
+    public function display_Detailed_Angebot(){
+        /* Kontrolliere ob eine ID gesetzt ist */
+        if(!isset($_GET['id'])){
+            /* liefere Fehler --> keine ID gesetzt */
+            $this->view->set_nachricht("Fehler: Kein Angebot ausgewählt.");
+            /* TODO: Setze ein Template dafür */
+            return;
+        }
+        if(!$this->model_Gesuche->hilfsgesuch_Detailed($_GET['id'])){
+            $this->view->set_nachricht("Fehler: Es ist ein Fehler beim Abfragen des Angebots passiert.");
+            /* TODO: Setze ein Template dafür */
+            return;
+        }
+
+        $erg = $this->model_Gesuche->get_ergebnisse();
+        $this->view->set_alte_Werte("titel", $erg['Titel']);
+        $this->view->set_alte_Werte("bild", $erg['bild']);
+        $this->view->set_alte_Werte("beschreibung", $erg['Beschreibung']);
+
+        $this->view->set_alte_Werte("vorname", $erg['Vorname']);
+        $this->view->set_alte_Werte("nachname", $erg['Nachname']);
+        $this->view->set_alte_Werte("email", $erg['EMail']);
+
+        return $this->view->lade_Template("tp_detailed_Angebot");
     }
 
     /* Hilfsfunktionen */

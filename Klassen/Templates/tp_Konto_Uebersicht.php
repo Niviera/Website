@@ -1,6 +1,7 @@
 <form method="POST" action="eigenes_konto.php">
         <div class="layout">
             <h1> Eigenes Konto </h1>
+            <!-- TODO: Kontroller händelt bild, laden! -->
             <div class="error"><?php echo $this->nachricht ?></div>
             <div class="profil_Bild">
                 <img src=<?php echo "../Bilder/profile/" . $this->alte_Werte['bild'] ?> alt="Profil Bild">

@@ -6,8 +6,12 @@ class Model_Hilfsgesuche{
     public function __construct($pfad){
         //$db = new Datenbank($pfad);
         //$this->verbindung = $db->erstelleVerbindung();
-        include "../Datenbank/db_Verbindung.php";
+        include $pfad."db_Verbindung.php";
         $this->db = $verbindung;
+    }
+
+    public function get_ergebnisse(){
+        return $this->erg;
     }
 
     public function neues_Hilfsgesuch($titel, $beschreibung, $kategorie){
@@ -28,6 +32,59 @@ class Model_Hilfsgesuche{
         }catch(Exception $e){
             return false;
         }
+    }
+
+    public function hilfsgesuch_Detailed($id){
+        try{
+            $query = "SELECT * FROM Hilfsgesuch LEFT JOIN Nutzer ON Hilfsgesuch.Ersteller = Nutzer.ID WHERE Hilfsgesuch.ID = ?";
+            $query = $this->db->prepare($query);
+            $query->bindValue(1, $id);
+            $query->execute();
+        
+            $this->erg = $query->fetch();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+        
+    }
+
+    public function hilfsgesuche($kategorie, $sucheingabe){
+        try{
+            $query = "SELECT Hilfsgesuch.ID as ID, Titel, SUBSTRING(Hilfsgesuch.Beschreibung, 1, 100) AS Beschreibung, Kategorie ,Nutzer.ID as nutzerID, Vorname, Nachname 
+            FROM Hilfsgesuch LEFT JOIN Nutzer on Hilfsgesuch.Ersteller = Nutzer.ID";
+
+            /* TODO: Überarbeite die Sucheingabe! */
+            $query_Zusatz_1 = "";
+            $query_Zusatz_2 = "";
+
+            /* Such abfrage spezifizieren */
+            if ($sucheingabe != '') {
+            $query_Zusatz_1 = "Beschreibung LIKE '%" . $sucheingabe . "%' 
+                        OR Vorname LIKE '%" . $sucheingabe . "%'
+                        OR Nachname LIKE '%" . $sucheingabe . "%'
+                        OR Titel LIKE '%" . $sucheingabe . "%'
+                        ";
+            }
+            if ($kategorie != '' && $kategorie != '0') {
+            $query_Zusatz_2 = "Kategorie = " . $kategorie;
+            }
+
+            /* Query bauen */
+            if ($query_Zusatz_1 != '' && $query_Zusatz_2 != '') {
+            $query = $query . " WHERE (" . $query_Zusatz_1 . ") AND (" . $query_Zusatz_2 . ")";
+            } else if ($query_Zusatz_1 != '' || $query_Zusatz_2 != '') {
+            $query = $query . " WHERE " . $query_Zusatz_1 . "" . $query_Zusatz_2;
+            }
+
+            $query = $this->db->prepare($query);
+            $query->execute();
+            $this->erg = $query->fetchAll();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+
     }
 
 }

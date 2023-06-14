@@ -43,6 +43,7 @@
 
         /* Sample Data */
         $query = "
+        INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('0','Alles');
         INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('1','Garten');
         INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('2','Haushalt');
         INSERT INTO `Kategorie`(`ID`, `Name`) VALUES ('3','abzugeben');

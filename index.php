@@ -1,6 +1,10 @@
 <?php
-$pfad = "Datenbank/";
 session_start();
+include "Klassen/Kontroller/Kontroller_Index.php";
+include "Klassen/Model/Model_Kategorien.php";
+include "Klassen/Model/Model_Hilfsgesuche.php";
+include "Klassen/View/View_Index.php";
+$Kontroller = new Kontroller_Index("Datenbank/");
 ?>
 
 <!DOCTYPE html>
@@ -64,23 +68,7 @@ session_start();
       <!-- Suche -->
       <ul>
         <?php
-        include "Datenbank/db_abfrage_Kategorien.php";
-        /* Darstellung */
-        $active = "";
-        if ($_GET['kategorie'] == '') {
-          $active = "active";
-        }
-        echo '<li> <a class="' . $active . '" href="index.php?sucheingabe=' . $_GET['sucheingabe'] . '&kategorie=">Alles</a></li>';
-
-        foreach ($query as $reihe) {
-          $wert = htmlentities($reihe["ID"]);
-          $bezeichnung = htmlentities($reihe["Name"]);
-          $active = "";
-          if ($_GET['kategorie'] == $wert) {
-            $active = "active";
-          }
-          echo '<li> <a class="' . $active . '" href="index.php?sucheingabe=' . $_GET['sucheingabe'] . '&kategorie=' . $wert . '">' . $bezeichnung . '</a> </li>';
-        }
+          echo $Kontroller->display_Index_Kategorien();
         ?>
       </ul>
     </div>
@@ -88,23 +76,7 @@ session_start();
     <div class="Container_kleineAngebote_und_Buttons">
       <div class="Container_kleine_Angebote">
         <?php
-        include "Datenbank/db_abfrageHilfsangebote.php";
-        /* Darstellung */
-        foreach ($query as $reihe) {
-          $titel = htmlentities($reihe['Titel']);
-          $pin_ID = htmlentities($reihe['ID']);
-          $beschreibung = htmlentities($reihe['Beschreibung']);
-          $nutzer_ID = htmlentities($reihe['nutzerID']);
-          $vorname = htmlentities($reihe['Vorname']);
-          $nachname = htmlentities($reihe['Nachname']);
-
-          echo '<div>
-                <p class="ueberschrift"> ' . $titel . ' </p>
-                <a class="beschreibung" href="Pins/angebot_eins.php?id=' . $pin_ID . '"> ' . $beschreibung . '...</a>
-                <a class="autor" href="Konto/konto_uebersicht.php?id=' . $nutzer_ID . '">' . $vorname . ' ' . $nachname . '</a>
-              </div>';
-        }
-
+          echo $Kontroller->display_Hilfsangebote();
         ?>
       </div>
       <!-- Buttons -->

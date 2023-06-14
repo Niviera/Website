@@ -1,5 +1,8 @@
 <?php
 include "db_Verbindung.php";
+
+
+
 if (isset($_POST["ID"])) {
     $query = "UPDATE Hilfsgesuch SET Titel= '".$_POST['titel']."',Beschreibung='".$_POST['beschreibung']."', Kategorie=".$_POST['kategorie']." WHERE ID = ".$_POST['ID'];
     $query = $verbindung->prepare($query);

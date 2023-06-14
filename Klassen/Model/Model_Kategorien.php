@@ -4,9 +4,7 @@ class Model_Kategorien{
     private $db;
     private $erg;
     public function __construct($pfad){
-        //$db = new Datenbank($pfad);
-        //$this->verbindung = $db->erstelleVerbindung();
-        include "../Datenbank/db_Verbindung.php";
+        include $pfad."db_Verbindung.php";
         $this->db = $verbindung;
     }
 

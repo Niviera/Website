@@ -1,6 +1,6 @@
 <?php
 class View_Hilfsgesuch{
-    private $kategorien;
+    private $kategorien = array();
     private $nachricht;
 
     public function lade_Template($tpl){
@@ -20,6 +20,10 @@ class View_Hilfsgesuch{
         $neu[] = htmlentities($wert1);
         $neu[] = htmlentities($wert2);
         $this->kategorien[] = $neu;
+	}
+
+    public function set_alte_Werte($schluessel, $wert){
+		$this->kategorien[$schluessel] = htmlentities($wert);
 	}
 
 }

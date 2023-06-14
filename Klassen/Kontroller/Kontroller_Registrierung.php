@@ -12,7 +12,7 @@ class Kontroller_Registrierung{
     }
 
     public function validate(){
-        /* Kleiner fix weil links zur zeit nicht richtig geladen werden */
+       
         if($_SESSION['UID'] != ""){
             $this->view->set_nachricht("Wilkommen");
             $this->view->set_alte_Werte("vorname", $_SESSION['UName']);           
@@ -50,7 +50,7 @@ class Kontroller_Registrierung{
                 $bild = "standart.jpeg";
                 $erlaubteTypen = array(IMAGETYPE_PNG, IMAGETYPE_JPEG);
         
-                /* Handhabung von Bildern */
+                /* Handhabung von Bildern unique() für namen */
                 if ($_FILES['dateiHochladen']['name'] <> "") {
                     $fileType = exif_imagetype($_FILES['dateiHochladen']['tmp_name']);
                     if (in_array($fileType, $erlaubteTypen)) {
