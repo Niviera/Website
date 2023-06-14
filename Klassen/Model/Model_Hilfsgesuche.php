@@ -34,6 +34,21 @@ class Model_Hilfsgesuche{
         }
     }
 
+    public function hilfsgesuch_Detailed($id){
+        try{
+            $query = "SELECT * FROM Hilfsgesuch LEFT JOIN Nutzer ON Hilfsgesuch.Ersteller = Nutzer.ID WHERE Hilfsgesuch.ID = ?";
+            $query = $this->db->prepare($query);
+            $query->bindValue(1, $id);
+            $query->execute();
+        
+            $this->erg = $query->fetch();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+        
+    }
+
     public function hilfsgesuche($kategorie, $sucheingabe){
         try{
             $query = "SELECT Hilfsgesuch.ID as ID, Titel, SUBSTRING(Hilfsgesuch.Beschreibung, 1, 100) AS Beschreibung, Kategorie ,Nutzer.ID as nutzerID, Vorname, Nachname 

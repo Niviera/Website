@@ -10,6 +10,7 @@ class Kontroller_Konto_Uebersicht{
 
     
     public function work(){
+        /* TODO: Lade sämtlich $_GET[''] & $_POST[''] in eine Variable */
         /* Entscheide ob eigenes Konto oder Fremdkonto erfragt wird */
         if(isset($_GET['id'])){
             $id = $_GET['id'];
@@ -44,6 +45,7 @@ class Kontroller_Konto_Uebersicht{
     }
 
     public function update(){
+        /* TODO: Überprüfe ob der Nutzer noch excistiert --> Stichwort Transaktionen, Constraints */
         /* Überprüfe ob Daten geupdatet werden sollen! */
         if(isset($_POST['bestaetigt'])){
             if(isset($_POST['vorname']) && isset($_POST['nachname']) && isset($_POST['straße'])

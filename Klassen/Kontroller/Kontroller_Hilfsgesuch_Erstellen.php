@@ -55,6 +55,32 @@ class Kontroller_Hiflsgesuch_Erstellen{
         }
     }
 
+    public function display_Detailed_Angebot(){
+        /* Kontrolliere ob eine ID gesetzt ist */
+        if(!isset($_GET['id'])){
+            /* liefere Fehler --> keine ID gesetzt */
+            $this->view->set_nachricht("Fehler: Kein Angebot ausgewählt.");
+            /* TODO: Setze ein Template dafür */
+            return;
+        }
+        if(!$this->model_Gesuche->hilfsgesuch_Detailed($_GET['id'])){
+            $this->view->set_nachricht("Fehler: Es ist ein Fehler beim Abfragen des Angebots passiert.");
+            /* TODO: Setze ein Template dafür */
+            return;
+        }
+
+        $erg = $this->model_Gesuche->get_ergebnisse();
+        $this->view->set_alte_Werte("titel", $erg['Titel']);
+        $this->view->set_alte_Werte("bild", $erg['bild']);
+        $this->view->set_alte_Werte("beschreibung", $erg['Beschreibung']);
+
+        $this->view->set_alte_Werte("vorname", $erg['Vorname']);
+        $this->view->set_alte_Werte("nachname", $erg['Nachname']);
+        $this->view->set_alte_Werte("email", $erg['EMail']);
+
+        return $this->view->lade_Template("tp_detailed_Angebot");
+    }
+
     /* Hilfsfunktionen */
     private function display_Kategorien(){
         if($this->model_Kategorien->get_Kategorien()){
