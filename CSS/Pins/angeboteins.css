@@ -17,8 +17,10 @@
 }
 
 .Container_Angebot .box2 {
+    max-width: 75%;
     width: 75%;
     font-family: 'Times New Roman', Times, serif;
+    word-wrap: break-word;
 }
 
 .Container_Angebot .box3 {

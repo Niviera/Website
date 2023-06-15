@@ -57,13 +57,50 @@ class Kontroller_Hiflsgesuch_Erstellen{
 
     public function display_Detailed_Angebot(){
         /* Kontrolliere ob eine ID gesetzt ist */
-        if(!isset($_GET['id'])){
+        $id = 0;
+        if(!isset($_GET['id']) && $_SESSION['CurrentID'] == ''){
             /* liefere Fehler --> keine ID gesetzt */
             $this->view->set_nachricht("Fehler: Kein Angebot ausgewählt.");
             /* TODO: Setze ein Template dafür */
             return;
+        }else{
+            if(isset($_GET['id'])){
+                $_SESSION['CurrentID']= $id = $_GET['id'];
+                
+            }else{
+                $id = $_SESSION['CurrentID'];
+            }
+            
         }
-        if(!$this->model_Gesuche->hilfsgesuch_Detailed($_GET['id'])){
+        if(isset($_GET['richtung'])){
+            $richtung = intval($_GET['richtung']);
+            switch($richtung){
+                case 1:
+                    if($this->model_Gesuche->get_Nächste_ID($id)){
+                        $erg = $this->model_Gesuche->get_ergebnisse();
+                        if($erg['ID'] == ''){
+ 
+                        }        
+                    }
+                    break;
+                case 0:
+                    if($this->model_Gesuche->get_vorherige_ID($id)){
+                        $erg = $this->model_Gesuche->get_ergebnisse();
+                        if($erg['ID'] == ''){
+                            
+                        }                         
+                    }
+                    break;
+                default:
+            }
+
+                $id = $erg['ID'];
+                $_SESSION['CurrentID'] = $id;
+
+
+        }
+
+        if(!$this->model_Gesuche->hilfsgesuch_Detailed($id)){
             $this->view->set_nachricht("Fehler: Es ist ein Fehler beim Abfragen des Angebots passiert.");
             /* TODO: Setze ein Template dafür */
             return;
