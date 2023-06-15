@@ -78,23 +78,27 @@ class Kontroller_Hiflsgesuch_Erstellen{
                 case 1:
                     if($this->model_Gesuche->get_Nächste_ID($id)){
                         $erg = $this->model_Gesuche->get_ergebnisse();
-                        if($erg['ID'] == ''){
- 
+                        if($erg['ID'] != ''){
+                            $id = $erg['ID'];
+                        }else{
+                            $this->view->set_nachricht("Es gibt vorher keine Hilfsgesuche mehr!");
                         }        
                     }
                     break;
                 case 0:
                     if($this->model_Gesuche->get_vorherige_ID($id)){
                         $erg = $this->model_Gesuche->get_ergebnisse();
-                        if($erg['ID'] == ''){
-                            
-                        }                         
+                        if($erg['ID'] != ''){
+                            $id = $erg['ID'];
+                        }else{
+                            $this->view->set_nachricht("Es gibt hier nach keine Hilfsgesuche mehr!");
+                        }                        
                     }
                     break;
                 default:
             }
 
-                $id = $erg['ID'];
+
                 $_SESSION['CurrentID'] = $id;
 
 
