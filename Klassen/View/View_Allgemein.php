@@ -5,6 +5,7 @@ class View_Allgmemein{
 
     private $kategorien = array();
 
+
     public function lade_Template($tpl){
         ob_start();
         include "../Klassen/Templates/".$tpl.".php";
@@ -31,5 +32,4 @@ class View_Allgmemein{
         $neu[] = htmlentities($beschreibung);
         $this->kategorien[] = $neu;
     }
-
 }

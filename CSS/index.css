@@ -177,6 +177,10 @@
     margin-top: 16px;
 }
 
+.erweitertes_Such_Navi .hidden{
+    display: none;
+ }
+
 /* Buttons listennavigation */
 .Container_Buttons{
     height:30px;

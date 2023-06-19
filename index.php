@@ -71,11 +71,18 @@ $Kontroller = new Kontroller_Index("");
     <!-- erweiterte Suche -->
     <div class="erweitertes_Such_Navi">
       <!-- Suche -->
-      <ul>
+      <ul id="Uebersicht_Kategorien">
         <?php
         echo $Kontroller->display_Index_Kategorien();
         ?>
       </ul>
+
+      <script>
+        const collection = document.getElementsByClassName("hidden");
+        for (let i = 0; i < collection.length; i++) {
+          collection[i].style.display = "block";
+        } 
+      </script>
     </div>
     <!-- Angebote -->
     <div class="Container_kleineAngebote_und_Buttons">
