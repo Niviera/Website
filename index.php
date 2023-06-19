@@ -4,7 +4,7 @@ include "Klassen/Kontroller/Kontroller_Index.php";
 include "Klassen/Model/Model_Kategorien.php";
 include "Klassen/Model/Model_Hilfsgesuche.php";
 include "Klassen/View/View_Index.php";
-$Kontroller = new Kontroller_Index("Datenbank/");
+$Kontroller = new Kontroller_Index("");
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +14,13 @@ $Kontroller = new Kontroller_Index("Datenbank/");
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <link rel="stylesheet" type="text/css" href="CSS/index.css">
+
+  <!-- JavaScript -->
+  <script src="JavaScript/Index_Suche.js" async></script>
 
   <title>Startseite</title>
 </head>
@@ -54,7 +58,8 @@ $Kontroller = new Kontroller_Index("Datenbank/");
       <form name="test" action="index.php" method="GET">
         <div class="suche_layout">
           <label for="sucheingabe">Suche:</label>
-          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="<?php echo $_GET['sucheingabe'] ?>">
+          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="<?php echo $_GET['sucheingabe'] ?>" onkeyup="dynamische_Suche(this.value)">
+          
           <button type="submit" value="suche" id="suche"></button>
         </div>
       </form>
@@ -68,13 +73,13 @@ $Kontroller = new Kontroller_Index("Datenbank/");
       <!-- Suche -->
       <ul>
         <?php
-          echo $Kontroller->display_Index_Kategorien();
+        echo $Kontroller->display_Index_Kategorien();
         ?>
       </ul>
     </div>
     <!-- Angebote -->
     <div class="Container_kleineAngebote_und_Buttons">
-      <div class="Container_kleine_Angebote">
+      <div id="Container_Pins" class="Container_kleine_Angebote">
         <?php
           echo $Kontroller->display_Hilfsangebote();
         ?>

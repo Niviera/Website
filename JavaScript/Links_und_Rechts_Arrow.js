@@ -1,9 +1,9 @@
 /* 
-    Arrows:
-        Source: https://stackoverflow.com/questions/5597060/detecting-arrow-key-presses-in-javascript 
-    Weiterleitung:
-        Source: https://stackoverflow.com/questions/5997450/append-to-url-and-refresh-page
-        Source: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/set
+ *   Arrows:
+ *      Source: https://stackoverflow.com/questions/5597060/detecting-arrow-key-presses-in-javascript 
+ *   Weiterleitung:
+ *        Source: https://stackoverflow.com/questions/5997450/append-to-url-and-refresh-page
+ *       Source: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/set
 */
 
 document.onkeydown = checkKey;

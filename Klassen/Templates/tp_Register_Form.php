@@ -28,7 +28,7 @@
                     <input id="email" name="email" type="email" value="<?php echo $this->alte_Werte['email'] ?>" required>
                     <br>
                     <label for="eMailwdh">E-Mail:</label>
-                    <input id="eMailwdh" name="eMailwdh" type="email" value="<?php echo $this->alte_Werte['eMailwdh'] ?>" required>
+                    <input id="eMailwdh" name="eMailwdh" type="email" value="<?php echo $this->alte_Werte['eMailwdh'] ?>" onkeyup="Email_Vergleich()" required>
                     <br>
                     <label for="passwort">Passwort:</label>
                     <input id="passwort" name="passwort" type="password" required>

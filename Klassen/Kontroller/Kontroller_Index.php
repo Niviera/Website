@@ -4,10 +4,12 @@ class Kontroller_Index{
     private $model_Gesuche;
     private $model_Kategorien;
     private $view;
+    private $pfad;
 
     public function __construct($pfad){
-        $this->model_Gesuche = new Model_Hilfsgesuche($pfad);
-        $this->model_Kategorien = new Model_Kategorien($pfad);
+        $this->$pfad = $pfad;
+        $this->model_Gesuche = new Model_Hilfsgesuche("Datenbank/");
+        $this->model_Kategorien = new Model_Kategorien("Datenbank/");
         $this->view = new View_Index();
     }
 
@@ -24,6 +26,8 @@ class Kontroller_Index{
             /* TODO: Error bei Hilfsangebot abfrage */
         }
     }
+
+  
 
     public function display_Index_Kategorien(){
         if($this->model_Kategorien->get_Kategorien()){

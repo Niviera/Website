@@ -3,6 +3,8 @@ class View_Allgmemein{
     private $nachricht = "";
     private $alte_Werte = array();
 
+    private $kategorien = array();
+
     public function lade_Template($tpl){
         ob_start();
         include "../Klassen/Templates/".$tpl.".php";
@@ -18,5 +20,16 @@ class View_Allgmemein{
     public function set_alte_Werte($schluessel, $wert){
 		$this->alte_Werte[$schluessel] = htmlentities($wert);
 	}
+
+    public function set_Hilfsgesuche($id_Hilfsgesuch ,$id_Ersteller ,$ueberschrift, $vorname, $nachname, $beschreibung ){
+        $neu = array();
+        $neu[] = htmlentities($id_Hilfsgesuch);
+        $neu[] = htmlentities($id_Ersteller);
+        $neu[] = htmlentities($ueberschrift);
+        $neu[] = htmlentities($vorname);
+        $neu[] = htmlentities($nachname);
+        $neu[] = htmlentities($beschreibung);
+        $this->kategorien[] = $neu;
+    }
 
 }
