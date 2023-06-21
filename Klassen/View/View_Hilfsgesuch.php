@@ -1,7 +1,6 @@
 <?php
 class View_Hilfsgesuch{
     private $kategorien = array();
-    private $alte_Werte = array();
     private $nachricht;
     private $error;
     private $success;
@@ -28,14 +27,6 @@ class View_Hilfsgesuch{
     public function set_alte_Werte($schluessel, $wert){
 		$this->kategorien[$schluessel] = htmlentities($wert);
 	}
-
-    public function set_alte_Formular_Werte($wert){
-		$this->alte_Werte[] = htmlentities($wert);
-	}
-
-    public function reset_alte_Formular_Werte(){
-        $this->alte_Werte = array();
-    }
 
     public function set_error($nachricht){
 		$this->error = htmlentities($nachricht);
