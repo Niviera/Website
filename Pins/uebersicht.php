@@ -38,14 +38,14 @@ $_SESSION['CheckDelete'] = array();
             <div class="ueberschrift">Aendern:</div>
             <!-- Listeneinträge -->
             <?php
-            foreach ($ergebnis as $row) {
-                array_push($_SESSION['CheckDelete'], 'entferne' . $row['ID']);
-                echo
-                    '<div class="eintrag">' . $row['Titel'] . '</div>
-                <div class="eintrag Kategorie_aktiv">' . $row['Name'] . '</div>
-                <div class="eintrag"><input type="checkbox" id="id" name="entferne' . $row['ID'] . '" value="' . $row['ID'] . '">
+            foreach($ergebnis as $row){
+                array_push($_SESSION['CheckDelete'], 'entferne'.$row['ID']);
+                echo 
+                '<div class="eintrag">'.$row['Titel'].'</div>
+                <div class="eintrag Kategorie_aktiv">'.$row['Name'].'</div>
+                <div class="eintrag"><input type="checkbox" id="id" name="entferne'.$row['ID'].'" value="'.$row['ID'].'">
                 </div>
-                <div class="eintrag"> <a class="fakeButton" href="angebot_aendern.php?ID=' . $row['ID'] . '">Ändern</a></div>';
+                <div class="eintrag"> <a class="fakeButton" href="angebot_aendern.php?ID='.$row['ID'].'">Ändern</a></div>';
             }
             ?>
             <div class="Container_Button">
