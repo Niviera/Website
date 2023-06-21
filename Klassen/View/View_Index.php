@@ -1,35 +1,19 @@
 <?php
-class View_Allgmemein{
-    private $nachricht = "";
-    private $alte_Werte = array();
-
+class View_Index{
     private $kategorien = array();
-    private $error;
-    private $success;
-
+    private $nachricht;
 
     public function lade_Template($tpl){
         ob_start();
-        include "../Klassen/Templates/".$tpl.".php";
+        include "Klassen/Templates/".$tpl.".php";
         $ausgabe = ob_get_contents();
         ob_end_clean();
         return $ausgabe;
     }
 
-    public function set_nachricht($msg){
-        $this->nachricht = htmlentities($msg);
+    public function set_nachricht($wert){
+        $this->nachricht = htmlentities($wert);
     }
-    public function set_error($msg){
-        $this->error = htmlentities($msg);
-    }
-
-    public function set_success($msg){
-        $this->success = htmlentities($msg);
-    }
-
-    public function set_alte_Werte($schluessel, $wert){
-		$this->alte_Werte[$schluessel] = htmlentities($wert);
-	}
 
     public function set_Hilfsgesuche($id_Hilfsgesuch ,$id_Ersteller ,$ueberschrift, $vorname, $nachname, $beschreibung ){
         $neu = array();
@@ -41,4 +25,15 @@ class View_Allgmemein{
         $neu[] = htmlentities($beschreibung);
         $this->kategorien[] = $neu;
     }
+
+    public function set_Kategorie_Index($wert1, $wert2, $active, $such_eingabe){
+        $neu = array();
+        $neu[] = htmlentities($wert1);
+        $neu[] = htmlentities($wert2);
+        $neu[] = htmlentities($active);
+        $neu[] = htmlentities($such_eingabe);
+        $this->kategorien[] = $neu;
+	}
+
+
 }

@@ -1,8 +1,10 @@
 <?php
-$pfad = "../Datenbank/";
 session_start();
+include "../Klassen/Kontroller/Kontroller_Konto_Uebersicht.php";
+include "../Klassen/Model/Model_Nutzer.php";
+include "../Klassen/View/View_Allgemein.php";
+$Kontroller = new Kontroller_Konto_Uebersicht();
 
-include "../Datenbank/db_KontoInformationAbfrage.php";
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -16,6 +18,7 @@ include "../Datenbank/db_KontoInformationAbfrage.php";
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/konto.css">
+    
 </head>
 
 <body>
@@ -26,70 +29,9 @@ include "../Datenbank/db_KontoInformationAbfrage.php";
     ?>
     <!-- Seiteninhalt -->
     <div class="Main_Container_Konto_Uebersicht">
-        <div class="layout_Konto_Uebersicht">
-            <h3>
-                Kontaktdaten:
-            </h3>
-            <!-- Bild-->
-            <div class="profil_Bild">
-                <img src=<?php echo "../Bilder/profile/" . $ergebnis['bild'] ?> alt="Profil Bild">
-            </div>
-            <!-- Kontoinformationen -->
-            <div class="kontoinformationen">
-                <div class="layout_kategorie schrift">
-                    <div class="kategorie">Vorname</div>
-                    <div class="doppelpunkt">:</div>
-                </div>
-                <div class="info schrift">
-                    <?php echo $ergebnis['Vorname']; ?>
-                </div>
-                <div class="layout_kategorie schrift">
-                    <div class="kategorie">Nachname</div>
-                    <div class="doppelpunkt">:</div>
-                </div>
-                <div class="info schrift">
-                    <?php echo $ergebnis['Nachname']; ?>
-                </div>
-                <div class="layout_kategorie schrift">
-                    <div class="kategorie">Straße</div>
-                    <div class="doppelpunkt">:</div>
-                </div>
-                <div class="info schrift">
-                    <?php echo $ergebnis['Addresse']; ?>
-                </div>
-                <div class="layout_kategorie schrift">
-                    <div class="kategorie">PLZ</div>
-                    <div class="doppelpunkt">:</div>
-                </div>
-                <div class="info schrift">
-                    <?php echo $ergebnis['PLZ']; ?>
-                </div>
-                <div class="layout_kategorie schrift">
-                    <div class="kategorie">Stadt</div>
-                    <div class="doppelpunkt">:</div>
-                </div>
-                <div class="info schrift">
-                    <?php echo $ergebnis['Name'] ?>
-                </div>
-                <div class="layout_kategorie schrift">
-                    <div class="kategorie">Tel-Nr.</div>
-                    <div class="doppelpunkt">:</div>
-                </div>
-                <div class="info schrift">
-                    <?php echo $ergebnis['telnr']; ?>
-                </div>
-                <div class="layout_kategorie schrift">
-                    <div class="kategorie">E-Mail</div>
-                    <div class="doppelpunkt">:</div>
-                </div>
-                <div class="info schrift">
-                    <?php echo $ergebnis['EMail']; ?>
-                </div>
-
-
-            </div>
-
-        </div>
+        <?php 
+            echo $Kontroller->work(); 
+        ?>
     </div>
     <!-- footer -->
     <?php

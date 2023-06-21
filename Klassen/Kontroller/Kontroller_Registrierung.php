@@ -12,7 +12,7 @@ class Kontroller_Registrierung{
     }
 
     public function validate(){
-        /* Kleiner fix weil links zur zeit nicht richtig geladen werden */
+       
         if($_SESSION['UID'] != ""){
             $this->view->set_nachricht("Wilkommen");
             $this->view->set_alte_Werte("vorname", $_SESSION['UName']);           
@@ -50,7 +50,7 @@ class Kontroller_Registrierung{
                 $bild = "standart.jpeg";
                 $erlaubteTypen = array(IMAGETYPE_PNG, IMAGETYPE_JPEG);
         
-                /* Handhabung von Bildern */
+                /* Handhabung von Bildern unique() für namen */
                 if ($_FILES['dateiHochladen']['name'] <> "") {
                     $fileType = exif_imagetype($_FILES['dateiHochladen']['tmp_name']);
                     if (in_array($fileType, $erlaubteTypen)) {
@@ -58,6 +58,8 @@ class Kontroller_Registrierung{
                         move_uploaded_file(
                             $_FILES['dateiHochladen']['tmp_name'],
                             '../Bilder/profile/' . $_FILES['dateiHochladen']['name']
+
+                            /*TODO: Fix Bildupload */
                         );
                     } else {
                         /* Fehlerhaftes Bildformat! */
@@ -120,11 +122,16 @@ class Kontroller_Registrierung{
     }
 
     private function stadt($plz, $name){
-        $erg = $this->model->kontrolliere_Stadt($plz);
-        if(intval($erg['COUNT(*)']) == 0){
-            return $this->model->neue_Stadt($plz, $name);
+        if($this->model->kontrolliere_Stadt($plz)){
+            $erg = $this->model->get_Daten();
+            if(intval($erg['COUNT(*)']) == 0){
+                return $this->model->neue_Stadt($plz, $name);
+            }
+            return true;
+        }else{
+            return false;
         }
-        return true;
+
     }
 
 }

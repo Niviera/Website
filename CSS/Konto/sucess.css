@@ -2,6 +2,8 @@
     width: 100%;
     height: 70vh;
     display: flex;
+    background-image: url("../../Bilder/hintergrund/Registrierung/Registrierung.jpg");
+    background-repeat: no-repeat;
 }
 
 
@@ -29,4 +31,25 @@
         width: 90%;        
     }
 
+    .Container_Main{
+        background-size: 100%;
+        /*background-position: 10% 147%;*/
+        background-position: right bottom;
+       
+    }
+
+}
+
+@media(min-width:1000px){
+    .Container_Main{
+        background-size: 40%;
+        background-position: right bottom;
+    }
+}
+
+@media(min-width:1500px){
+    .Container_Main{
+        background-size: 25%;
+        background-position: right bottom;
+    }
 }

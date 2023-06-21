@@ -1,6 +1,10 @@
 <?php
-$pfad = "Datenbank/";
 session_start();
+include "Klassen/Kontroller/Kontroller_Index.php";
+include "Klassen/Model/Model_Kategorien.php";
+include "Klassen/Model/Model_Hilfsgesuche.php";
+include "Klassen/View/View_Index.php";
+$Kontroller = new Kontroller_Index("");
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +14,13 @@ session_start();
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <link rel="stylesheet" type="text/css" href="CSS/index.css">
+
+  <!-- JavaScript -->
+  <script src="JavaScript/Index_Suche.js" async></script>
 
   <title>Startseite</title>
 </head>
@@ -50,7 +58,8 @@ session_start();
       <form name="test" action="index.php" method="GET">
         <div class="suche_layout">
           <label for="sucheingabe">Suche:</label>
-          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="<?php echo $_GET['sucheingabe'] ?>">
+          <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="<?php echo $_GET['sucheingabe'] ?>" onkeyup="dynamische_Suche(this.value)">
+          
           <button type="submit" value="suche" id="suche"></button>
         </div>
       </form>
@@ -62,49 +71,24 @@ session_start();
     <!-- erweiterte Suche -->
     <div class="erweitertes_Such_Navi">
       <!-- Suche -->
-      <ul>
+      <ul id="Uebersicht_Kategorien">
         <?php
-        include "Datenbank/db_abfrage_Kategorien.php";
-        /* Darstellung */
-        $active = "";
-        if ($_GET['kategorie'] == '') {
-          $active = "active";
-        }
-        echo '<li> <a class="' . $active . '" href="index.php?sucheingabe=' . $_GET['sucheingabe'] . '&kategorie=">Alles</a></li>';
-
-        foreach ($query as $reihe) {
-          $wert = htmlentities($reihe["ID"]);
-          $bezeichnung = htmlentities($reihe["Name"]);
-          $active = "";
-          if ($_GET['kategorie'] == $wert) {
-            $active = "active";
-          }
-          echo '<li> <a class="' . $active . '" href="index.php?sucheingabe=' . $_GET['sucheingabe'] . '&kategorie=' . $wert . '">' . $bezeichnung . '</a> </li>';
-        }
+        echo $Kontroller->display_Index_Kategorien();
         ?>
       </ul>
+
+      <script>
+        const collection = document.getElementsByClassName("hidden");
+        for (let i = 0; i < collection.length; i++) {
+          collection[i].style.display = "block";
+        } 
+      </script>
     </div>
     <!-- Angebote -->
     <div class="Container_kleineAngebote_und_Buttons">
-      <div class="Container_kleine_Angebote">
+      <div id="Container_Pins" class="Container_kleine_Angebote">
         <?php
-        include "Datenbank/db_abfrageHilfsangebote.php";
-        /* Darstellung */
-        foreach ($query as $reihe) {
-          $titel = htmlentities($reihe['Titel']);
-          $pin_ID = htmlentities($reihe['ID']);
-          $beschreibung = htmlentities($reihe['Beschreibung']);
-          $nutzer_ID = htmlentities($reihe['nutzerID']);
-          $vorname = htmlentities($reihe['Vorname']);
-          $nachname = htmlentities($reihe['Nachname']);
-
-          echo '<div>
-                <p class="ueberschrift"> ' . $titel . ' </p>
-                <a class="beschreibung" href="Pins/angebot_eins.php?id=' . $pin_ID . '"> ' . $beschreibung . '...</a>
-                <a class="autor" href="Konto/konto_uebersicht.php?id=' . $nutzer_ID . '">' . $vorname . ' ' . $nachname . '</a>
-              </div>';
-        }
-
+          echo $Kontroller->display_Hilfsangebote();
         ?>
       </div>
       <!-- Buttons -->
