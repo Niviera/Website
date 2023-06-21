@@ -17,6 +17,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $this->display_Kategorien();
         $this->view->set_error("");
         $this->view->set_success("");
+        $this->view->reset_alte_Formular_Werte();
 
         if(isset($_POST['titel'])&& isset($_POST['kategorie']) && isset($_POST['beschreibung'])){
             /* Kontrolliere Title */
@@ -26,6 +27,8 @@ class Kontroller_Hiflsgesuch_Erstellen{
             }
             if(strlen($_POST['titel']) >= 41){
                 $this->view->set_error("Titel zu lang!");
+                $this->view->set_alte_Formular_Werte($_POST['titel']);
+                $this->view->set_alte_Formular_Werte($_POST['beschreibung']);
                 return $this->view->lade_Template($this->template);
             }
 
@@ -41,6 +44,8 @@ class Kontroller_Hiflsgesuch_Erstellen{
             }
             if(strlen($_POST['beschreibung']) >= 1201){
                 $this->view->set_error("Beschreibung zu lang!");
+                $this->view->set_alte_Formular_Werte($_POST['titel']);
+                $this->view->set_alte_Formular_Werte($_POST['beschreibung']);
                 return $this->view->lade_Template($this->template);
             }
 
