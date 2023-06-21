@@ -4,7 +4,9 @@
     text-align: center;
     background-image: url("../../Bilder/hintergrund/Registrierung/Registrierung.jpg");
     background-repeat: no-repeat;
+    min-height: 70vh;
 }
+
 
 .RegisterContainerMain .legend{
     width: 99%;

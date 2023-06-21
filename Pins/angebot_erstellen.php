@@ -1,6 +1,10 @@
 <?php
 session_start();
-include "../Datenbank/db_AngebotErstellen.php";
+include "../Klassen/Kontroller/Kontroller_Hilfsgesuch_Erstellen.php";
+include "../Klassen/Model/Model_Kategorien.php";
+include "../Klassen/Model/Model_Hilfsgesuche.php";
+include "../Klassen/View/View_Hilfsgesuch.php";
+$Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +20,7 @@ include "../Datenbank/db_AngebotErstellen.php";
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboterstellen.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
 </head>
 
 <body>
@@ -26,27 +31,7 @@ include "../Datenbank/db_AngebotErstellen.php";
     ?>
     <!-- Content -->
     <div class="Container_Main_Erstellen">
-
-        <form action="angebot_erstellen.php" method="POST">
-            <div class="layout">
-                <h1>Angebot erstellen:</h1>
-                <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
-                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie">
-                    <?php
-                    include "../Datenbank/db_abfrage_Kategorien.php";
-                    /* Darstellung */
-                    foreach ($query as $reihe) {
-                        $wert = htmlentities($reihe["ID"]);
-                        $bezeichnung = htmlentities($reihe["Name"]);
-                        echo "<option value=" . $wert . ">" . $bezeichnung . "</option>";
-                    }
-                    ?>
-                </select>
-                <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
-                    required></textarea>
-                <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
-            </div>
-        </form>
+        <?php echo $Kontroller->validate() ?>
     </div>
     <!-- footer -->
     <?php

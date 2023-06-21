@@ -1,6 +1,10 @@
 <?php
 session_start();
-include "../Datenbank/db_Detail_Angebot.php";
+include "../Klassen/Kontroller/Kontroller_Hilfsgesuch_Erstellen.php";
+include "../Klassen/Model/Model_Kategorien.php";
+include "../Klassen/Model/Model_Hilfsgesuche.php";
+include "../Klassen/View/View_Hilfsgesuch.php";
+$Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +18,11 @@ include "../Datenbank/db_Detail_Angebot.php";
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboteins.css">
+
+
+    <!-- JavaScripte -->
+    <script src="../JavaScript/Links_und_Rechts_Swipe.js" async></script>
+    <script src="../JavaScript/Links_und_Rechts_Arrow.js" async></script>
 </head>
 
 <body>
@@ -22,37 +31,15 @@ include "../Datenbank/db_Detail_Angebot.php";
     include "pfad_angabe.php";
     include "../Ressourcen/header.php";
     ?>
-    <!-- Content -->
-
-    <div id="angeboteins">
-
-        <!-- Title -->
-        <div class="Container_Angebot">
-            <div class="box3">
-                <h1> <?php echo $ergebnis['Titel'] ?> </h1>
-            </div>
-            <div class="box1">
-                <img src= <?php  echo '../Bilder/profile/'. $ergebnis['bild'] ?> alt="Profil Bild">
-                <!-- Name -->
-                <p><?php echo $ergebnis['Vorname']. ' '. $ergebnis['Nachname'] ?></p>
-
-            </div>
-
-            <!-- Beschreibung -->
-            <div class="box2">
-                <p>
-                    <?php echo $ergebnis['Beschreibung'] ?>
-                </p>
-            </div>
-            <div class="box4">
-                <a href= <?php echo "mailto:".$ergebnis['EMail']?>>Nachricht</a>
-            </div>
-        </div>
-    </div>
+    <?php    
+        echo $Kontroller->display_Detailed_Angebot();
+    ?>
     <!-- footer -->
     <?php
     include "../Ressourcen/footer.php";
     ?>
+
+
 
 </body>
 

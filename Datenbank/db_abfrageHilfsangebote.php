@@ -24,7 +24,12 @@ if ($_GET['sucheingabe'] != '' && $_GET['kategorie'] != '') {
 } else if ($_GET['sucheingabe'] != '' || $_GET['kategorie'] != '') {
   $query = $query . " WHERE " . $query_Zusatz_1 . "" . $query_Zusatz_2;
 }
-$query = $verbindung->prepare($query);
-$query->execute();
-$query = $query->fetchAll();
+
+try{
+  $query = $verbindung->prepare($query);
+  $query->execute();
+  $query = $query->fetchAll();
+}catch(Exception $e){
+
+}
 ?>

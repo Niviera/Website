@@ -1,4 +1,5 @@
 <?php
+$pfad = "../Datenbank/";
 session_start();
 include "../Datenbank/db_Angebot_Loeschen.php";
 include "../Datenbank/db_Abfrage_Eigene_Angebote.php";

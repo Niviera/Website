@@ -1,8 +1,10 @@
 <?php
 session_start();
-include "../Datenbank/db_Daten_aendern.php";
-include "../Datenbank/db_KontoInformationAbfrage.php"
-    ?>
+include "../Klassen/Kontroller/Kontroller_Konto_Uebersicht.php";
+include "../Klassen/Model/Model_Nutzer.php";
+include "../Klassen/View/View_Allgemein.php";
+$Kontroller = new Kontroller_Konto_Uebersicht();
+?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -15,6 +17,7 @@ include "../Datenbank/db_KontoInformationAbfrage.php"
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/eigenes_konto.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
 </head>
 
 <body>
@@ -25,24 +28,10 @@ include "../Datenbank/db_KontoInformationAbfrage.php"
     ?>
     <!-- Content -->
     <div class="Container_Main_Eigenes">
-        <form method="POST" action="eigenes_konto.php">
-            <div class="layout">
-                <h1> Eigenes Konto </h1>
-                <div class="profil_Bild">
-                    <img src=<?php echo "../Bilder/profile/" . $ergebnis['bild'] ?> alt="Profil Bild">
-                </div>
-                <div class="Container_konto">
-                    <label for="vorname">Vorname:</label><input id="vorname" name="vorname" type="text" value=<?php echo $ergebnis['Vorname'] ?>>
-                    <label for="nachname">Nachname:</label><input id="nachname" name="nachname" type="text" value=<?php echo $ergebnis['Nachname'] ?>>
-                    <label for="straße">Straße:</label><input id="straße" name="straße" type="text" value="<?php echo $ergebnis['Addresse'] ?>">
-                    <label for="plz">PLZ:</label><input id="plz" name="plz" type="text" value=<?php echo $ergebnis['PLZ'] ?>>
-                    <label for="stadt">Stadt:</label><input id="stadt" name="stadt" type="text" value=<?php echo $ergebnis['Name'] ?>>
-                    <label for="email">Email:</label><input id="email" name="email" type="email" value=<?php echo $ergebnis['EMail'] ?>>
-                    <label for="bearbeiten">Daten bearbeiten:</label><input id="bearbeiten" name="bestaetigt" type="checkbox" required>
-                </div>
-                <button type="submit" name="aendern">Ändern</button>
-            </div>
-        </form>
+    <?php 
+             $Kontroller->update();
+        echo $Kontroller->work(); 
+    ?>
     </div>
     <!-- footer -->
     <?php
