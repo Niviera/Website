@@ -46,9 +46,36 @@
                 <div class="legend">Kontodaten:</div>
                 <label for="email">E-Mail:</label>
                 <input id="email" name="email" type="email" required>
+                <script>
+                    function isValidEmail(email) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        return emailRegex.test(email);
+                        window.alert("Die E-Mail ist nicht gültig");
+                    }
+                </script>
                 <br>
                 <label for="eMailwdh">E-Mail:</label>
                 <input id="eMailwdh" type="email" required>
+                <script>
+                    const form = document.getElementById('email-form');
+
+                    form.addEventListener('submit', (event) => {
+                        event.preventDefault(); // Verhindert das Standardverhalten des Formulars
+
+                        const email = document.getElementById('email').value;
+                        const eMailwdh = document.getElementById('eMailwdh').value;
+
+                        if (isValidEmail(email) && email === emailRepeat) {
+
+                            console.log(`Die E-Mail-Adresse ${email} ist gültig.`);
+
+
+                        } else {
+                            // Geben Sie eine Fehlermeldung aus und fordern Sie den Benutzer auf, die E-Mail-Adresse erneut einzugeben
+                            console.error(`Die E-Mail-Adressen stimmen nicht überein oder sind ungültig.`);
+                        }
+                    });
+                </script>
                 <br>
                 <label for="passwort">Passwort:</label>
                 <input id="passwort" name="passwort" type="password" required>

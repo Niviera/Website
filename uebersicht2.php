@@ -2,7 +2,43 @@
 session_start();
 include "../Datenbank/db_Angebot_Loeschen.php";
 include "../Datenbank/db_Abfrage_Eigene_Angebote.php";
-$_SESSION['CheckDelete'] = array();
+include "uebersicht.js";
+
+// Controller 
+if (isset($_POST['loeschen'])) {
+    foreach ($_SESSION['CheckDelete'] as $deleteID) {
+        if (isset($_POST[$deleteID])) {
+            $id = str_replace('entferne', '', $deleteID);
+
+            deleteOffer($id);
+        }
+    }
+}
+
+// Model 
+function deleteOffer($id)
+{
+
+}
+
+// View 
+function renderOfferList($offers)
+{
+    foreach ($offers as $row) {
+        $deleteID = 'entferne' . $row['ID'];
+        array_push($_SESSION['CheckDelete'], $deleteID);
+        echo '
+        <div class="eintrag">' . $row['Titel'] . '</div>
+        <div class="eintrag Kategorie_aktiv">' . $row['Name'] . '</div>
+        <div class="eintrag">
+            <input type="checkbox" id="id" name="' . $deleteID . '" value="' . $row['ID'] . '">
+        </div>
+        <div class="eintrag">
+            <a class="fakeButton" href="angebot_aendern.php?ID=' . $row['ID'] . '">Ändern</a>
+        </div>';
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,18 +73,11 @@ $_SESSION['CheckDelete'] = array();
             <div class="ueberschrift">Aendern:</div>
             <!-- Listeneinträge -->
             <?php
-            foreach ($ergebnis as $row) {
-                array_push($_SESSION['CheckDelete'], 'entferne' . $row['ID']);
-                echo
-                    '<div class="eintrag">' . $row['Titel'] . '</div>
-                <div class="eintrag Kategorie_aktiv">' . $row['Name'] . '</div>
-                <div class="eintrag"><input type="checkbox" id="id" name="entferne' . $row['ID'] . '" value="' . $row['ID'] . '">
-                </div>
-                <div class="eintrag"> <a class="fakeButton" href="angebot_aendern.php?ID=' . $row['ID'] . '">Ändern</a></div>';
-            }
+            renderOfferList($ergebnis);
             ?>
             <div class="Container_Button">
                 <button type="submit" value="loeschen" name="loeschen"> Löschen </button>
+                <button type="button" onclick="sortieren()">Sortieren</button>
             </div>
         </form>
     </div>
