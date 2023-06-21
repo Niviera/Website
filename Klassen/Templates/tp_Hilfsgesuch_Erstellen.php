@@ -1,7 +1,8 @@
 <form action="angebot_erstellen.php" method="POST">   
     <div class="layout">     
         <h1>Angebot erstellen:</h1>
-        <div class="nachricht"><?php echo $this->nachricht ?></div>
+        <div class="error"><?php echo $this->error ?></div>
+        <div class="success"><?php echo $this->success ?></div>
         <label for="title">Titel:</label><input id="title" name="titel" type="text" required>
         <label for="kategorie">Kategorie:</label>
         <select name="kategorie" id="kategorie">

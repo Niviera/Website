@@ -7,3 +7,13 @@ div .error{
     background-color: #FF8DA6;
     color: #050505;
 }
+
+div .success{
+    
+    width: 100%;
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #66FB83;
+    color: #050505;
+}

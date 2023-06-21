@@ -20,6 +20,7 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboterstellen.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
 </head>
 
 <body>

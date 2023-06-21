@@ -4,6 +4,8 @@ class View_Allgmemein{
     private $alte_Werte = array();
 
     private $kategorien = array();
+    private $error;
+    private $success;
 
 
     public function lade_Template($tpl){
@@ -16,6 +18,13 @@ class View_Allgmemein{
 
     public function set_nachricht($msg){
         $this->nachricht = htmlentities($msg);
+    }
+    public function set_error($msg){
+        $this->error = htmlentities($msg);
+    }
+
+    public function set_success($msg){
+        $this->success = htmlentities($msg);
     }
 
     public function set_alte_Werte($schluessel, $wert){
