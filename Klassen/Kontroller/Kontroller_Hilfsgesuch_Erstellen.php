@@ -88,7 +88,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
                         if($erg['ID'] != ''){
                             $id = $erg['ID'];
                         }else{
-                            $this->view->set_nachricht("Es gibt vorher keine Hilfsgesuche mehr!");
+                            $this->view->set_nachricht("Es gibt hier nach keine Hilfsgesuche mehr!");
                         }        
                     }
                     break;
@@ -98,7 +98,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
                         if($erg['ID'] != ''){
                             $id = $erg['ID'];
                         }else{
-                            $this->view->set_nachricht("Es gibt hier nach keine Hilfsgesuche mehr!");
+                            $this->view->set_nachricht("Es gibt vorher keine Hilfsgesuche mehr!");
                         }                        
                     }
                     break;
