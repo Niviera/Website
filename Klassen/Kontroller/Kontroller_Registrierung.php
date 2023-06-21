@@ -51,7 +51,7 @@ class Kontroller_Registrierung{
                 $erlaubteTypen = array(IMAGETYPE_PNG, IMAGETYPE_JPEG);
         
                 /* Handhabung von Bildern unique() für namen */
-                if ($_FILES['dateiHochladen']['name'] <> "") {
+                if ($_FILES['dateiHochladen']['name'] != "") {
                     $fileType = exif_imagetype($_FILES['dateiHochladen']['tmp_name']);
                     if (in_array($fileType, $erlaubteTypen)) {
                         $bild = $_FILES['dateiHochladen']['name'];
