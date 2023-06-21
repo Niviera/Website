@@ -18,6 +18,7 @@ $Kontroller = new Kontroller_Konto_Uebersicht();
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/konto.css">
+    
 </head>
 
 <body>

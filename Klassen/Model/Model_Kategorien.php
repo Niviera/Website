@@ -10,7 +10,7 @@ class Model_Kategorien{
 
     public function get_Kategorien(){
         try{
-            $query = $this->db->prepare("SELECT * FROM Kategorie");
+            $query = $this->db->prepare("SELECT * FROM Kategorie ORDER BY Name ASC");
             $query->execute();
             $this->erg =  $query->fetchAll();
             return true;

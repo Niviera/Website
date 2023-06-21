@@ -58,6 +58,8 @@ class Kontroller_Registrierung{
                         move_uploaded_file(
                             $_FILES['dateiHochladen']['tmp_name'],
                             '../Bilder/profile/' . $_FILES['dateiHochladen']['name']
+
+                            /*TODO: Fix Bildupload */
                         );
                     } else {
                         /* Fehlerhaftes Bildformat! */

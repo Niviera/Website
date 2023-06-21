@@ -154,7 +154,7 @@
     height:100%;
     text-align: left;
     margin:0;
-
+    word-wrap: break-word;
     /*Position im grid*/
     grid-column: 2/6;
     grid-row: 3/5;
@@ -176,6 +176,10 @@
     font-size: 1.0em;
     margin-top: 16px;
 }
+
+.erweitertes_Such_Navi .hidden{
+    display: none;
+ }
 
 /* Buttons listennavigation */
 .Container_Buttons{

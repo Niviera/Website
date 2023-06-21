@@ -2,6 +2,8 @@
 class View_Hilfsgesuch{
     private $kategorien = array();
     private $nachricht;
+    private $error;
+    private $success;
 
     public function lade_Template($tpl){
         ob_start();
@@ -24,6 +26,14 @@ class View_Hilfsgesuch{
 
     public function set_alte_Werte($schluessel, $wert){
 		$this->kategorien[$schluessel] = htmlentities($wert);
+	}
+
+    public function set_error($nachricht){
+		$this->error = htmlentities($nachricht);
+	}
+
+    public function set_success($nachricht){
+		$this->success = htmlentities($nachricht);
 	}
 
 }

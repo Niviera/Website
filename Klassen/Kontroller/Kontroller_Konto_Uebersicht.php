@@ -65,34 +65,34 @@ class Kontroller_Konto_Uebersicht{
                     if( $_SESSION['UMail'] != $_POST['email']){
                         $test = $this->model->kontrolliere_Email($_POST['email']);
                         if(intval($test['COUNT(*)']) != 0){
-                            $this->view->set_nachricht("Fehler: Ihre Daten konnten nicht geupdatet werden.");
+                            $this->view->set_error("Fehler: Ihre Daten konnten nicht geupdatet werden.");
                             return;
                         }
                     }
                     /* Kontrolliere den Vornamen */
                     if(strlen($_POST['vorname']) >= 41){
-                        $this->view->set_nachricht("Fehler: Der Vorname ist zu lang");
+                        $this->view->set_error("Fehler: Der Vorname ist zu lang");
                         return;
                     }
                     /* Kontrolliere den Vornamen */
                     if(strlen($_POST['nachname']) >= 41){
-                        $this->view->set_nachricht("Fehler: Der Nachname ist zu lang.");
+                        $this->view->set_error("Fehler: Der Nachname ist zu lang.");
                         return;
                     }
                     /* Kontrolliere den Vornamen */
                     if(strlen($_POST['straße']) >= 41){
-                        $this->view->set_nachricht("Fehler: Die Adresse ist zu lang.");
+                        $this->view->set_error("Fehler: Die Adresse ist zu lang.");
                         return;
                     }
 
                     if($this->model->update_User_Data($_SESSION['UID'], $_POST['vorname'], $_POST['nachname'], $_POST['straße'], $_POST['plz'], $_POST['email'])){
-                        $this->view->set_nachricht("Erfolg: Ihre Daten wurden geupdatet.");
+                        $this->view->set_success("Erfolg: Ihre Daten wurden geupdatet.");
                     }else{
-                        $this->view->set_nachricht("Fehler: Ihre Daten konnten nicht erfolgreich geupdatet werden.");
+                        $this->view->set_error("Fehler: Ihre Daten konnten nicht erfolgreich geupdatet werden.");
                     }
         
             }else{
-                $this->view->set_nachricht("Fehler: Ihre Daten sind nicht vollständig");
+                $this->view->set_error("Fehler: Ihre Daten sind nicht vollständig");
             }
         }
 

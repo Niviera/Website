@@ -9,10 +9,16 @@
 var el = document.getElementById('Container_Angebot')
 swipedetect(el, function(swipedir){     
             if(swipedir == "left"){
-                alert("You swiped Left")
+                const parser = new URL(window.location);
+                parser.searchParams.set("richtung", 1);
+                parser.searchParams.delete("id");
+                window.location = parser.href;
             }
             if(swipedir == "right"){
-                alert("You swiped right")
+                const parser = new URL(window.location);
+                parser.searchParams.set("richtung", 0);
+                parser.searchParams.delete("id");
+                window.location = parser.href;
             }
 })
  

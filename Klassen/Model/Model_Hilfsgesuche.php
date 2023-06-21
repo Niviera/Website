@@ -45,8 +45,42 @@ class Model_Hilfsgesuche{
             return true;
         }catch(Exception $e){
             return false;
+        }      
+    }
+    public function get_Nächste_ID($id){
+        try{
+            $query = "SELECT ID FROM Hilfsgesuch WHERE ID > ? ORDER BY ID LIMIT 1";
+            $query = $this->db->prepare($query);
+            $query->execute([$id]);
+            $this->erg = $query->fetch();
+            return true;
+        }catch(Exception $e){
+            return false;
         }
-        
+    }
+
+    public function get_Vorherige_ID($id){
+        try{
+            $query = "SELECT ID FROM Hilfsgesuch WHERE ID < ? ORDER BY ID DESC LIMIT 1";
+            $query = $this->db->prepare($query);
+            $query->execute([$id]);
+            $this->erg = $query->fetch();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+    }
+
+    public function get_ID(){
+        try{
+            $query = "SELECT ID FROM Hilfsgesuch";
+            $query = $this->db->prepare($query);
+            $query->execute();
+            $this->erg = $query->fetchAll();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
     }
 
     public function hilfsgesuche($kategorie, $sucheingabe){
