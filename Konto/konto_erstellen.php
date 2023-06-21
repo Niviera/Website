@@ -20,6 +20,7 @@ $Kontroller = new Kontroller_Registrierung();
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/registrierung.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/sucess.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
 </head>
 
 <body>

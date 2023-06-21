@@ -27,13 +27,13 @@
                     <label for="email">E-Mail:</label>
                     <input id="email" name="email" type="email" value="<?php echo $this->alte_Werte['email'] ?>" required>
                     <br>
-                    <label for="eMailwdh">E-Mail:</label>
+                    <label for="eMailwdh">E-Mail wdh.:</label>
                     <input id="eMailwdh" name="eMailwdh" type="email" value="<?php echo $this->alte_Werte['eMailwdh'] ?>" onkeyup="Email_Vergleich()" required>
                     <br>
                     <label for="passwort">Passwort:</label>
                     <input id="passwort" name="passwort" type="password" required>
                     <br>
-                    <label for="passwortwdh">Passwort:</label>
+                    <label for="passwortwdh">Passwort wdh.:</label>
                     <input id="passwortwdh" name="passwortwdh" type="password" required>
                 </div>
                 <div class="ContainerRubrik">

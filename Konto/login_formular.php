@@ -18,6 +18,7 @@ $Kontroller =new Kontroller_Login();
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/login.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Konto/sucess.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
 </head>
 
 <body>
