@@ -1,4 +1,4 @@
-    <!-- Content -->
+<!-- Content -->
 <div id="angeboteins">
     <!-- Title -->
     <div id="Container_Angebot" class="Container_Angebot">

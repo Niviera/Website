@@ -19,7 +19,7 @@
                     <label for="plz">PLZ:</label>
                     <input id="plz" name="plz" type="number" value="<?php echo $this->alte_Werte['plz'] ?>">
                     <br>
-                    <label for="stadt">Stadt:</label>
+                    <label for="stadt">Ort:</label>
                     <input id="stadt" name="stadt" type="text" value="<?php echo $this->alte_Werte['stadt'] ?>">
                 </div>
                 <div class="ContainerRubrik">
@@ -42,10 +42,11 @@
                     <input id="dateiHochladen" name="dateiHochladen" type="file">
                 </div>
                 <div class="ContainerButtons">
+                <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
+                    </div>
                     <button type="submit" name="abgeschickt" value="abgeschickt"
                         class="buttonDesign allgemeinesDesign">Registrieren</button>
-                    <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
-                    </div>
+                    
                 </div>
             </form>
 </div>
