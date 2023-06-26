@@ -121,4 +121,20 @@ class Model_Hilfsgesuche{
 
     }
 
+    public function angebot_aendern($titel, $beschreibung, $kategorie, $id){
+        try{
+            $query = "UPDATE Hilfsgesuch SET Titel=?,Beschreibung=?, Kategorie=? WHERE ID = ?";
+            $query = $this->db->prepare($query);
+            $query->bindValue(1, $titel);
+            $query->bindValue(2, $beschreibung);
+            $query->bindValue(3, $kategorie);
+            $query->bindValue(4, $id);
+            $query->execute();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+        
+    }
+
 }
