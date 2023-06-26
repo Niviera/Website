@@ -134,11 +134,40 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $kategorie = "";
         $id = "";
         $bezeichnung = "";
+
+        /* Hole richtige ID */
+        if (isset($_GET['ID'])) {
+            $id = $_GET['ID'];
+        } else {
+            $id = $_POST['ID'];
+        }
+
+        /* Kategorien */
+        $this->display_Kategorien();
+
+        /* Hohle aktuelle Angebot details */
+        if($this->model_Gesuche->hilfsgesuch_Detailed($id)){
+            $erg = $this->model_Gesuche->get_ergebnisse();
+
+            if($erg['Ersteller'] != $_SESSION['UID']){
+                $this->view->set_error("Es ist ein Fehler passiert.");
+                return $this->view->lade_Template("tp_Angebot_Aendern");
+            }
+
+            $titel = $erg['Titel'];
+            $bezeichnung = $erg['Beschreibung'];
+            $kategorie = intval($erg['Kategorie']);
+            
+            
+        }else{
+            $this->view->set_error("Kein Angebot gefunden.");
+            return $this->view->lade_Template("tp_Angebot_Aendern");
+        } 
+
+        /* Änderungen des Angebots */
         if(isset($_POST['ID'], $_POST['titel'], $_POST['beschreibung'], $_POST['kategorie'])){
-            /* Kontrolle ID */
-            $id = $_POST['ID']; 
             /* Kontrolle Kategorie */
-            $kategorie = $_POST['kategorie'];
+            $kategorie = intval($_POST['kategorie']);
             /* Kontrolle Titel */
             if(strlen($_POST['titel']) < 41){
                 $titel = $_POST['titel'];
@@ -149,43 +178,23 @@ class Kontroller_Hiflsgesuch_Erstellen{
             if(strlen($_POST['beschreibung']) < 1201){
                 $bezeichnung = $_POST['beschreibung'];
             }else{
-                $this->view->set_error("Die Beschreibung ist zu lang");
+                $this->view->set_error("Die Beschreibung ist zu lang");             
             }
             
             /* Angebot Ändern */
             if($this->model_Gesuche->angebot_aendern($titel, $bezeichnung, $kategorie, $id)){
                 $this->view->set_success("Das Angebot wurde Erfolgreich angepasst.");
             }else{
-                $this->view->set_error("Bei der änderung ist ein fehler passiert.".$id);
-                $this->view->set_alte_Formular_Werte($titel);
-                $this->view->set_alte_Formular_Werte($bezeichnung);
-                $this->view->set_alte_Formular_Werte($id);
-                
+                $this->view->set_error("Bei der änderung ist ein fehler passiert.");      
             }  
-        }else{
-            if (isset($_GET['ID'])) {
-                $id = $_GET['ID'];
-            } else {
-                $id = $_POST['ID'];
-            }
         }
 
-        /* Kategorien */
-        $this->display_Kategorien();
-        /* wähle preselected Kategorie aus */
-
-        /* Hohle aktuelle Angebot details */
-        if($this->model_Gesuche->hilfsgesuch_Detailed($id)){
-            $erg = $this->model_Gesuche->get_ergebnisse();
-            $this->view->set_alte_Formular_Werte($erg['Titel']);
-            $this->view->set_alte_Formular_Werte($erg['Beschreibung']);
-            $this->view->set_alte_Formular_Werte($id);
-            $this->view->set_selected(intval($erg['Kategorie']));
-            return $this->view->lade_Template("tp_Angebot_Aendern");
-        }else{
-            $this->view->set_error("Kein Angebot gefunden.");
-            return $this->view->lade_Template("tp_Angebot_Aendern");
-        } 
+        /* Updaten der View */
+        $this->view->set_alte_Formular_Werte($titel);
+        $this->view->set_alte_Formular_Werte($bezeichnung);
+        $this->view->set_alte_Formular_Werte($id);
+        $this->view->set_selected($kategorie);
+        return $this->view->lade_Template("tp_Angebot_Aendern");
     }
 
     /* Hilfsfunktionen */
