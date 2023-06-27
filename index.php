@@ -60,7 +60,7 @@ $Kontroller = new Kontroller_Index("");
           <label for="sucheingabe">Suche:</label>
           <input id="sucheingabe" name="sucheingabe" type="text" class="suchEingabe" placeholder="<?php echo $_GET['sucheingabe'] ?>" onkeyup="dynamische_Suche(this.value)">
           
-          <button type="submit" value="suche" id="suche"></button>
+          <button type="submit" value="suche" id="suche">Suche</button>
         </div>
       </form>
     </div>
