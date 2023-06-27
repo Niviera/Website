@@ -21,6 +21,8 @@ class Kontroller_Login{
             return $this->view->lade_Template($this->template_erfolg);
         }
 
+        
+
         if(isset($_POST['email']) && $_POST['passwort']){
             /* Überprüfe auf gültige Email */
             if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
@@ -50,6 +52,10 @@ class Kontroller_Login{
             $this->view->set_nachricht($this->nachricht);
             $this->view->set_alte_Werte("vorname", $erg['Vorname']);
             $this->view->set_alte_Werte("nachname", $erg['Nachname']);
+
+
+
+            header('Location: login_formular.php');
             return $this->view->lade_Template($this->template_erfolg);
 
         }else{

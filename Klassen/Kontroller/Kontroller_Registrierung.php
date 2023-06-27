@@ -84,7 +84,9 @@ class Kontroller_Registrierung{
                 $this->view->set_nachricht("Wilkommen");
                 $this->view->set_alte_Werte("vorname", $_POST['vorname']);           
                 $this->view->set_alte_Werte("nachname", $_POST['nachname']);
-                
+
+
+                header('Location: konto_erstellen.php');
                 return $this->view->lade_Template($this->template_erfolg);
                
         }else{

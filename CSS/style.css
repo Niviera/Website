@@ -45,8 +45,6 @@ nav{
     background-color: #74c4ff; 
 }
 
-
-
 nav .navi{
     height: 41px;
 }
@@ -95,9 +93,15 @@ nav a{
     display: block;
     padding: 10px 5px;
     text-align: center;
-    border: 1px solid #5693BF;
-    border-right: 0px;
+    border-left: 1px solid #5693BF;
+    border-bottom: 1px solid #5693BF;
+    border-top: 1px solid #5693BF;
+    
  }
+
+ nav .letzte{
+    border-right: 1px solid #5693BF;
+}
 
 nav a:hover{
     background-color: #5693BF;
