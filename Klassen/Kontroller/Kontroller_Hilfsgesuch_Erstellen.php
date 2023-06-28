@@ -19,6 +19,9 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $this->view->set_success("");
         $this->view->reset_alte_Formular_Werte();
 
+        $lat = NULL;
+        $lon = NULL;
+
         if(isset($_POST['titel'])&& isset($_POST['kategorie']) && isset($_POST['beschreibung'])){
             /* Kontrolliere Title */
             if(!is_string($_POST['titel'])){
@@ -49,7 +52,12 @@ class Kontroller_Hiflsgesuch_Erstellen{
                 return $this->view->lade_Template($this->template);
             }
 
-            if($this->model_Gesuche->neues_Hilfsgesuch($_POST['titel'], $_POST['beschreibung'], $_POST['kategorie'])){
+            if(isset($_POST['lat'], $_POST['lon'])){
+                $lat = $_POST['lat'];
+                $lon = $_POST['lon'];
+            }
+
+            if($this->model_Gesuche->neues_Hilfsgesuch($_POST['titel'], $_POST['beschreibung'], $_POST['kategorie'], $lat, $lon)){
                 $this->view->set_success("Die Eintragung war Erfolgreich");
             }else{
                 $this->view->set_error("Bei der Eintragung ist etwas Schiefgelaufen");
@@ -125,6 +133,9 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $this->view->set_alte_Werte("vorname", $erg['Vorname']);
         $this->view->set_alte_Werte("nachname", $erg['Nachname']);
         $this->view->set_alte_Werte("email", $erg['EMail']);
+
+        $this->view->set_alte_Werte("lon", $erg['lon']);
+        $this->view->set_alte_Werte("lat", $erg['lat']);
 
         return $this->view->lade_Template("tp_detailed_Angebot");
     }

@@ -14,6 +14,11 @@
             </select>
         <label for="beschreibung">Beschreibung:</label>
         <textarea id="beschreibung" name="beschreibung" required><?php echo $this->alte_Werte[1] ?></textarea>
+        <label for="lat">Breitengrad:</label>
+        <input id="lat" name="lat" type="number" step="any" value="" >
+        <label for="lon">Längengrad:</label>
+        <input id="lon" name="lon" type="number" step="any" value="" >
+        <div id="map" class="hidden"></div>
         <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
     </div>
 </form>

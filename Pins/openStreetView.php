@@ -14,23 +14,19 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angebot erstellen</title>
-
+    <title>Karte</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboterstellen.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/map.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-
-    <!-- JavaScript -->
+     
+    <!--  JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-    
      
 
 </head>
@@ -42,15 +38,23 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     include "../Ressourcen/header.php";
     ?>
     <!-- Content -->
-    <div class="Container_Main_Erstellen">
-        <?php echo $Kontroller->validate() ?>
-    </div>
+    
+    <form>
+    <input id="lat" type="text">
+    <input id="lon" type="text">
 
+    </form>
+
+    <div id="map"></div>
+  
     <script src="../JavaScript/map.js" async></script>
+
     <!-- footer -->
     <?php
     include "../Ressourcen/footer.php";
     ?>
+
+
 </body>
 
 </html>

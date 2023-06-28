@@ -14,16 +14,18 @@ class Model_Hilfsgesuche{
         return $this->erg;
     }
 
-    public function neues_Hilfsgesuch($titel, $beschreibung, $kategorie){
+    public function neues_Hilfsgesuch($titel, $beschreibung, $kategorie, $lat, $lon){
         try{
             /* Querrys */
-            $query = $this->db->prepare("INSERT INTO Hilfsgesuch(Titel, Beschreibung, Kategorie, Ersteller) VALUES (?,?,?,?)");
+            $query = $this->db->prepare("INSERT INTO Hilfsgesuch(Titel, Beschreibung, Kategorie, Ersteller, lat, lon) VALUES (?,?,?,?,?,?)");
 
             /* Eintragen der Werte */
             $query->bindValue(1, $titel);
             $query->bindValue(2, $beschreibung);
             $query->bindValue(3, $kategorie);
             $query->bindValue(4, $_SESSION['UID']);
+            $query->bindValue(5, $lat);
+            $query->bindValue(6, $lon);
 
             /* Eintragung des Hilfsangebots */
             $query->execute();

@@ -36,6 +36,8 @@
             Beschreibung TEXT(1200),
             Kategorie INTEGER,
             Ersteller INTEGER,
+            lat REAL,
+            lon REAL,
             FOREIGN KEY(Kategorie) REFERENCES Kategorie(ID),
             FOREIGN KEY(Ersteller) REFERENCES Nutzer(ID)
         );";

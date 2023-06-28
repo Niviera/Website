@@ -1,5 +1,5 @@
 .Container_Main_Erstellen{
-    height: 60vh;
+    min-height: 85vh;
     width: 100%;
     display: flex;
     background-image: url("../../Bilder/hintergrund/ueberuns/ueberuns.jpg");
