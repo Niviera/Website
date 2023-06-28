@@ -13,5 +13,12 @@
         </select>
         <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
                     type="text" required><?php echo $this->alte_Werte[1] ?></textarea>
-        <button type="submit" name="ID" value="<?php echo $this->alte_Werte[2] ?>">Ändern</button>
+       
+        <label for="lat">Breitengrad:</label>
+        <input id="lat" name="lat" type="number" step="any" value="<?php echo $this->alte_Werte[3] ?>" >
+        <label for="lon">Längengrad:</label>
+        <input id="lon" name="lon" type="number" step="any" value="<?php echo $this->alte_Werte[4] ?>" >
+
+        <div id="map" class="hidden"></div>
+         <button type="submit" name="ID" value="<?php echo $this->alte_Werte[2] ?>">Ändern</button>
 </div>

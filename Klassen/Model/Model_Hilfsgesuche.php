@@ -123,14 +123,16 @@ class Model_Hilfsgesuche{
 
     }
 
-    public function angebot_aendern($titel, $beschreibung, $kategorie, $id){
+    public function angebot_aendern($titel, $beschreibung, $kategorie, $id, $lat, $lon){
         try{
-            $query = "UPDATE Hilfsgesuch SET Titel=?,Beschreibung=?, Kategorie=? WHERE ID = ?";
+            $query = "UPDATE Hilfsgesuch SET Titel=?,Beschreibung=?, Kategorie=?, lat=?, lon=? WHERE ID = ?";
             $query = $this->db->prepare($query);
             $query->bindValue(1, $titel);
             $query->bindValue(2, $beschreibung);
-            $query->bindValue(3, $kategorie);
-            $query->bindValue(4, $id);
+            $query->bindValue(3, $kategorie);        
+            $query->bindValue(4, $lat);
+            $query->bindValue(5, $lon);
+            $query->bindValue(6, $id);
             $query->execute();
             return true;
         }catch(Exception $e){
