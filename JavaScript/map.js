@@ -1,6 +1,8 @@
 
 /* Schalte die Karte frei */
+//document.getElementsByClassName("Container_Main_Erstellen").style.height = "100vh";
 document.getElementById("map").classList.remove("hidden");
+document.getElementById("mapInfo").classList.remove("hidden");
 
 /* Lade die Karte default Oldenburg */
 const map = new L.map("map");
@@ -19,6 +21,8 @@ map.addLayer(layer);
 /* Funktionen */
 function success(erg){
     /* Setze die Karte auf die aktuelle Position */
+    document.getElementById("mapInfo").innerHTML = "Ihre aktuelle Position wurde gewählt.";
+
     const lat = erg.coords.latitude;
     const lng = erg.coords.longitude;
     document.getElementById('lat').value = lat;
@@ -29,6 +33,7 @@ function success(erg){
     var marker = L.marker([lat,lng], { draggable: true }).addTo(map);
 
     marker.on('dragend', function(event) {
+        document.getElementById("mapInfo").innerHTML = "Sie haben einen Standort gewählt.";
         var position = marker.getLatLng();
         document.getElementById('lat').value = position.lat.toFixed(6);
         document.getElementById('lon').value = position.lng.toFixed(6);
@@ -36,6 +41,7 @@ function success(erg){
 }
 
 function error(){
+    document.getElementById("mapInfo").innerHTML = "Es wurde ein default Standort gewählt.";
     var marker = L.marker([53.1401,8.2139], { draggable: true }).addTo(map);
 
     document.getElementById('lat').value = 53.1401;

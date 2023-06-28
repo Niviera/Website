@@ -24,9 +24,10 @@
         </div>
         <input hidden id="lat" value="<?php echo $this->kategorien['lat'] ?>">
         <input hidden id="lon" value="<?php echo $this->kategorien['lon'] ?>">
-    </div>
-    <div id="Container_Map" class="hidden">
+        <div id="map" class="hidden">
         
+        </div>       
     </div>
+    
 </div>
 

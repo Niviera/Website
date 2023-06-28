@@ -1,8 +1,8 @@
 /* Schalte die Karte frei */
-document.getElementById("Container_Map").classList.remove("hidden");
+document.getElementById("map").classList.remove("hidden");
 
 /* Lade die Karte default Oldenburg */
-const map = new L.map("Container_Map");
+const map = new L.map("map");
 map.setView([53.1401,8.2139], 18); 
 
 

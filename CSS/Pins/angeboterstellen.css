@@ -1,5 +1,5 @@
 .Container_Main_Erstellen{
-    min-height: 85vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     background-image: url("../../Bilder/hintergrund/ueberuns/ueberuns.jpg");
@@ -85,6 +85,11 @@
 @media(max-width: 680px){
     .Container_Main_Erstellen{
         background-size: 75%;
+        height: 120vh;
+    }
+
+    .Container_Main_Erstellen form{
+        width: 85%;
     }
 
     .Container_Main_Erstellen form select{
