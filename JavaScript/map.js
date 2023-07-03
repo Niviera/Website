@@ -10,6 +10,7 @@ function loadMap(){
     /* Verstecke Button zum Laden */
     document.getElementById("lade").classList.add("hidden");
     document.getElementById("map").classList.remove("hidden");
+    document.getElementById("map").classList.add("height400");
 
     /* Lade benötigte Stylesheets nach */
 

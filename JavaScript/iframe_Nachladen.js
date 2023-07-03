@@ -12,6 +12,7 @@ function karte_laden(){
         document.getElementById("iframe_laden").classList.add("hidden");
         document.getElementById("iframe_laden").classList.remove("iframe_laden");
         document.getElementById("karte").classList.remove("hidden");
+        document.getElementById("karte").classList.add("height400");
         iframe.src = "map.php?lat=" + encodeURIComponent(lat) +"&lon=" + encodeURIComponent(lon);
     }else{
         var error_msg = document.getElementById("error");

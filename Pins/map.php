@@ -18,6 +18,7 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/map.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -33,8 +34,11 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
 
 <body>
     <!-- Content -->  
-    <div id="map"></div>
+    <div id="map">
+        <div id="error" class="error"></div>
+    </div>
     <script src="../JavaScript/map_detailed.js" async></script>
+    
 
 </body>
 

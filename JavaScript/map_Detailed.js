@@ -3,10 +3,18 @@ const parser = new URLSearchParams(window.location.search);
 let lat = parser.get('lat');
 let lon = parser.get('lon');
 
-const map = new L.map("map");
-var marker = L.marker([lat,lon]).addTo(map);
-map.setView([lat, lon], 18);
+if(lat != "" && lon != ""){
+    document.getElementById("map").classList.add("height400");
 
-var layer = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+    const map = new L.map("map");
+    var marker = L.marker([lat,lon]).addTo(map);
+    map.setView([lat, lon], 18);
 
-map.addLayer(layer);
+    var layer = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+
+    map.addLayer(layer);
+
+}else{
+    document.getElementById("map").classList.add("height20");
+}
+

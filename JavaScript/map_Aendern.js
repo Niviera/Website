@@ -1,6 +1,7 @@
 
 /* Schalte die Karte frei */
 document.getElementById("map").classList.remove("hidden");
+document.getElementById("map").classList.add("height400");
 document.getElementById("mapInfo").classList.remove("hidden");
 
 var latitude = document.getElementById("lat").value;
