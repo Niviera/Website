@@ -28,6 +28,7 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+     
     
 </head>
 
@@ -40,9 +41,8 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <?php    
         echo $Kontroller->display_Detailed_Angebot();
     ?>
+    <script src="../JavaScript/iframe_Nachladen.js"></script>
     
-
-    <script src="../JavaScript/map_Detailed.js" async></script>
     <!-- footer -->
     <?php
     include "../Ressourcen/footer.php";

@@ -32,28 +32,9 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
 </head>
 
 <body>
-    <!-- Header -->
-    <?php
-    include "pfad_angabe.php";
-    include "../Ressourcen/header.php";
-    ?>
-    <!-- Content -->
-    
-    <form>
-    <input id="lat" type="text">
-    <input id="lon" type="text">
-
-    </form>
-
+    <!-- Content -->  
     <div id="map"></div>
-  
-    <script src="../JavaScript/map.js" async></script>
-
-    <!-- footer -->
-    <?php
-    include "../Ressourcen/footer.php";
-    ?>
-
+    <script src="../JavaScript/map_detailed.js" async></script>
 
 </body>
 

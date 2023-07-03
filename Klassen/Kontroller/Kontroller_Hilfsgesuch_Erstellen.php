@@ -22,6 +22,11 @@ class Kontroller_Hiflsgesuch_Erstellen{
 
         $lat = NULL;
         $lon = NULL;
+        /* Kontrolliere ob jemand eingeloggt ist */
+        if(!isset($_SESSION['UID'], $_SESSION['UTOKEN'])){
+            $this->view->set_error("Sie sind nicht eingeloggt!");
+            return $this->view->lade_Template($this->template);
+        }
 
         if(isset($_POST['titel'], $_POST['kategorie'], $_POST['beschreibung'], $_POST['UTOKEN'])){
             /* kontrolliere Token */
@@ -153,6 +158,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
 
         $this->view->set_alte_Werte("lon", $erg['lon']);
         $this->view->set_alte_Werte("lat", $erg['lat']);
+        
 
         return $this->view->lade_Template("tp_detailed_Angebot");
     }
@@ -176,6 +182,11 @@ class Kontroller_Hiflsgesuch_Erstellen{
         /* Kategorien */
         $this->display_Kategorien();
 
+        if(!isset($_SESSION['UID'], $_SESSION['UTOKEN'])){
+            $this->view->set_error("Sie sind nicht eingeloggt!");
+            return $this->view->lade_Template("tp_Angebot_Aendern");
+        }
+        
         /* Hohle aktuelle Angebot details */
         if($this->model_Gesuche->hilfsgesuch_Detailed($id)){
             $erg = $this->model_Gesuche->get_ergebnisse();

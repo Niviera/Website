@@ -7,7 +7,6 @@
     min-height: 70vh;
 }
 
-
 .RegisterContainerMain .legend{
     width: 99%;
     text-align: center;
@@ -21,6 +20,27 @@
     margin-top: 3px;
     margin-bottom: 3px;
 }
+
+.RegisterContainerMain .checkbox_text{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    text-align: left;
+}
+
+.checkbox_text #datenschutz{
+    width: 20%;
+}
+
+.checkbox_text #nutzungsbediungen{
+    width: 20%;
+}
+
+.checkbox_text .text{
+    width: 75%;
+    margin-bottom: 10px;
+}
+
 
 .ContainerRubrik label{
     text-align: left;
@@ -126,6 +146,22 @@
     .ContainerButtons .buttonDesign{
         width: 102px;
         height: 32px;
+    }
+
+    .RegisterContainerMain .checkbox_text{
+        width: 100%;
+    }
+    
+    .checkbox_text #datenschutz{
+        width: 10%;
+    }
+
+    .checkbox_text #nutzungsbediungen{
+        width: 10%;
+    }
+    
+    .checkbox_text .text{
+        width: 85%;
     }
     
 }
