@@ -79,6 +79,7 @@ class Kontroller_Registrierung{
                 $erg = $this->model->get_User_Data($_POST['email']);
                 $_SESSION['UID'] = $erg['ID'];
                 $_SESSION['UName'] = $_POST['vorname'];
+                $_SESSION['UTOKEN'] = uniqid();
 
                 
                 $this->view->set_nachricht("Wilkommen");

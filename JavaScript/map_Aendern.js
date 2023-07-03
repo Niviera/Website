@@ -39,7 +39,7 @@ map.addLayer(layer);
 /* Funktionen */
 function success(erg){
     /* Setze die Karte auf die aktuelle Position */
-    document.getElementById("mapInfo").innerHTML = "Ihre aktuelle Position wurde gewählt.";
+    document.getElementById("mapInfo").innerHTML = "Keine Daten hinterlegt. Ihre aktuelle Position wurde gewählt.";
     latitude = erg.coords.latitude;
     longitude = erg.coords.longitude;
     document.getElementById('lat').value = latitude;

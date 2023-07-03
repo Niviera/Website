@@ -3,6 +3,7 @@
     <div class="error"><?php echo $this->error ?></div>
     <div class="success"><?php echo $this->success ?></div>
     <label for="title">Titel:</label><input id="title" name="titel" type="text" required value="<?php echo $this->alte_Werte[0] ?>">
+    <input type="text" name="UTOKEN" readonly hidden value="<?php echo $this->alte_Werte[5] ?>">
     <label for="kategorie">Kategorie:</label>
         <select name="kategorie" id="kategorie" required>
             <?php foreach ($this->kategorien as $erg):?> 

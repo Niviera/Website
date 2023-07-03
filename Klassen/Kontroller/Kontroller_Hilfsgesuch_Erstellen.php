@@ -18,11 +18,18 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $this->view->set_error("");
         $this->view->set_success("");
         $this->view->reset_alte_Formular_Werte();
+        $this->view->set_alte_Formular_Werte($_SESSION['UTOKEN']);
 
         $lat = NULL;
         $lon = NULL;
 
-        if(isset($_POST['titel'])&& isset($_POST['kategorie']) && isset($_POST['beschreibung'])){
+        if(isset($_POST['titel'], $_POST['kategorie'], $_POST['beschreibung'], $_POST['UTOKEN'])){
+            /* kontrolliere Token */
+            if($_POST['UTOKEN'] != $_SESSION['UTOKEN']){
+                $this->view->set_error("Überprüfe bitte den Titel");
+                return $this->view->lade_Template($this->template);
+            }
+
             /* Kontrolliere Title */
             if(!is_string($_POST['titel'])){
                 $this->view->set_error("Überprüfe bitte den Titel");
@@ -157,6 +164,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $bezeichnung = "";
         $lat = "";
         $lon = "";
+        $utoken = "";
 
         /* Hole richtige ID */
         if (isset($_GET['ID'])) {
@@ -182,6 +190,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
             $titel = $erg['Titel'];
             $bezeichnung = $erg['Beschreibung'];
             $kategorie = intval($erg['Kategorie']);
+            $utoken = $_POST['UTOKEN'];
             
             
             
@@ -191,7 +200,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
         } 
 
         /* Änderungen des Angebots */
-        if(isset($_POST['ID'], $_POST['titel'], $_POST['beschreibung'], $_POST['kategorie'])){
+        if(isset($_POST['ID'], $_POST['titel'], $_POST['beschreibung'], $_POST['kategorie']) || $_POST['UTOKEN'] == $_SESSION['UTOKEN']){
             /* Kontrolle Kategorie */
             $kategorie = intval($_POST['kategorie']);
             /* Kontrolle Titel */
@@ -234,6 +243,7 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $this->view->set_alte_Formular_Werte($id);
         $this->view->set_alte_Formular_Werte($lat);
         $this->view->set_alte_Formular_Werte($lon);
+        $this->view->set_alte_Formular_Werte($utoken);
         
         $this->view->set_selected($kategorie);
         return $this->view->lade_Template("tp_Angebot_Aendern");
