@@ -116,9 +116,11 @@ function loadMap(funktion){
     /*Funktion lädt alle benötigten scripte nach */
   
     /* Verstecke Button zum Laden */
+    document.getElementById("hinweis").classList.add("hidden");
     document.getElementById("lade").classList.add("hidden");
     document.getElementById("map").classList.remove("hidden");
     document.getElementById("map").classList.add("height400");
+    document.getElementById("map").classList.add("flex");
 
     /* Lade benötigtes Stylesheets nach */
     var styleSheet_leaflet = document.createElement("link");
