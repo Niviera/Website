@@ -21,7 +21,7 @@
         <input id="lon" name="lon" type="number" step="any" value="<?php echo $this->alte_Werte[4] ?>" >
         <div id="mapInfo" class="hidden"></div>
         <div id="map" class="hidden">
-            <div id="lade" onclick="loadMap(starte_map_aendern)"> Geo Picker Laden </div>
+            <div id="lade" onclick="loadMap(starte_map_aendern)"> <p>Geo Picker Laden</p> </div>
             
         </div>
          <button type="submit" name="ID" value="<?php echo $this->alte_Werte[2] ?>">Ändern</button>

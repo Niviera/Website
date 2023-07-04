@@ -1,5 +1,5 @@
 #map{
-    
+    display: flex;
     width: 100%;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -8,6 +8,31 @@
 
 .height400{
     height: 400px;
+}
+
+#lade{
+    display: flex;
+    height: 30px;
+    width: 40%;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+
+
+    font-size: 13.3333px;
+    border: 1px solid #6E7880;
+    color: black;
+    font-family: Arial;
+    background-color: #efefef;
+    box-shadow: 9px 6px 15px #6E7880;
+
+}
+
+#lade p{
+    margin: auto;
 }
 
 .height20{

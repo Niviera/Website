@@ -21,8 +21,7 @@
         <input id="lon" name="lon" type="number" step="any" value="" >
         <div id="mapInfo" class="hidden"></div>
         <div id="map" class="hidden">
-            <div id="lade" onclick="loadMap(starte_map_erstellen)"> Geo Picker Laden </div>
-            
+            <div id="lade" onclick="loadMap(starte_map_erstellen)"> <p>Geo Picker Laden</p> </div>
         </div>
         <button type="submit" name="abgeschickt" value="abgeschickt">Erstellen</button>
     </div>
