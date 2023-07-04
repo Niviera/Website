@@ -24,8 +24,8 @@
         </div>
         <input hidden id="lat" value="<?php echo $this->kategorien['lat'] ?>">
         <input hidden id="lon" value="<?php echo $this->kategorien['lon'] ?>">
-        <iframe src="" class="hidden" id="karte"></iframe>   
-        <div id="iframe_laden" class="hidden iframe_laden"> <button onclick="karte_laden()">Karte Laden</button></div>  
+       <iframe src="" class="hidden" id="karte"></iframe>   
+        <div id="iframe_laden" class="hidden iframe_laden"> <button onclick="karte_laden()">Karte Laden</button></div>
     </div>
     
 </div>

@@ -23,8 +23,9 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
   
 
     <!-- JavaScript -->
-    <script src="../JavaScript/Links_und_Rechts_Arrow.js"></script>
-    <script src="../JavaScript/Links_und_Rechts_Swipe.js"></script>
+    <script src="../JavaScript/Links_und_Rechts_Swipe.js" async></script>
+    <script src="../JavaScript/Links_und_Rechts_Arrow.js" async></script>
+    
      
     
 </head>
@@ -38,7 +39,7 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <?php    
         echo $Kontroller->display_Detailed_Angebot();
     ?>
-    <script src="../JavaScript/iframe_Nachladen.js"></script>
+    <script src="../JavaScript/iframe_Nachladen.js" async></script>
     
     <!-- footer -->
     <?php
