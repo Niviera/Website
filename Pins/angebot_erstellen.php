@@ -23,11 +23,6 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/map.css">
 
-    <!-- JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>    
-
 </head>
 
 <body>

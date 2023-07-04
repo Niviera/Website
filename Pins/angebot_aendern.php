@@ -22,14 +22,8 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboterstellen.css">
     <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/map.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
 
     <!-- JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
 </head>
 
 <body>
@@ -44,7 +38,7 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
         <form action="angebot_aendern.php" method="POST">
             <?php echo $Kontroller->angebot_Aendern() ?>
         </form>
-    <script src="../JavaScript/map_Aendern.js" async></script>
+    <script src="../JavaScript/map.js" async></script>
     </div>
     <!-- footer -->
     <?php
