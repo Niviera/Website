@@ -110,6 +110,13 @@ class Kontroller_Registrierung{
         /* Kontrolle ob in der Datenbank bereits vorhanden */
         $erg = $this->model->kontrolliere_Email($mail);
         if(intval($erg['COUNT(*)']) >= 1){
+            /* Schreibe in einer Datei Link zum reset des Passworts */
+            file_put_contents("../Email.txt", "Bitte ignoriere die E-Mail, 
+            wenn du es nicht warst, der sich versucht hat zu registrieren. 
+            Du bist aber bereits registriert. Solltest du dein Password vergessen habe, 
+            klicke bitte hier");
+
+            /* */
             return false;
         }
 
