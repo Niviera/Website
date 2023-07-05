@@ -1,12 +1,15 @@
-Verwendet:
-Es wurde eine Datenbank verwendet. Die Struktur befindet sich in dem Ordner Planung/Datenbank mit ein paar bsp Daten.
-
 Bekannte Fehler:
 - MVC Pattern teilsweise nur vorhanden
 - PDO Pattern nicht vorhanden
 - bsp Nutzer passwort wird falsch eingtragen, da in bsp daten ein kleiner teil des String als 
   Globale Variable erkannt wird
-- Erfolgreiche Registrierung --> Links werden bei Success nachricht noch nicht angepasst
+
+Testdaten zum Einloggen:
+Nutzername: test@test.de
+Passwort:   test
+
+Email:
+Wird im Index.php Verzeichnis abgelegt.
 
 
 
