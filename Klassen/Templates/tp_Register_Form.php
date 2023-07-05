@@ -47,7 +47,7 @@
                     <div class="checkbox_text">
                         <input id="datenschutz" name="datenschutz" type="checkbox" required>
                         <div class="text">
-                            Ich habe die <a href="../Datenschutzerklaerung.php"> Datenschutzerklärung</a>
+                            Ich habe die <a href="../Datenschutzerklaerung.php" target="_blank"> Datenschutzerklärung</a>
                             zur Kenntnis genommen und bin damit einverstanden, dass die von mir angebenen Daten 
                             elektronisch erhoben und gespeichert werden. Meine Daten werden dabei nur streng 
                             zweckgebunden zur Bearbeitung und Beantwortung meiner Anfragen genutzt.
@@ -57,7 +57,7 @@
                     <div class="checkbox_text">
                         <input id="nutzungsbediungen" name="nutzungsbediungen" type="checkbox" required>
                         <div class="text">
-                            Ich habe die <a href="../Nutzungsbedingung.php"> Nutzungsbedingungen</a>
+                            Ich habe die <a href="../Nutzungsbedingung.php" target="_blank"> Nutzungsbedingungen</a>
                             zur Kenntnis genommen und Verstanden. Hiermit erkläre ich mich für einverstanden diese
                             neinzuhalten
                         </div>
