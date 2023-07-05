@@ -21,6 +21,8 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboterstellen.css">
     <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Pins/map.css">
+
 </head>
 
 <body>
@@ -33,6 +35,8 @@ $Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
     <div class="Container_Main_Erstellen">
         <?php echo $Kontroller->validate() ?>
     </div>
+
+    <script src="../JavaScript/map.js" async></script>
     <!-- footer -->
     <?php
     include "../Ressourcen/footer.php";

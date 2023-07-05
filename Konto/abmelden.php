@@ -2,6 +2,7 @@
 session_start();
 $name = $_SESSION['UName'];
 $_SESSION['UID'] = "";
+$_SESSION['UTOKEN'] = "";
 session_destroy();
 ?>
 <!DOCTYPE html>
