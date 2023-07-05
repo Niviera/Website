@@ -10,7 +10,6 @@ class Kontroller_Konto_Uebersicht{
 
     
     public function work(){
-        /* TODO: Lade sämtlich $_GET[''] & $_POST[''] in eine Variable */
         /* Entscheide ob eigenes Konto oder Fremdkonto erfragt wird */
         if(isset($_GET['id'])){
             $id = $_GET['id'];
@@ -32,6 +31,7 @@ class Kontroller_Konto_Uebersicht{
             $this->view->set_alte_Werte("plz", $erg['PLZ']);
             $this->view->set_alte_Werte("stadt", $erg['Name']);
             $this->view->set_alte_Werte("tele", $erg['telnr']);
+            $this->view->set_alte_Werte("utoken", $_SESSION['UTOKEN']);
 
 
             return $this->view->lade_Template($template);
@@ -48,8 +48,14 @@ class Kontroller_Konto_Uebersicht{
         /* TODO: Überprüfe ob der Nutzer noch excistiert --> Stichwort Transaktionen, Constraints */
         /* Überprüfe ob Daten geupdatet werden sollen! */
         if(isset($_POST['bestaetigt'])){
-            if(isset($_POST['vorname']) && isset($_POST['nachname']) && isset($_POST['straße'])
-                && isset($_POST['plz']) && isset($_POST['stadt']) && isset($_POST['email'])){
+            if(isset($_POST['vorname'], $_POST['nachname'], $_POST['straße'], $_POST['plz'], $_POST['stadt'], $_POST['email'], $_POST['UTOKEN']))
+            {
+                /* Überprüfe auf User Token */
+                if($_POST['UTOKEN'] != $_SESSION['UTOKEN']){
+                    $this->view->set_error("Fehler: Ihre Daten konnten nicht geupdatet werden.");
+                    return;
+                }
+
                 /* Überpfüfe ob die Stadt bisher eingetragen ist */
                 if($this->model->kontrolliere_Stadt($_POST['plz'])){
                     $test = $this->model->get_Daten();

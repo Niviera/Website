@@ -8,6 +8,7 @@
                 <img src=<?php echo "../Bilder/profile/" . $this->alte_Werte['bild'] ?> alt="Profil Bild">
             </div>
             <div class="Container_konto">
+                <input type="text" name="UTOKEN" value="<?php echo $this->alte_Werte["utoken"] ?>" readonly hidden>
                 <label for="vorname">Vorname:</label><input id="vorname" name="vorname" type="text" value=<?php echo $this->alte_Werte['vorname'] ?>>
                 <label for="nachname">Nachname:</label><input id="nachname" name="nachname" type="text" value=<?php echo $this->alte_Werte['nachname'] ?>>
                 <label for="straße">Straße:</label><input id="straße" name="straße" type="text" value="<?php echo $this->alte_Werte['adresse'] ?>">

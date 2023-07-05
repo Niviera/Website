@@ -22,6 +22,7 @@ class View_Hilfsgesuch{
         $neu = array();
         $neu[] = htmlentities($wert1);
         $neu[] = htmlentities($wert2);
+        $neu[] = htmlentities("a");
         $this->kategorien[] = $neu;
 	}
 
@@ -44,5 +45,17 @@ class View_Hilfsgesuch{
     public function set_success($nachricht){
 		$this->success = htmlentities($nachricht);
 	}
+
+    public function set_selected($schluessel){
+        $index = 0;
+		foreach($this->kategorien as $lookup){      
+            if($lookup[0] == $schluessel){
+                break;
+            }
+            $index += 1;
+        }
+        $this->kategorien[$index][2] = htmlentities("selected");
+	}
+
 
 }

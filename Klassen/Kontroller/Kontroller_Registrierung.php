@@ -12,6 +12,12 @@ class Kontroller_Registrierung{
     }
 
     public function validate(){
+
+        if(isset($_GET['token'])){
+            if($_GET['token'] == $_SESSION['UTOKEN']){
+                $this->bestaetigen();
+            }
+        }
        
         if($_SESSION['UID'] != ""){
             $this->view->set_nachricht("Wilkommen");
@@ -47,14 +53,14 @@ class Kontroller_Registrierung{
 
                 /* Behandlung des Bildes */
 
-                $bild = "standart.jpeg";
+                $_SESSION['bild'] = "standart.jpeg";
                 $erlaubteTypen = array(IMAGETYPE_PNG, IMAGETYPE_JPEG);
         
                 /* Handhabung von Bildern unique() für namen */
                 if ($_FILES['dateiHochladen']['name'] != "") {
                     $fileType = exif_imagetype($_FILES['dateiHochladen']['tmp_name']);
                     if (in_array($fileType, $erlaubteTypen)) {
-                        $bild = $_FILES['dateiHochladen']['name'];
+                        $_SESSION['bild'] = $_FILES['dateiHochladen']['name'];
                         move_uploaded_file(
                             $_FILES['dateiHochladen']['tmp_name'],
                             '../Bilder/profile/' . $_FILES['dateiHochladen']['name']
@@ -69,28 +75,57 @@ class Kontroller_Registrierung{
                 }
 
                 /* Eintragung des neuen Nutzers */
-                $pw = password_hash($_POST['passwort'], PASSWORD_DEFAULT);
-                $this->model->neuer_Nutzer( $_POST['email'], $_POST['vorname'], $_POST['nachname'], 
-                                            $_POST['straße'], $_POST['plz'], $_POST['tele'], 
-                                            $pw, $bild);
+                $_SESSION['temp_pw'] = password_hash($_POST['passwort'], PASSWORD_DEFAULT);
+                
 
                 
-                /* Speichere Nutzerdaten in Session */
-                $erg = $this->model->get_User_Data($_POST['email']);
-                $_SESSION['UID'] = $erg['ID'];
+                /* Speichere Nutzerdaten in Session */       
                 $_SESSION['UName'] = $_POST['vorname'];
+                $_SESSION['UNachname'] = $_POST['nachname'];
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['straße'] = $_POST['straße'];
+                $_SESSION['plz'] = $_POST['plz'];
+                $_SESSION['tele'] = $_POST['tele'];
+                $_SESSION['UTOKEN'] = uniqid();  // Token für die Registrierung
 
-                
-                $this->view->set_nachricht("Wilkommen");
-                $this->view->set_alte_Werte("vorname", $_POST['vorname']);           
-                $this->view->set_alte_Werte("nachname", $_POST['nachname']);
-                
-                return $this->view->lade_Template($this->template_erfolg);
+                /* Schreibe in einer Datei bestätigung der Registrierung */
+                file_put_contents("../Email.html", 'Bitte ignoriere die E-Mail, wenn du es nicht warst, der sich versucht hat zu registrieren. 
+                Ansonsten klicke auf folgenden Link, um die Registrierung zu beenden: <a href="Konto/konto_erstellen.php?token='.$_SESSION["UTOKEN"].'"> 
+                jetzt Registrieren </a>)');
+                $this->view->set_nachricht("Es wurde eine E-Mail an die angegebene Adresse verschickt mit weiteren Infos.");
+                return $this->view->lade_Template("tp_Email_bestaetigung");
                
         }else{
                 /* Eine Sache minumum nicht gesetzt */
                 return $this->view->lade_Template($this->template);
         }
+    }
+
+    public function bestaetigen(){
+
+        if(isset($_SESSION['email'], $_SESSION['UName'], $_SESSION['UNachname'], 
+                $_SESSION['straße'], $_SESSION['plz'], $_SESSION['tele'], 
+                $_SESSION['temp_pw'], $_SESSION['bild']))
+        {
+            $this->model->neuer_Nutzer( $_SESSION['email'], $_SESSION['UName'], $_SESSION['UNachname'], 
+                                            $_SESSION['straße'], $_SESSION['plz'], $_SESSION['tele'], 
+                                            $_SESSION['temp_pw'], $_SESSION['bild']);
+
+            $erg = $this->model->get_User_Data($_SESSION['email']);
+            $_SESSION['UID'] = $erg['ID'];
+            $_SESSION['UTOKEN'] = uniqid();   // neuen Token generieren
+
+
+            /* Vernichte nicht benötigte Daten */
+            header('Location: konto_erstellen.php');
+            
+        }else{
+            //return $this->view->lade_Template($this->template);
+        }
+
+        
+
+        
     }
 
     /* Hilfsfunktionen */
@@ -107,6 +142,13 @@ class Kontroller_Registrierung{
         /* Kontrolle ob in der Datenbank bereits vorhanden */
         $erg = $this->model->kontrolliere_Email($mail);
         if(intval($erg['COUNT(*)']) >= 1){
+            /* Schreibe in einer Datei Link zum reset des Passworts */
+            file_put_contents("../Email.txt", "Bitte ignoriere die E-Mail, 
+            wenn du es nicht warst, der sich versucht hat zu registrieren. 
+            Du bist aber bereits registriert. Solltest du dein Password vergessen habe, 
+            klicke bitte hier");
+
+            /* */
             return false;
         }
 

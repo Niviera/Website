@@ -18,8 +18,23 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $this->view->set_error("");
         $this->view->set_success("");
         $this->view->reset_alte_Formular_Werte();
+        $this->view->set_alte_Formular_Werte($_SESSION['UTOKEN']);
 
-        if(isset($_POST['titel'])&& isset($_POST['kategorie']) && isset($_POST['beschreibung'])){
+        $lat = NULL;
+        $lon = NULL;
+        /* Kontrolliere ob jemand eingeloggt ist */
+        if(!isset($_SESSION['UID'], $_SESSION['UTOKEN'])){
+            $this->view->set_error("Sie sind nicht eingeloggt!");
+            return $this->view->lade_Template($this->template);
+        }
+
+        if(isset($_POST['titel'], $_POST['kategorie'], $_POST['beschreibung'], $_POST['UTOKEN'])){
+            /* kontrolliere Token */
+            if($_POST['UTOKEN'] != $_SESSION['UTOKEN']){
+                $this->view->set_error("Überprüfe bitte den Titel");
+                return $this->view->lade_Template($this->template);
+            }
+
             /* Kontrolliere Title */
             if(!is_string($_POST['titel'])){
                 $this->view->set_error("Überprüfe bitte den Titel");
@@ -49,11 +64,26 @@ class Kontroller_Hiflsgesuch_Erstellen{
                 return $this->view->lade_Template($this->template);
             }
 
-            if($this->model_Gesuche->neues_Hilfsgesuch($_POST['titel'], $_POST['beschreibung'], $_POST['kategorie'])){
-                $this->view->set_success("Die Eintragung war Erfolgreich");
-            }else{
-                $this->view->set_error("Bei der Eintragung ist etwas Schiefgelaufen");
+            if(isset($_POST['lat'], $_POST['lon'])){
+                $lat = $_POST['lat'];
+                $lon = $_POST['lon'];
             }
+
+            if($lat != ""){
+                if($this->model_Gesuche->neues_Hilfsgesuch($_POST['titel'], $_POST['beschreibung'], $_POST['kategorie'], $lat, $lon)){
+                    $this->view->set_success("Die Eintragung war Erfolgreich");
+                }else{
+                    $this->view->set_error("Bei der Eintragung ist etwas Schiefgelaufen");
+                }
+            }else{
+                if($this->model_Gesuche->neues_Hilfsgesuch($_POST['titel'], $_POST['beschreibung'], $_POST['kategorie'], NULL, NULL)){
+                    $this->view->set_success("Die Eintragung war Erfolgreich");
+                }else{
+                    $this->view->set_error("Bei der Eintragung ist etwas Schiefgelaufen");
+                }
+            }
+
+            
 
             return $this->view->lade_Template($this->template);
 
@@ -126,7 +156,108 @@ class Kontroller_Hiflsgesuch_Erstellen{
         $this->view->set_alte_Werte("nachname", $erg['Nachname']);
         $this->view->set_alte_Werte("email", $erg['EMail']);
 
+        $this->view->set_alte_Werte("lon", $erg['lon']);
+        $this->view->set_alte_Werte("lat", $erg['lat']);
+        
+
         return $this->view->lade_Template("tp_detailed_Angebot");
+    }
+
+    public function angebot_Aendern(){
+        $titel = "";
+        $kategorie = "";
+        $id = "";
+        $bezeichnung = "";
+        $lat = "";
+        $lon = "";
+        $utoken = "";
+
+        /* Hole richtige ID */
+        if (isset($_GET['ID'])) {
+            $id = $_GET['ID'];
+        } else {
+            $id = $_POST['ID'];
+        }
+
+        /* Kategorien */
+        $this->display_Kategorien();
+
+        if(!isset($_SESSION['UID'], $_SESSION['UTOKEN'])){
+            $this->view->set_error("Sie sind nicht eingeloggt!");
+            return $this->view->lade_Template("tp_Angebot_Aendern");
+        }
+        
+        /* Hohle aktuelle Angebot details */
+        if($this->model_Gesuche->hilfsgesuch_Detailed($id)){
+            $erg = $this->model_Gesuche->get_ergebnisse();
+
+            if($erg['Ersteller'] != $_SESSION['UID']){
+                $this->view->set_error("Es ist ein Fehler passiert.");
+                return $this->view->lade_Template("tp_Angebot_Aendern");
+            }
+
+            $lat = $erg['lat'];
+            $lon = $erg['lon'];
+            $titel = $erg['Titel'];
+            $bezeichnung = $erg['Beschreibung'];
+            $kategorie = intval($erg['Kategorie']);
+            $utoken = $_POST['UTOKEN'];
+            
+            
+            
+        }else{
+            $this->view->set_error("Kein Angebot gefunden.");
+            return $this->view->lade_Template("tp_Angebot_Aendern");
+        } 
+
+        /* Änderungen des Angebots */
+        if(isset($_POST['ID'], $_POST['titel'], $_POST['beschreibung'], $_POST['kategorie']) || $_POST['UTOKEN'] == $_SESSION['UTOKEN']){
+            /* Kontrolle Kategorie */
+            $kategorie = intval($_POST['kategorie']);
+            /* Kontrolle Titel */
+            if(strlen($_POST['titel']) < 41){
+                $titel = $_POST['titel'];
+            }else{
+                $this->view->set_error("Der Titel ist zu lang!");
+            }
+            /* Kontrolle Beschreibung */
+            if(strlen($_POST['beschreibung']) < 1201){
+                $bezeichnung = $_POST['beschreibung'];
+            }else{
+                $this->view->set_error("Die Beschreibung ist zu lang");             
+            }
+
+            if($_POST['lat'] == ""){
+                $lat = NULL;
+            }else{
+                $lat = $_POST['lat'];
+            }
+
+            if($_POST['lon'] == ""){
+                $lon = NULL;
+            }else{
+                $lon = $_POST['lon'];
+            }
+            
+            /* Angebot Ändern */
+            if($this->model_Gesuche->angebot_aendern($titel, $bezeichnung, $kategorie, $id, $lat, $lon)){
+                $this->view->set_success("Das Angebot wurde Erfolgreich angepasst.");
+            }else{
+                $this->view->set_error("Bei der änderung ist ein fehler passiert.");      
+            }  
+        }
+
+        /* Updaten der View */
+        
+        $this->view->set_alte_Formular_Werte($titel);
+        $this->view->set_alte_Formular_Werte($bezeichnung);
+        $this->view->set_alte_Formular_Werte($id);
+        $this->view->set_alte_Formular_Werte($lat);
+        $this->view->set_alte_Formular_Werte($lon);
+        $this->view->set_alte_Formular_Werte($utoken);
+        
+        $this->view->set_selected($kategorie);
+        return $this->view->lade_Template("tp_Angebot_Aendern");
     }
 
     /* Hilfsfunktionen */

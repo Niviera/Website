@@ -19,7 +19,7 @@
                     <label for="plz">PLZ:</label>
                     <input id="plz" name="plz" type="number" value="<?php echo $this->alte_Werte['plz'] ?>">
                     <br>
-                    <label for="stadt">Stadt:</label>
+                    <label for="stadt">Ort:</label>
                     <input id="stadt" name="stadt" type="text" value="<?php echo $this->alte_Werte['stadt'] ?>">
                 </div>
                 <div class="ContainerRubrik">
@@ -41,11 +41,34 @@
                     <label for="dateiHochladen">Datei:</label>
                     <input id="dateiHochladen" name="dateiHochladen" type="file">
                 </div>
+                <div class="ContainerRubrik">
+                    <div class="legend"></div>
+                    <label for="datenschutz">Datenschutz:</label>
+                    <div class="checkbox_text">
+                        <input id="datenschutz" name="datenschutz" type="checkbox" required>
+                        <div class="text">
+                            Ich habe die <a href="../Datenschutzerklaerung.php" target="_blank"> Datenschutzerklärung</a>
+                            zur Kenntnis genommen und bin damit einverstanden, dass die von mir angebenen Daten 
+                            elektronisch erhoben und gespeichert werden. Meine Daten werden dabei nur streng 
+                            zweckgebunden zur Bearbeitung und Beantwortung meiner Anfragen genutzt.
+                        </div>
+                    </div>
+                    <label for="nutzungsbediungen">Nutzungsbedingungen:</label>
+                    <div class="checkbox_text">
+                        <input id="nutzungsbediungen" name="nutzungsbediungen" type="checkbox" required>
+                        <div class="text">
+                            Ich habe die <a href="../Nutzungsbedingung.php" target="_blank"> Nutzungsbedingungen</a>
+                            zur Kenntnis genommen und Verstanden. Hiermit erkläre ich mich für einverstanden diese
+                            neinzuhalten
+                        </div>
+                    </div>
+                </div>
                 <div class="ContainerButtons">
+                <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
+                    </div>
                     <button type="submit" name="abgeschickt" value="abgeschickt"
                         class="buttonDesign allgemeinesDesign">Registrieren</button>
-                    <div class="zurueckButton allgemeinesDesign"><a href="index.php" class="pseudoButton">Abbrechen</a>
-                    </div>
+                    
                 </div>
             </form>
 </div>

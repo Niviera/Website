@@ -1,8 +1,10 @@
 <?php
-$pfad = "../Datenbank/";
 session_start();
-include "../Datenbank/db_angebot_aendern.php";
-
+include "../Klassen/Kontroller/Kontroller_Hilfsgesuch_Erstellen.php";
+include "../Klassen/Model/Model_Kategorien.php";
+include "../Klassen/Model/Model_Hilfsgesuche.php";
+include "../Klassen/View/View_Hilfsgesuch.php";
+$Kontroller = new Kontroller_Hiflsgesuch_Erstellen("../Datenbank/");
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +20,10 @@ include "../Datenbank/db_angebot_aendern.php";
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Pins/angeboterstellen.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/erfolg_fehlermeldungen.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Pins/map.css">
+
+    <!-- JavaScript -->
 </head>
 
 <body>
@@ -30,31 +36,9 @@ include "../Datenbank/db_angebot_aendern.php";
     <div class="Container_Main_Erstellen">
 
         <form action="angebot_aendern.php" method="POST">
-            <div class="layout">
-                <h1>Angebot ändern:</h1>
-                <label for="title">Titel:</label><input id="title" name="titel" type="text" required value="<?php echo $ergebnis['Titel'] ?>">
-                <label for="kategorie">Kategorie:</label><select name="kategorie" id="kategorie" required>
-                    <?php
-                    include "../Datenbank/db_abfrage_Kategorien.php";
-                    /* Darstellung */
-                    $zaehler = 0;
-                    foreach ($query as $reihe) {
-                        $wert = htmlentities($reihe["ID"]);
-                        $bezeichnung = htmlentities($reihe["Name"]);
-                        $zaehler++;
-                        if($zaehler == intval($ergebnis["Kategorie"])){
-                            echo "<option selected value=" . $wert . ">" . $bezeichnung . "</option>";
-                        }else{
-                            echo "<option value=" . $wert . ">" . $bezeichnung . "</option>";
-                        }                   
-                    }
-                    ?>
-                </select>
-                <label for="beschreibung">Beschreibung:</label><textarea id="beschreibung" name="beschreibung"
-                    type="text" required><?php echo $ergebnis['Beschreibung'] ?></textarea>
-                <button type="submit" name="ID" value="<?php echo $id ?>">Ändern</button>
-            </div>
+            <?php echo $Kontroller->angebot_Aendern() ?>
         </form>
+    <script src="../JavaScript/map.js" async></script>
     </div>
     <!-- footer -->
     <?php
